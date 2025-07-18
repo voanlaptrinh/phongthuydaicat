@@ -1,0 +1,1496 @@
+/* Extra Small Devices (< 480px) */
+:root {
+    /*
+     * QUAN TRỌNG: Hãy thay đổi giá trị 80px này 
+     * bằng chiều cao thực tế của header của bạn.
+    */
+    --header-height-mobie: 85px;
+}
+
+/* < 320px (rất nhỏ) */
+@media screen and (max-width: 319.98px) {
+    .h1-chuyen-gia {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 479.98px) {
+
+    .title-logo {
+        display: none;
+        font-size: 16px;
+    }
+
+    .main-navigation {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .img-logo {
+        width: 52px;
+        height: 61px;
+    }
+
+    .btn-banner-pc {
+        display: none;
+    }
+
+    .btn-banner-mobile {
+        display: flex;
+    }
+
+    .btn-hover-default {
+        height: 70px;
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    .text-dess-su-menh {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .img-banner-tu-van {
+        width: 250px;
+        height: 168px;
+    }
+
+    .img-banner-dich-vu {
+        width: 300px;
+        height: 224px;
+    }
+
+    .phong-thuyh1 {
+        height: 89px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 18px;
+    }
+
+    /* .sticky-title-wrapper {
+        position: unset;
+    } */
+
+    .title-decorator-img {
+        display: none;
+    }
+
+    .bird-image {
+        display: none;
+
+    }
+
+    .bird-images {
+        width: 90px;
+        height: auto;
+    }
+
+    .upleft-image {
+        display: none;
+    }
+
+    .upright-image {
+        display: none;
+    }
+
+    .bottom-image {
+        display: none;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 27px;
+    }
+
+    .chuyen-gia2 {
+        line-height: 66px;
+        font-size: 56px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 69px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 40px;
+    }
+
+    .decorative-line {
+        display: none;
+    }
+
+    .gioi-thieu-section {
+        padding-top: 100px;
+    }
+
+    /* .about-2-image {
+        top: 12%;
+        left: 9%;
+    } */
+
+    /* .about-1-image {
+        top: 12%;
+        right: 9%;
+       
+    } */
+
+    .about-2-image img {
+        width: 90px;
+    }
+
+    .about-1-image img {
+        width: 90px;
+    }
+
+    .gioi-thieu-content {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* .scroll-container {
+        margin-top: 10px;
+    } */
+
+    .songabout-upright-image {
+        bottom: 8%;
+        left: -14%;
+    }
+
+    .song2about-upright-image {
+        bottom: 9%;
+        right: -11%;
+    }
+
+    .section-title {
+        font-size: 46px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 25px;
+    }
+
+    .decoration-dot {
+        display: none;
+    }
+
+    .section-title {
+        position: unset;
+        text-align: center;
+        transform: none;
+        display: block;
+    }
+
+    .title-wrapper {
+        position: relative;
+        height: 100px;
+    }
+
+    .sumenh-2-image {
+        bottom: 40%;
+        left: 8%;
+    }
+
+    .sumenh-1-image {
+        bottom: 40%;
+        right: 8%;
+    }
+
+    .sumenh-2-image img {
+        width: 100px;
+    }
+
+    .sumenh-1-image img {
+        width: 100px;
+    }
+
+    .mission-text .sub-title {
+        justify-content: center;
+    }
+
+    .card-container-miss {
+        justify-content: center;
+    }
+
+    .card-item-miss {
+        font-size: 18px;
+    }
+
+    .mission-image {
+        display: none;
+    }
+
+    .mission-text-content {
+        display: flex;
+        flex-direction: column;
+        /* Xếp các phần tử con theo cột (dọc) */
+
+    }
+
+    /* 2. Thiết lập thứ tự mặc định cho desktop */
+    .mission-text-content .sub-title {
+        order: 2;
+        /* Hiển thị đầu tiên */
+    }
+
+    .mission-text-content .text-dess-su-menh {
+        order: 1;
+        /* Hiển thị thứ hai */
+    }
+
+    .title-quytrinh {
+        font-size: 34px;
+        /* line-height: 50px; */
+    }
+
+    .quytrinh-2-image {
+        left: 0%;
+        bottom: 0;
+    }
+
+    .quytrinh-1-image {
+        right: 0;
+        bottom: 0;
+    }
+
+    .quytrinh-2-image img {
+        width: 100px;
+    }
+
+    .quytrinh-1-image img {
+        width: 100px;
+    }
+
+    .caydao-upleft-image {
+        display: none;
+    }
+
+    .steps-slider {
+        margin-top: 50px;
+        /* margin-bottom: 110px; */
+    }
+     .slide {
+        flex: 0 0 100%;
+        padding: 0;
+    }
+      .slide-content{
+        height: 440px;
+    }
+
+}
+
+/* Small Devices (≥ 480px and < 768px) */
+@media screen and (min-width: 480px) and (max-width: 767.98px) {
+    .title-logo {
+        display: none;
+        font-size: 18px;
+    }
+
+    .main-navigation {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .img-logo {
+        width: 52px;
+        height: 61px;
+    }
+
+    .btn-banner-pc {
+        display: none;
+    }
+
+    .btn-banner-mobile {
+        display: flex;
+    }
+
+    .btn-hover-default {
+        height: 70px;
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 18px;
+    }
+
+    .img-banner-tu-van {
+        width: 319px;
+        height: 168px;
+    }
+
+    .img-banner-dich-vu {
+        width: 310px;
+        height: 224px;
+    }
+
+    .phong-thuyh1 {
+        height: 110px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 17px;
+    }
+
+    /* .sticky-title-wrapper {
+        position: unset;
+    } */
+
+    .title-decorator-img {
+        display: none;
+    }
+
+    .bird-image {
+        bottom: 0;
+        left: 0%;
+    }
+
+    .upleft-image {
+        top: 10%;
+        left: 0%;
+    }
+
+    .upright-image {
+        top: 10%;
+        right: 0%;
+    }
+
+    .bottom-image {
+        bottom: 10%;
+        right: 0%;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 31px;
+    }
+
+    .chuyen-gia2 {
+        font-size: 54px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 70px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 40px;
+    }
+
+    .decorative-line {
+        display: none;
+    }
+
+    .gioi-thieu-section {
+        padding-top: 100px;
+    }
+
+    /* .about-2-image {
+        top: 11%;
+        left: 20%;
+    } */
+
+    /* .about-1-image {
+        top: 11%;
+        right: 20%;
+    }*/
+
+    .about-2-image img {
+
+        width: 120px;
+    }
+
+    .about-1-image img {
+
+        width: 120px;
+    }
+
+    .gioi-thieu-content {
+        margin-top: 10px;
+        /* padding-top: 13px; */
+        font-size: 20px;
+    }
+
+    .songabout-upright-image {
+        bottom: 8%;
+        left: 17%;
+    }
+
+    .song2about-upright-image {
+        bottom: 8%;
+        right: 12%;
+    }
+
+    .section-title {
+        font-size: 46px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 40px;
+    }
+
+    .decoration-dot {
+        display: none;
+    }
+
+    .section-title {
+        position: unset;
+        text-align: center;
+        transform: none;
+        display: block;
+    }
+
+    .title-wrapper {
+        position: relative;
+        height: 100px;
+    }
+
+    .sumenh-2-image {
+        bottom: 40%;
+        left: 8%;
+    }
+
+    .sumenh-1-image {
+        bottom: 40%;
+        right: 8%;
+    }
+
+    .mission-text .sub-title {
+        justify-content: center;
+    }
+
+    .card-container-miss {
+        justify-content: center;
+    }
+
+    .card-item-miss {
+        font-size: 18px;
+    }
+
+    .mission-image {
+        display: none;
+    }
+
+    .mission-text-content {
+        display: flex;
+        flex-direction: column;
+        /* Xếp các phần tử con theo cột (dọc) */
+
+    }
+
+    /* 2. Thiết lập thứ tự mặc định cho desktop */
+    .mission-text-content .sub-title {
+        order: 2;
+        /* Hiển thị đầu tiên */
+    }
+
+    .mission-text-content .text-dess-su-menh {
+        order: 1;
+        /* Hiển thị thứ hai */
+    }
+
+    .title-quytrinh {
+        font-size: 42px;
+        /* line-height: 50px; */
+    }
+
+    .quytrinh-2-image {
+        left: 16%;
+        bottom: 0px;
+    }
+
+    .quytrinh-1-image {
+        right: 16%;
+        bottom: 0;
+    }
+
+    .quytrinh-2-image img {
+        width: 100px;
+    }
+
+    .quytrinh-1-image img {
+        width: 100px;
+    }
+
+    .caydao-upleft-image {
+        display: none;
+    }
+
+    .steps-slider {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+     .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 2);
+    }
+      .slide-content{
+        height: 440px;
+    }
+
+}
+
+/* Medium Devices (≥ 768px and < 992px) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .title-logo {
+        display: none;
+        font-size: 20px;
+    }
+
+    .main-navigation {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .img-logo {
+        width: 52px;
+        height: 61px;
+    }
+
+    .btn-banner-pc {
+        display: none;
+    }
+
+    .btn-banner-mobile {
+        display: flex;
+    }
+
+    .btn-hover-default {
+        height: 65px;
+        margin-top: 20px;
+        font-size: 26px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 18px;
+    }
+
+    .img-banner-tu-van {
+        width: 390px;
+        height: 168px;
+    }
+
+    .img-banner-dich-vu {
+        width: 310px;
+        height: 224px;
+    }
+
+    .phong-thuyh1 {
+        height: 150px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 24px;
+    }
+
+    /* .sticky-title-wrapper {
+        position: unset;
+    } */
+
+    .title-decorator-img {
+        display: none;
+    }
+
+    .bird-image {
+        left: 7%;
+    }
+
+    .upleft-image {
+        top: 10%;
+        left: 0%;
+    }
+
+    .upright-image {
+        top: 10%;
+        right: 0%;
+    }
+
+    .bottom-image {
+        bottom: 10%;
+        right: 0%;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 34px;
+    }
+
+    .chuyen-gia2 {
+        padding: 13px;
+        line-height: 87px;
+        font-size: 81px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 70px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 44px;
+    }
+
+    .decorative-line {
+        display: none;
+    }
+
+    /* .about-2-image {
+        top: 16%;
+        left: 23%;
+    }
+
+    .about-1-image {
+        top: 16%;
+        right: 23%;
+    } */
+
+    .gioi-thieu-content {
+        margin-top: 10px;
+        font-size: 21px;
+    }
+
+    .songabout-upright-image {
+        bottom: 8%;
+        left: 17%;
+    }
+
+    .song2about-upright-image {
+        bottom: 8%;
+        right: 12%;
+    }
+
+    .section-title {
+        font-size: 46px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 35px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 18px;
+    }
+
+    .decoration-dot {
+        display: none;
+    }
+
+    .section-title {
+        position: unset;
+        text-align: center;
+        transform: none;
+        display: block;
+    }
+
+    .title-wrapper {
+        position: relative;
+        height: 100px;
+    }
+
+    .sumenh-2-image {
+        bottom: 40%;
+        left: 22%;
+    }
+
+    .sumenh-1-image {
+        bottom: 40%;
+        right: 22%;
+    }
+
+    .mission-text .sub-title {
+        justify-content: center;
+    }
+
+    .card-container-miss {
+        justify-content: center;
+    }
+
+    .card-item-miss {
+        font-size: 20px;
+    }
+
+    .mission-image {
+        display: none;
+    }
+
+    .mission-text-content {
+        display: flex;
+        flex-direction: column;
+        /* Xếp các phần tử con theo cột (dọc) */
+
+    }
+
+    /* 2. Thiết lập thứ tự mặc định cho desktop */
+    .mission-text-content .sub-title {
+        order: 2;
+        /* Hiển thị đầu tiên */
+    }
+
+    .mission-text-content .text-dess-su-menh {
+        order: 1;
+        /* Hiển thị thứ hai */
+    }
+
+    .title-quytrinh {
+        font-size: 42px;
+        line-height: noma;
+    }
+
+    .quytrinh-2-image {
+        left: 22%;
+        bottom: -10px;
+    }
+
+    .quytrinh-1-image {
+        right: 22%;
+        bottom: -10px;
+    }
+
+    .caydao-upleft-image {
+        display: none;
+    }
+
+    .steps-slider {
+        margin-top: 110px;
+        margin-bottom: 110px;
+
+    }
+     .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 3);
+    }
+      .slide-content{
+        height: 440px;
+    }
+
+}
+
+/* Large Devices (≥ 992px and < 1200px) */
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .title-logo {
+        display: block;
+        font-size: 22px;
+    }
+
+    .main-navigation {
+        display: block;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .img-logo {
+        width: 70px;
+        height: 82px;
+    }
+
+    .btn-banner-pc {
+        display: flex;
+    }
+
+    .btn-banner-mobile {
+        display: none;
+    }
+
+    .btn-hover-default {
+        height: 70px;
+        margin-top: 30px;
+        font-size: 31px;
+    }
+
+
+    .text-dess-su-menh {
+        font-size: 20px;
+    }
+
+    .phong-thuyh1 {
+        height: 150px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 24px;
+    }
+
+    /* .sticky-title-wrapper {
+        top: 70px;
+        right: 35%;
+    } */
+
+    .bird-image {
+        left: 7%;
+    }
+
+    .upleft-image {
+        top: 10%;
+        left: 0%;
+    }
+
+    .upright-image {
+        top: 10%;
+        right: 0%;
+    }
+
+    .bottom-image {
+        bottom: 10%;
+        right: 0%;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 27px;
+    }
+
+    .chuyen-gia2 {
+        line-height: 90px;
+        font-size: 73px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 63px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 56px;
+    }
+
+    /* .about-2-image {
+        top: 17%;
+        left: 25%;
+    }
+
+    .about-1-image {
+        top: 17%;
+        right: 25%;
+    } */
+
+    .gioi-thieu-content {
+        font-size: 28px;
+    }
+
+    .songabout-upright-image {
+        bottom: 5%;
+        left: 22%;
+    }
+
+    .song2about-upright-image {
+        bottom: 4%;
+        right: 12%;
+    }
+
+    .section-title {
+        font-size: 56px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 35px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 20px;
+    }
+
+    .box-about-text {
+        padding-top: 80px;
+    }
+
+    .decoration-dot,
+    .section-title {
+        left: 20%;
+    }
+
+    .decoration-dot {
+        height: 60px;
+    }
+
+    .section-title {
+        top: 60px;
+    }
+
+    .sumenh-2-image,
+    .sumenh-1-image {
+        display: none;
+    }
+
+    .card-container-miss {
+        justify-content: start;
+    }
+
+    .card-item-miss {
+        font-size: 20px;
+    }
+
+    .title-quytrinh {
+        font-size: 56px;
+        line-height: 50px;
+    }
+
+    .quytrinh-2-image {
+        left: 25%;
+        bottom: -10px;
+    }
+
+    .quytrinh-1-image {
+        right: 25%;
+        bottom: -10px;
+    }
+
+    .caydao-upleft-image {
+        left: 0;
+        top: 0;
+    }
+
+    .steps-slider {
+        margin-top: 110px;
+        margin-bottom: 110px;
+
+    }
+     .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 3);
+    }
+      .slide-content{
+        height: 440px;
+    }
+
+}
+
+/* Extra Large Devices (≥ 1200px and < 1400px) */
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+    .title-quytrinh {
+        font-size: 56px;
+        line-height: 50px;
+    }
+
+    .quytrinh-2-image {
+        left: 33%;
+        bottom: -10px;
+    }
+
+    .quytrinh-1-image {
+        right: 33%;
+        bottom: -10px;
+    }
+
+    .title-logo {
+        display: block;
+        font-size: 24px;
+    }
+
+    .main-navigation {
+        display: block;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .img-logo {
+        width: 70px;
+        height: 82px;
+    }
+
+    .btn-banner-pc {
+        display: flex;
+    }
+
+    .btn-banner-mobile {
+        display: none;
+    }
+
+    .btn-hover-default {
+        height: 70px;
+        margin-top: 30px;
+        font-size: 35px;
+    }
+
+    /* .sticky-title-wrapper {
+        margin-left: 20%;
+    } */
+
+    .text-dess-su-menh {
+        font-size: 20px;
+    }
+
+    .phong-thuyh1 {
+        height: 150px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 24px;
+    }
+
+    /* 
+    .sticky-title-wrapper {
+        top: 60px;
+        right: 30%;
+    } */
+
+    .bird-image {
+        left: 18%;
+    }
+
+    .upleft-image {
+        top: 10%;
+        left: 10%;
+    }
+
+    .upright-image {
+        top: 10%;
+        right: 10%;
+    }
+
+    .bottom-image {
+        bottom: 10%;
+        right: 10%;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 34px;
+    }
+
+    .chuyen-gia2 {
+        font-size: 67px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 85px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 56px;
+    }
+
+    /* .about-2-image {
+        top: 17%;
+        left: 30%;
+    }
+
+    .about-1-image {
+        top: 17%;
+        right: 30%;
+    } */
+
+    .gioi-thieu-content {
+        margin-top: 10px;
+        font-size: 27px;
+    }
+
+    .songabout-upright-image {
+        bottom: 5%;
+        left: 22%;
+    }
+
+    .song2about-upright-image {
+        bottom: 0%;
+        right: 20%;
+    }
+
+    .section-title {
+        font-size: 56px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 40px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 24px;
+    }
+
+    .box-about-text {
+        padding-top: 95px;
+    }
+
+    .decoration-dot,
+    .section-title {
+        left: 20%;
+    }
+
+    .decoration-dot {
+        height: 60px;
+    }
+
+    .section-title {
+        top: 60px;
+    }
+
+    .sumenh-2-image,
+    .sumenh-1-image {
+        display: none;
+    }
+
+    .card-container-miss {
+        justify-content: start;
+    }
+
+    .card-item-miss {
+        font-size: 24px;
+    }
+
+    .caydao-upleft-image {
+        left: 0;
+        top: 0;
+    }
+
+    .slide-item {
+        height: 400px !important;
+    }
+
+    .steps-slider {
+        margin-top: 110px;
+        margin-bottom: 110px;
+
+    }
+     .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 3);
+    }
+      .slide-content{
+        height: 440px;
+    }
+
+}
+
+/* Ultra Large Devices (≥ 1400px) */
+@media screen and (min-width: 1400px) {
+    .title-logo {
+        display: block;
+        font-size: 26px;
+    }
+
+    .main-navigation {
+        display: block;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .img-logo {
+        width: 70px;
+        height: 82px;
+    }
+
+    .btn-hover-default {
+        height: 70px;
+        margin-top: 30px;
+        font-size: 35px;
+    }
+
+    .btn-banner-pc {
+        display: flex;
+    }
+
+    .btn-banner-mobile {
+        display: none;
+    }
+
+    /* .sticky-title-wrapper {
+        top: 70px;
+        right: 30%;
+    } */
+
+    .text-dess-su-menh {
+        font-size: 20px;
+    }
+
+    .phong-thuyh1 {
+        height: 150px;
+    }
+
+    .title-chuyengiatuvan {
+        font-size: 24px;
+    }
+
+    .bird-image {
+        left: 10%;
+    }
+
+    .upleft-image {
+        top: 10%;
+        left: 10%;
+    }
+
+    .upright-image {
+        top: 10%;
+        right: 10%;
+    }
+
+    .bottom-image {
+        bottom: 10%;
+        right: 10%;
+    }
+
+    .h1-chuyen-gia {
+        font-size: 100px;
+    }
+
+    .chuyen-gia2 {
+        line-height: 86px;
+        font-size: 65px;
+    }
+
+    .h1-chuyen-gia {
+        line-height: 80px;
+    }
+
+    .title-gioi-thieu {
+        font-size: 56px;
+    }
+
+    /* .about-2-image {
+        top: 17%;
+        left: 35%;
+    }
+
+    .about-1-image {
+        top: 17%;
+        right: 35%;
+    } */
+
+    .gioi-thieu-content {
+        margin-top: 10px;
+        font-size: 28px;
+    }
+
+    .songabout-upright-image {
+        bottom: 5%;
+        left: 22%;
+    }
+
+    .song2about-upright-image {
+        bottom: 0%;
+        right: 20%;
+    }
+
+    .decon-sumenh {
+        left: 20%;
+        height: 200px;
+    }
+
+    .box-about-text {
+        padding-top: 30px;
+    }
+
+    .section-title {
+        font-size: 56px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 40px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 24px;
+    }
+
+    .decoration-dot,
+    .section-title {
+        left: 20%;
+    }
+
+    .decoration-dot {
+        height: 50px;
+        /* margin-bottom: 64px; */
+    }
+
+    .section-title {
+        top: 50px;
+    }
+
+    .sumenh-2-image,
+    .sumenh-1-image {
+        display: none;
+    }
+
+    .card-container-miss {
+        justify-content: start;
+    }
+
+    .card-item-miss {
+        font-size: 24px;
+    }
+
+    .title-quytrinh {
+        font-size: 56px;
+        line-height: 50px;
+    }
+
+    .quytrinh-2-image {
+        left: 33%;
+        bottom: -10px;
+    }
+
+    .quytrinh-1-image {
+        right: 33%;
+        bottom: -10px;
+    }
+
+    .caydao-upleft-image {
+        left: 0;
+        top: 0;
+    }
+
+    .steps-slider {
+        margin-top: 110px;
+        margin-bottom: 110px;
+    }
+ .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 3);
+    }
+  .slide-content{
+        height: 440px;
+    }
+
+}
+
+@media screen and (min-width: 2560px) {
+    /* .about-2-image {
+        top: 11%;
+        left: 40%;
+    }
+
+    .about-1-image {
+        top: 11%;
+        right: 40%;
+    } */
+
+    .gioi-thieu-content {
+        font-size: 28px;
+    }
+
+    .songabout-upright-image {
+        bottom: 10%;
+        left: 28%;
+    }
+
+    .song2about-upright-image {
+        bottom: 10%;
+        right: 28%;
+    }
+
+    .decon-sumenh {
+        left: 30%;
+        height: 200px;
+    }
+
+    .box-about-text {
+        padding-top: 30px;
+    }
+
+    .about-decorative-line {
+
+        height: 70px;
+
+    }
+
+    .section-title {
+        font-size: 56px;
+    }
+
+    .mission-text .sub-title {
+        font-size: 40px;
+    }
+
+    .text-dess-su-menh {
+        font-size: 24px;
+    }
+
+    .decoration-dot,
+    .section-title {
+        left: 30%;
+    }
+
+    .decoration-dot {
+        height: 50px;
+    }
+
+    .section-title {
+        top: 50px;
+    }
+
+    .sumenh-2-image,
+    .sumenh-1-image {
+        display: none;
+    }
+
+    .card-container-miss {
+        justify-content: start;
+    }
+
+    .card-item-miss {
+        font-size: 24px;
+    }
+
+    .title-quytrinh {
+        font-size: 56px;
+        line-height: 50px;
+    }
+
+    .quytrinh-2-image {
+        left: 33%;
+        bottom: -10px;
+    }
+
+    .quytrinh-1-image {
+        right: 33%;
+        bottom: -10px;
+    }
+
+    .caydao-upleft-image {
+        left: 0;
+        top: 0;
+    }
+
+    .steps-slider {
+        margin-top: 170px;
+        margin-bottom: 170px;
+    }
+
+    .slide {
+        /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+        flex: 0 0 calc(100% / 3);
+    }
+    .slide-content{
+        height: 440px;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .my-manual-slider {
+        width: 100%;
+        /* Chiếm toàn bộ chiều rộng trên mobile */
+    }
+
+   
+
+    /* Ẩn nút bấm đi nếu bạn muốn dùng vuốt (swipe) */
+
+}

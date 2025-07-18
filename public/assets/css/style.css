@@ -1,0 +1,1167 @@
+ /* --- Cài đặt chung --- */
+ @font-face {
+     font-display: block;
+     font-family: Anton-Regular;
+     src: url("../font/Anton-Regular.ttf") format("truetype");
+
+ }
+
+ @font-face {
+     font-display: block;
+     font-family: CormorantGaramond-Bold;
+     src: url("../font/CormorantGaramond-Bold.ttf") format("truetype");
+
+ }
+
+ @font-face {
+     font-display: block;
+     font-family: OpenSans-Italic;
+     src: url("../font/OpenSans-Italic.ttf") format("truetype");
+
+ }
+
+ @font-face {
+     font-display: block;
+     font-family: OpenSans_Condensed-Regular;
+     src: url("../font/OpenSans_Condensed-Regular.ttf") format("truetype");
+
+ }
+
+ :root {
+     /*
+     * QUAN TRỌNG: Hãy thay đổi giá trị 80px này 
+     * bằng chiều cao thực tế của header của bạn.
+    */
+     --header-height: 80px;
+ }
+
+ /* .hero__v6 {
+     padding: 10rem 0 !important;
+ } */
+
+ .section {
+     padding: 70px 0;
+     scroll-margin-top: 60px;
+ }
+
+ .site-header.active {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 1000;
+
+ }
+
+ /* --- Container chính của header --- */
+ .site-header {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     width: 100%;
+     transition: all 0.3s ease;
+ }
+
+ /* --- Logo --- */
+ .site-logo a {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+ }
+
+ /* .site-logo img {
+     height: 100px;
+ } */
+ .title-logo {
+     display: none;
+     /* font-size: 24px; */
+     font-weight: 400;
+     /* Bước 1: Dùng 'background' để TẠO dải màu gradient.
+       Đây là bước bắt buộc. Gradient này chỉ tồn tại bên trong phần tử h1. */
+     background: linear-gradient(to right, #EFE5B8, #F2E7C3, #F4D297);
+
+     /* Bước 2: Ra lệnh cho trình duyệt: "Hãy lấy nền ở trên và chỉ hiển thị
+       nó ở những nơi có chữ". */
+     -webkit-background-clip: text;
+     background-clip: text;
+
+     /* Bước 3: Làm cho màu của chữ trở nên trong suốt.
+       Nếu không có dòng này, màu chữ (mặc định là đen) sẽ che mất
+       lớp nền gradient bên dưới. */
+     color: transparent;
+     font-family: Anton-Regular, sans-serif;
+ }
+
+ /* --- Thanh Menu --- */
+ .main-navigation {
+     flex-grow: 1;
+
+     border-radius: 50px;
+     padding: 5px 50px;
+ }
+
+ .main-navigation ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .main-navigation li a {
+     text-decoration: none;
+     font-size: 18px;
+     font-weight: 500;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 130px;
+     height: 50px;
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     color: #ffffff;
+     background-image: none;
+     transition: color 0.3s ease;
+     font-family: CormorantGaramond-Bold, serif;
+ }
+
+ /* --- KHI HOVER HOẶC ACTIVE: HIỂN THỊ ẢNH NỀN VÀ ĐỔI MÀU CHỮ --- */
+ .main-navigation li a:hover,
+ .main-navigation li a.active {
+     color: #7C4601;
+     background-image: url('../images/519412595_756542936871062_3322409113867386569_n.png');
+ }
+
+ .site-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 15px;
+     background-color: #7D1C1E;
+ }
+
+ /* .site-logo img {
+     max-height: 40px;
+ } */
+
+ .main-navigation ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     display: flex;
+ }
+
+
+
+ .main-navigation a {
+     text-decoration: none;
+     color: #333;
+     font-weight: bold;
+     padding: 5px 0;
+     position: relative;
+     transition: color 0.3s;
+ }
+
+
+
+ /* --- PHẦN CSS THÊM CHO MENU MOBILE --- */
+
+ /* 1. Icon Hamburger (chỉ hiển thị trên mobile) */
+ /* .mobile-menu-toggle {
+     display: none;
+     font-size: 24px;
+     cursor: pointer;
+     color: #333;
+ } */
+
+ /* 2. Menu trượt ra từ bên phải */
+ .mobile-navigation {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: 280px;
+     height: 100%;
+     background-color: #ffffff;
+     z-index: 1001;
+     /* Phải cao hơn lớp phủ */
+     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+     transform: translateX(100%);
+     /* Ẩn menu ra ngoài màn hình bên phải */
+     transition: transform 0.3s ease-in-out;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+
+ /* Trạng thái khi menu mở */
+ .mobile-navigation.is-open {
+     transform: translateX(0);
+ }
+
+ /* Nút đóng menu mobile */
+ .mobile-nav-close {
+     text-align: right;
+     font-size: 24px;
+     margin-bottom: 20px;
+     cursor: pointer;
+     color: #333;
+ }
+
+ .mobile-navigation ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .mobile-navigation li {
+     margin-bottom: 15px;
+ }
+
+ .mobile-navigation a {
+     text-decoration: none;
+     color: #333;
+     font-size: 18px;
+     display: block;
+     padding: 10px;
+     border-radius: 5px;
+     transition: background-color 0.3s;
+ }
+
+ .mobile-navigation a.active,
+ .mobile-navigation a:hover {
+     background-color: #f0f0f0;
+     color: #007bff;
+ }
+
+ /* 3. Lớp phủ nền */
+ .menu-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     z-index: 1000;
+     opacity: 0;
+     visibility: hidden;
+     /* Ẩn hoàn toàn */
+     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+ }
+
+ /* Trạng thái khi lớp phủ hiện */
+ .menu-overlay.is-open {
+     opacity: 1;
+     visibility: visible;
+     /* Cho phép tương tác */
+ }
+
+
+ /* MEDIA QUERY - Responsive cho màn hình nhỏ */
+ @media (max-width: 768px) {
+
+     /* Ẩn menu desktop */
+     /* .main-navigation {
+         display: none;
+     } */
+
+     /* Hiện icon hamburger */
+     /* .mobile-menu-toggle {
+         display: block;
+     } */
+ }
+
+
+
+ /* --- Khung chứa icon (div chính) --- */
+ .mobile-menu-toggle {
+     /* Kích thước */
+     width: 40px;
+     height: 40px;
+
+     /* Màu nền */
+     background-color: #860002;
+
+     /* Bo góc (ước tính từ Figma) */
+     border-radius: 8px;
+
+     /* Hiệu ứng Inner Shadow từ Figma */
+     box-shadow:
+         inset -1px -4px 2px 0 rgba(0, 0, 0, 0.24),
+         inset 1px 2px 4px 0 rgba(255, 255, 255, 0.5);
+
+     /* Thiết lập để căn giữa icon bên trong */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     /* Con trỏ để người dùng biết có thể click */
+     cursor: pointer;
+
+     /* Hiệu ứng chuyển động mượt mà */
+     transition: all 0.2s ease-in-out;
+ }
+
+ /* --- Icon Font Awesome bên trong --- */
+ .mobile-menu-toggle i.fas.fa-bars {
+     /* Kích thước của icon */
+     font-size: 20px;
+
+     /* --- Kỹ thuật tạo màu gradient cho icon (chữ) --- */
+     /* 1. Đặt nền là dải màu gradient vàng gold */
+     background: linear-gradient(to right, #FADFB4, #C0983D, #C79E3F, #DAAF47, #DEB249);
+
+     /* 2. Cắt nền theo hình dạng của chữ (icon) */
+     -webkit-background-clip: text;
+     /* Dành cho trình duyệt Safari/Chrome */
+     background-clip: text;
+
+     /* 3. Làm cho màu của chữ/icon trong suốt để nền hiện ra */
+     color: transparent;
+ }
+
+
+ /* --- Hiệu ứng khi di chuột và nhấn (tùy chọn) --- */
+ .mobile-menu-toggle:hover {
+     filter: brightness(1.1);
+ }
+
+ .mobile-menu-toggle:active {
+     transform: scale(0.98);
+     filter: brightness(0.9);
+ }
+
+
+ /* === PHẦN 1: GLOBAL RESET - Đặt ở đầu file CSS === */
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ html,
+ body {
+     margin: 0;
+     padding: 0;
+     /* An toàn nhất là ẩn overflow-x trên toàn trang */
+     overflow-x: hidden;
+ }
+
+
+ /* === PHẦN 2: SCROLL CONTAINER ĐÃ ĐƯỢC SỬA LỖI === */
+ /* .scroll-container {
+     height: 100vh;
+    
+     width: 100%;
+     
+     overflow-y: scroll;
+  
+     scroll-snap-type: y mandatory;
+  
+     scroll-behavior: smooth;
+   
+ }*/
+
+ /* Tùy chọn: Ẩn thanh cuộn trên các trình duyệt Webkit (Chrome, Safari) */
+ /* .scroll-container::-webkit-scrollbar {
+     display: none;
+ }  */
+
+
+ /* === PHẦN 3: CẤU HÌNH CHO CÁC SECTION CON BÊN TRONG === */
+ /* Áp dụng cho tất cả các thẻ <section> là con trực tiếp của .scroll-container */
+ /* .scroll-container>section {
+     width: 100%;
+     height: 100vh;
+     scroll-snap-align: start;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 2rem;
+ } */
+
+ /* Thêm màu nền khác nhau để phân biệt */
+ .section-1 {
+     background-image: url('../images/banner_k.svg');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     overflow: hidden
+ }
+
+ .section-1 {
+     position: relative;
+     z-index: 0;
+ }
+
+ /* Ảnh trang trí luôn ở phía sau */
+ .upleft-image,
+ .upright-image,
+ .bottom-image,
+ .bird-image {
+     z-index: 1;
+ }
+
+ /* Nội dung chính nổi lên trên */
+ .section-1 .container {
+     position: relative;
+     z-index: 2;
+ }
+
+ /* --- Nút bấm chính (Thẻ <a>) --- */
+ .fancy-button {
+     position: relative;
+     display: flex;
+     align-items: center;
+     background-color: #9A2A2A;
+     /* Nền của nút trùng với nền trang */
+
+     /* Bo tròn để tạo hình viên thuốc */
+     border-radius: 50px;
+
+     /* ---- PHẦN CẬP NHẬT QUAN TRỌNG ---- */
+     /* Viền và hiệu ứng shadow đa lớp từ Figma */
+     border: 2px solid #F3C96B;
+     /* Giữ lại viền cứng bên ngoài */
+     box-shadow:
+         /* Shadow 1: Vầng sáng tỏa đều, blur trung bình 8.5px */
+         0 0 8.5px rgba(254, 229, 165, 0.82),
+         /* Shadow 2: Vầng sáng nhỏ hơn, gần hơn */
+         0 0 4px rgba(255, 232, 173, 0.87),
+         /* Shadow 3: Đổ bóng nhẹ xuống dưới */
+         0 2px 8px rgba(237, 217, 80, 0.47);
+
+     /* Padding: top/bottom | right | left (để chừa không gian cho icon) */
+     padding: 12px 30px 12px 85px;
+
+     text-decoration: none;
+     transition: all 0.3s ease-in-out;
+ }
+
+ /* --- Hiệu ứng khi di chuột vào (Cũng có thể nâng cấp) --- */
+ .fancy-button:hover {
+     transform: translateY(-3px) scale(1.02);
+     /* Bạn có thể làm cho hiệu ứng sáng mạnh hơn ở đây nếu muốn */
+     /* Ví dụ: */
+     box-shadow:
+         0 0 12px rgba(254, 229, 165, 0.9),
+         0 0 8px rgba(255, 232, 173, 0.95),
+         0 4px 12px rgba(237, 217, 80, 0.6);
+ }
+
+ /* ----- CÁC PHẦN CSS KHÁC GIỮ NGUYÊN ----- */
+
+ .icon-wrapper {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 64px;
+     height: 72px;
+     background-color: #FDF3D5;
+     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+     box-shadow: inset 0 0 0 2px #A53939;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .icon-wrapper img {
+     width: 32px;
+     height: 32px;
+     object-fit: contain;
+ }
+
+ .button-text {
+     color: #F0EAD6;
+     font-size: 18px;
+     font-weight: bold;
+     margin-left: 15px;
+ }
+
+ .btn-hover-default {
+     font-size: 20px;
+     font-weight: 500;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-image: url(../images/btndefault.svg);
+     background-repeat: no-repeat;
+     background-size: unset;
+     background-position: center;
+     cursor: pointer;
+ }
+
+ .btn-hover-default:hover {
+     font-weight: 500;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-image: url(../images/btnhover.svg);
+     background-repeat: no-repeat;
+     background-size: unset;
+     background-position: center;
+
+ }
+
+ .btn-hover-default a {
+     text-decoration: none;
+     color: #ffffff;
+     font-family: CormorantGaramond-Bold, serif;
+
+ }
+
+ .phong-thuyh1 {
+
+     text-align: center;
+
+     display: flex;
+
+     justify-content: center;
+
+     align-items: center;
+
+     background-image: url(../images/gthieu.svg);
+
+     background-repeat: no-repeat;
+
+     background-size: contain;
+
+     background-position: center;
+     font-family: OpenSans-Italic, serif;
+
+ }
+
+ .title-chuyengiatuvan {
+
+     font-family: OpenSans-Italic, serif;
+ }
+
+ /* --- Khung chính của section --- */
+ .mission-section {
+     width: 100%;
+
+     background-color: #FCF9F3;
+     /* Màu nền giấy cũ */
+     /* Thêm texture giấy (tùy chọn) */
+     background-image: url('../images/bg_su_menh.svg');
+
+     box-sizing: border-box;
+     overflow: hidden
+ }
+
+ /* --- Tiêu đề chính "Sứ mệnh" --- */
+ .section-title {
+     font-size: 32px;
+     color: #333;
+     /* Bỏ các thuộc tính không cần thiết nữa */
+     margin: 0;
+     text-align: center;
+ }
+
+ /* --- CSS CHO HIỆU ỨNG DÍNH (STICKY) --- */
+
+ .sticky-title-wrapper {
+     top: var(--header-height);
+     z-index: 10;
+
+ }
+
+
+
+ /* Style cho tiêu đề (đã có trong HTML của bạn) */
+ .section-title {
+     font-size: 32px;
+     color: #333;
+     margin-bottom: 0;
+     /* Bỏ margin dưới để căn chỉnh với align-items-end đẹp hơn */
+ }
+
+
+
+ .mission-text .sub-title {
+     font-size: 24px;
+     color: #8C2B2A;
+     text-align: start;
+     margin-bottom: 20px;
+     font-family: CormorantGaramond-Bold, serif;
+     display: flex;
+     align-items: center;
+     justify-content: start;
+     gap: 15px;
+ }
+
+ .text-dess-su-menh {
+     color: #000;
+     font-family: OpenSans_Condensed-Regular, serif;
+ }
+
+ .title-chuyengiatuvan {
+     /* Để pseudo-element định vị theo thẻ này */
+     position: relative;
+
+     /* --- 1. Typography (Thông số chữ) --- */
+     font-family: Arial, sans-serif;
+     /* Thay bằng font bạn muốn */
+     font-weight: bold;
+     /* Chữ trong ảnh trông khá đậm */
+     font-size: 24px;
+     line-height: 24px;
+     letter-spacing: 0.02em;
+     /* 2% tương đương 0.02em */
+     text-transform: uppercase;
+     text-align: center;
+
+     /* --- 2. Gradient Fill (Màu chữ chuyển sắc) --- */
+     /* Kỹ thuật: tạo nền gradient rồi cắt theo hình dạng chữ */
+     background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+     -webkit-background-clip: text;
+     /* Cho trình duyệt Safari/Chrome */
+     background-clip: text;
+     color: transparent;
+     /* Làm màu chữ trong suốt để lộ nền gradient */
+ }
+
+ /* --- 3. Shadows (Tạo hiệu ứng bóng) --- */
+ /* 
+  Sử dụng pseudo-element '::after' để tạo một lớp nằm sau chữ chính.
+  Lớp này sẽ chứa TẤT CẢ các hiệu ứng bóng để kiểm soát thứ tự xếp chồng.
+*/
+ .title-chuyengiatuvan::after {
+     content: attr(data-text);
+     /* Lấy nội dung từ thuộc tính data-text */
+
+     /* Đặt lớp này nằm chính xác bên dưới lớp chữ chính */
+     position: absolute;
+     left: 0;
+     top: 0;
+     z-index: -1;
+     /* QUAN TRỌNG: Đẩy lớp này ra phía sau */
+
+     /* Làm cho chữ của lớp này trong suốt, chỉ giữ lại hiệu ứng bóng */
+     color: transparent;
+
+     /* Áp dụng tất cả các lớp shadow từ Figma tại đây */
+     text-shadow:
+         /* Lớp Inner shadow (trên cùng) */
+         0px 0px 2.3px #C19113,
+
+         /* Lớp Drop shadow (dưới cùng) */
+         /* Figma có 2 lớp drop shadow giống hệt, trong CSS chỉ cần 1 là đủ */
+         0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+
+ .deco-icon {
+     height: 18px;
+     /* Kích thước icon hoa văn */
+ }
+
+
+
+
+ /* ========================================================= */
+ /*  CSS CHO TITLE NẰM ĐÈ LÊN NỘI DUNG (ABSOLUTE)
+/* ========================================================= */
+
+ /* 1. Thiết lập cho section cha */
+
+
+ /* 2. Thiết lập cho khối tiêu đề */
+ /* .sticky-title-wrapper {
+     position: absolute;
+     top: 40px;
+     left: 0;
+     right: 0;
+     justify-content: center;
+     z-index: 10;
+ } */
+
+
+
+ .section-title {
+     margin: 0;
+ }
+
+
+ .h1-chuyen-gia {
+     /* --- Typography (Định dạng chữ) --- */
+     font-family: 'Anton-Regular', sans-serif;
+     /* Sửa lại cách gọi font */
+     font-weight: 400;
+     /* Weight: 400 (không phải bold) */
+     font-size: 64px;
+     /* Size: 64px */
+     line-height: 110px;
+     padding: 10px;
+     /* Line height: 110px */
+     letter-spacing: 0.04em;
+     /* Letter spacing: 4% (0.04em) */
+     text-transform: uppercase;
+     /* Case: Uppercase */
+     text-align: center;
+
+     background-image: linear-gradient(to right,
+             #EFE5B8,
+             #F2E7C3,
+             #F4D297);
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+
+     -webkit-text-stroke: 0.5px #BA130F;
+
+     /* --- Shadows and blurs (Đổ bóng) --- */
+     /* Kết hợp cả hai loại bóng bằng dấu phẩy */
+
+ }
+
+ .gioi-thieu-section {
+
+     background-image: url(../images/gioi_thieu_bg.svg);
+
+     background-repeat: no-repeat;
+
+     background-size: cover;
+
+     background-position: center;
+
+     /* padding-top: 150px; */
+
+     align-items: normal;
+     /* === THÊM DÒNG NÀY ĐỂ SỬA LỖI === */
+
+     overflow: hidden;
+     /* Hoặc overflow-x: hidden; */
+
+ }
+
+ .about-upleft-image {
+     position: relative;
+     bottom: 0;
+     left: 0;
+ }
+
+ .about-upright-image {
+     position: relative;
+     bottom: 0;
+     right: 0;
+ }
+
+ .decorative-line {
+     /* --- 1. ĐỊNH VỊ --- */
+     position: absolute;
+     /* Định vị tuyệt đối so với thẻ cha có position: relative */
+     top: 0;
+     /* Đặt ở sát mép trên cùng của section */
+     left: 50%;
+     /* Đặt điểm bắt đầu bên trái ở giữa section */
+     transform: translateX(-50%);
+     /* Dịch chuyển sang trái 50% chiều rộng của chính nó để căn giữa hoàn hảo */
+     z-index: 10;
+     /* Đảm bảo nó nổi lên trên các phần tử nền khác */
+
+     /* --- 2. TẠO HÌNH DÁNG (từ yêu cầu trước) --- */
+     width: 1px;
+     /* Chiều rộng của đường kẻ */
+     height: 80px;
+     /* Chiều cao của đường kẻ */
+     background-color: #888;
+     /* Màu của đường kẻ */
+     padding-bottom: 20px;
+ }
+
+ /* Dùng ::after để tạo hình tròn ở cuối đường kẻ */
+ .decorative-line::after {
+     content: '';
+     position: absolute;
+
+     /* Vị trí của hình tròn */
+     top: 100%;
+     left: 50%;
+     /* Dịch chuyển lên trên một chút để đầu đường kẻ chạm vào giữa vòng tròn */
+     transform: translate(-50%, -50%);
+
+     /* === THAY ĐỔI CHÍNH Ở ĐÂY === */
+
+     /* Kích thước của vòng tròn ngoài cùng (màu trắng) */
+     width: 24px;
+     height: 24px;
+
+     /* Màu nền trắng cho vòng tròn ngoài */
+     background-color: #860002;
+
+     /* Viền đỏ sẫm cho vòng tròn ngoài */
+     border: 1px solid #860002;
+
+     border-radius: 50%;
+     box-sizing: border-box;
+
+     /* Thêm hiệu ứng bóng đổ để tạo hình tròn nhỏ bên trong */
+     /* Đây là một kỹ thuật dùng box-shadow để vẽ một hình khác bên trong */
+     box-shadow:
+         inset 0 0 0 7px #fafafa;
+     /* inset shadow tạo hình tròn bên trong */
+ }
+
+ .title-gioi-thieu {
+     /* padding-top: 10px; */
+     font-weight: 700;
+     font-family: CormorantGaramond-Bold, serif;
+
+ }
+
+ .gioi-thieu-content {
+     color: #000;
+     text-align: center;
+     font-family: CormorantGaramond-Bold, serif;
+ }
+
+ .xem-them {
+     color: #A1000D;
+     text-align: center;
+     font-family: CormorantGaramond-Bold, serif;
+
+
+ }
+
+ /* === PHẦN GIẢI PHÁP CHÍNH === */
+
+
+
+
+ /* 4. Tiêu đề "Sứ mệnh" */
+ .section-title {
+     /* Xóa margin mặc định của h2 để căn chỉnh chính xác */
+     margin: 0;
+
+     font-size: 3rem;
+     /* Tùy chỉnh kích thước */
+     color: #333;
+     font-weight: bold;
+     position: relative;
+     z-index: 2;
+     /* Đảm bảo chữ nằm trên đường kẻ */
+     display: inline-block;
+     /* Cần thiết để transform hoạt động đúng */
+
+     /* 
+         * === BƯỚC QUAN TRỌNG NHẤT ===
+         * Dịch chuyển H2 LÊN TRÊN một khoảng bằng 50% CHIỀU CAO CỦA CHÍNH NÓ.
+         * Điều này làm cho tâm của dòng chữ thẳng hàng với tâm của icon tròn.
+        */
+     transform: translateY(-50%);
+ }
+
+
+
+
+ /* === SECTION SỨ MỆNH === */
+
+
+
+
+ /* === PHẦN CSS ĐÃ SỬA LỖI === */
+
+ /* 1. KHỐI BAO BỌC CHUNG */
+
+
+ /* 2. ĐƯỜNG KẺ DỌC */
+ .decoration-dot {
+     /* --- 1. ĐỊNH VỊ --- */
+     position: absolute;
+     /* Định vị tuyệt đối so với thẻ cha có position: relative */
+     top: 0;
+     /* Đặt ở sát mép trên cùng của section */
+     left: 50%;
+     /* Đặt điểm bắt đầu bên trái ở giữa section */
+     transform: translateX(-50%);
+     /* Dịch chuyển sang trái 50% chiều rộng của chính nó để căn giữa hoàn hảo */
+     z-index: 10;
+     /* Đảm bảo nó nổi lên trên các phần tử nền khác */
+
+     /* --- 2. TẠO HÌNH DÁNG (từ yêu cầu trước) --- */
+     width: 1px;
+     /* Chiều rộng của đường kẻ */
+     height: 150px;
+     /* Chiều cao của đường kẻ */
+     background-color: #888;
+     /* Màu của đường kẻ */
+     padding-bottom: 20px;
+ }
+
+ /* 3. DẤU CHẤM TRÒN (Tạo từ ::before của đường kẻ) */
+ .decoration-dot::before {
+     content: '';
+     position: absolute;
+
+     /* Vị trí của hình tròn */
+     top: 100%;
+     left: 50%;
+     /* Dịch chuyển lên trên một chút để đầu đường kẻ chạm vào giữa vòng tròn */
+     transform: translate(-50%, -50%);
+
+     /* === THAY ĐỔI CHÍNH Ở ĐÂY === */
+
+     /* Kích thước của vòng tròn ngoài cùng (màu trắng) */
+     width: 24px;
+     height: 24px;
+
+     /* Màu nền trắng cho vòng tròn ngoài */
+     background-color: #860002;
+
+     /* Viền đỏ sẫm cho vòng tròn ngoài */
+     border: 1px solid #860002;
+
+     border-radius: 50%;
+     box-sizing: border-box;
+
+     /* Thêm hiệu ứng bóng đổ để tạo hình tròn nhỏ bên trong */
+     /* Đây là một kỹ thuật dùng box-shadow để vẽ một hình khác bên trong */
+     box-shadow:
+         inset 0 0 0 7px #fafafa;
+     /* inset shadow tạo hình tròn bên trong */
+ }
+
+ /* 4. CHỮ "SỨ MỆNH" */
+ .section-title {
+     /* Định vị tuyệt đối bên trong .title-wrapper */
+     position: absolute;
+
+     /* 
+     * Đặt nó ở cùng độ cao với dấu chấm tròn.
+     * top = chiều cao của đường kẻ.
+    */
+     top: 150px;
+
+     /* Bắt đầu từ đường trung tâm */
+     left: 50%;
+
+     /* 
+     * === MẤU CHỐT CỦA GIẢI PHÁP ===
+     * Dịch chuyển nó sang phải một chút (ví dụ 20px) để tạo khoảng cách với dấu chấm.
+     * Dịch chuyển nó LÊN TRÊN 50% chiều cao của chính nó để căn giữa theo chiều dọc.
+    */
+     transform: translate(20px, -50%);
+
+     margin: 0;
+     /* Xóa margin mặc định */
+     font-size: 2.5rem;
+     color: #3a3a3a;
+     font-weight: 500;
+     font-family: 'Times New Roman', serif;
+     white-space: nowrap;
+     /* Đảm bảo chữ không bị xuống dòng */
+ }
+
+ /* Các style khác cho .mission-content, .card-container... giữ nguyên như cũ */
+
+ .card-container-miss {
+     display: flex;
+     gap: 20px;
+     /* justify-content: center; */
+ }
+
+ .card-item-miss {
+
+     height: 190px;
+
+     text-align: center;
+
+     width: 100px;
+
+     background-image: url('../images/tam_tri_tin.svg');
+
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+
+     background-size: contain;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+
+     display: flex;
+
+     font-family: CormorantGaramond-Bold, serif;
+
+     justify-content: center;
+     font-style: italic;
+     align-items: center;
+
+ }
+
+ .card-highlight {
+     background-image: url('../images/tam_tri_tin_color.svg');
+     color: white;
+     cursor: pointer;
+ }
+
+ .section-3 {
+     background-image: url('../images/bg_quy_trinh.svg');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     align-items: normal;
+     overflow: hidden;
+ }
+
+ .title-quytrinh {
+     font-family: CormorantGaramond-Bold, serif;
+     line-height: normal;
+ }
+/* === SECTION CÁC BƯỚC === */
+/* .steps-section {
+    padding: 80px 0;
+    background-image: url('path/to/your/background-mountain.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+} */
+
+/* === SLIDER === */
+/* .steps-slider .slick-list {
+    padding: 0 50px !important;
+} */
+
+/* === TỪNG SLIDE ITEM === */
+.step-item {
+    /* Quan trọng: Tạo khoảng cách giữa các slide */
+    padding: 0 15px; 
+}
+
+.step-content {
+    /* Ảnh nền khung vàng cho mỗi slide */
+    background-image: url('../images/khung_cac_buoc.svg'); /* ĐƯỜNG DẪN ĐẾN FILE KHUNG VÀNG */
+    background-size: 100% 100%; /* Kéo dãn khung để lấp đầy */
+    background-repeat: no-repeat;
+    
+    /* Đặt chiều cao hoặc tỷ lệ để khung không bị dẹt */
+    height: 450px; /* Điều chỉnh chiều cao cho phù hợp */
+    
+    /* Dùng Flexbox để sắp xếp nội dung bên trong */
+    display: flex;
+    flex-direction: column;
+    
+    /* Padding để nội dung không dính sát viền khung */
+    padding: 40px 30px; 
+    box-sizing: border-box;
+}
+
+/* Phần chữ bên trong slide */
+.step-text {
+    text-align: center;
+    color: #333;
+    font-family: 'Times New Roman', serif;
+}
+
+.step-text h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.step-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* --- CSS CHO SLIDER HIỂN THỊ 3 CÁI --- */
+
+/* Khung chính bao bọc toàn bộ slider (Giữ nguyên) */
+.my-manual-slider {
+    position: relative;
+    width: 90%; 
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Viewport (Giữ nguyên) */
+.slider-viewport {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Track (Giữ nguyên) */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Từng slide (THAY ĐỔI LỚN) */
+.slide {
+    /* 
+     * QUAN TRỌNG: Mỗi slide chiếm 1/3 chiều rộng của viewport.
+     * Sử dụng calc() để tính toán chính xác.
+    */
+    flex: 0 0 calc(100% / 3); 
+    
+    box-sizing: border-box;
+    /* Thêm padding để tạo khoảng cách giữa các slide */
+    padding: 0 10px;
+}
+
+/* Nội dung bên trong slide (Giữ nguyên) */
+.slide-content {
+      background-image: url(../images/khung_cac_buoc.svg);
+
+     background-repeat: no-repeat;
+
+     background-size: cover;
+
+     background-position: center;
+
+     /* padding-top: 150px; */
+
+     align-items: normal;
+     /* === THÊM DÒNG NÀY ĐỂ SỬA LỖI === */
+
+     overflow: hidden;
+    
+    background-color: #fcf9f3;
+    border: 2px solid #e0d9c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #333;
+    border-radius: 8px;
+}
+
+/* Nút điều hướng (Giữ nguyên) */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.prev-btn {
+    left: -25px;
+}
+
+.next-btn {
+    right: -25px;
+}
+
+.slider-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}

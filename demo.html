@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Phong Thủy Đại Cát</title>
+   <style>
+        /* --- Cài đặt chung --- */
+        body {
+            font-family: serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- Container chính của header --- */
+        .site-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* --- Logo --- */
+        .site-logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .site-logo img {
+            height: 100px;
+        }
+        
+        /* --- Thanh Menu --- */
+        .main-navigation {
+            flex-grow: 1;
+            background: linear-gradient(to bottom, #e3c98f, #cda758);
+            border-radius: 50px;
+            padding: 8px 15px;
+        }
+
+        .main-navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .main-navigation li a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 130px; 
+            height: 50px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #6b4f2c;
+            background-image: none;
+            transition: color 0.3s ease;
+        }
+
+        /* --- KHI HOVER HOẶC ACTIVE: HIỂN THỊ ẢNH NỀN VÀ ĐỔI MÀU CHỮ --- */
+        .main-navigation li a:hover,
+        .main-navigation li a.active {
+            color: #8c5e28;
+            background-image: url('/519412595_756542936871062_3322409113867386569_n.png'); 
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-logo">
+            <a href="#">
+                <img src="https://bootstrapmade.com/content/demo/NiceAdmin/assets/img/logo.png" alt="Logo Phong Thủy Đại Cát">
+            </a>
+        </div>
+
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="#" class="active">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
