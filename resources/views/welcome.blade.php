@@ -282,20 +282,54 @@
                                     <div class="slider-track">
                                         <!-- Thêm nhiều slide hơn để thấy rõ hiệu ứng -->
                                         <div class="slide">
-                                            <div class="slide-content">1</div>
+                                            <div class="slide-content flex-column">
+                                                <div class="p-4 text-center">
+                                                    <div class="title-quytrinhkhach">
+                                                        Bước 1
+                                                    </div>
+                                                    <p class="content-quytrinhkhach">Khách đặt gói -
+                                                        điền form đầy đủ thông tin</p>
+                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="slide">
-                                            <div class="slide-content">2</div>
+                                            <div class="slide-content flex-column">
+                                                <div class="p-4 text-center">
+                                                    <div class="title-quytrinhkhach">
+                                                        Bước 2
+                                                    </div>
+                                                    <p class="content-quytrinhkhach">Khách đặt gói -
+                                                        điền form đầy đủ thông tin</p>
+                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="slide">
-                                            <div class="slide-content">3</div>
+                                            <div class="slide-content flex-column">
+                                                <div class="p-4 text-center">
+                                                    <div class="title-quytrinhkhach">
+                                                        Bước 3
+                                                    </div>
+                                                    <p class="content-quytrinhkhach">Khách đặt gói -
+                                                        điền form đầy đủ thông tin</p>
+                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
                                         </div>
-                                      
+
+
                                     </div>
                                 </div>
                                 <button class="slider-btn prev-btn">
-                                   < </button>
-                                        <button class="slider-btn next-btn">></button>
+                                    <img src="{{ asset('assets/images/previcon.svg') }}" alt=""
+                                        class="img-fluid"> </button>
+                                <button class="slider-btn next-btn"> <img
+                                        src="{{ asset('assets/images/nexticon.svg') }}" alt=""
+                                        class="img-fluid"> </button>
                             </div>
                             <!-- KẾT THÚC SLIDER -->
 
@@ -306,7 +340,69 @@
             </div>
 
         </section>
-   
+        <section class="commitment-section section">
+            <!-- Các họa tiết trang trí. Bạn có thể thay bằng file ảnh của bạn -->
+            <img src="{{ asset('assets/images/trangtris2-giatri.svg') }}" alt="Họa tiết trang trí"
+                class="deco-top-left">
+            <img src="{{ asset('assets/images/giatri-song.svg') }}" alt="Họa tiết trang trí"
+                class="deco-bottom-left">
+            <img src="{{ asset('assets/images/giatri-right.svg') }}" alt="Họa tiết trang trí"
+                class="deco-bottom-right">
+            <img src="{{ asset('assets/images/trangtris1-giatri.svg') }}" alt="Họa tiết trang trí"
+                class="deco-bottom">
+            <img src="{{ asset('assets/images/giatri-hoa.svg') }}" alt="Họa tiết trang trí" class="deco-top-hoa">
+
+            <div class="container">
+                <div class="section-header">
+                  <div>
+                      <p class="tagline">Giá trị thật・Chất lượng thật・Niềm tin bền vững</p>
+                  </div>
+                    <div class="main-heading-wrapper">
+                      <div>
+                          <h2 class="main-heading">Cam kết</h2>
+                        <img src="{{ asset('assets/images/icontitlecamketleft.svg') }}" alt="Họa tiết trang trí"
+                            class="icontitle-camketleft">
+                        <img src="{{ asset('assets/images/icontitlecamketright.svg') }}" alt="Họa tiết trang trí"
+                            class="icontitle-camketright">
+                      </div>
+                        <div class="heading-decorator"></div>
+
+                    </div>
+                </div>
+
+                <div class="commitment-grid row g-3">
+                    <!-- Item 1 -->
+                    <article class="commitment-item col-lg-4">
+                        <div class="item-icon-placeholder"></div>
+                        <div class="item-number"><span>1</span></div>
+                        <h3 class="item-title-camket">Tư vấn chuẩn xác – <br> Cá nhân hóa theo mệnh số</h3>
+                        <p class="item-description">Cam kết đưa ra lời khuyên đúng người – đúng thời điểm</p>
+                    </article>
+
+                    <!-- Item 2 -->
+                    <article class="commitment-item col-lg-4">
+                        <div class="item-icon-placeholder"></div>
+                        <div class="item-number"><span>2</span></div>
+                        <h3 class="item-title-camket">Ứng dụng kiến thức phong thủy <br> chuẩn mực và chính thống</h3>
+                        <p class="item-description">Đội ngũ chuyên gia có nền tảng vững chắc về Kinh Dịch, Bát Tự,
+                            Huyền Không, Tử Vi...</p>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="commitment-item col-lg-4">
+                        <div class="item-icon-placeholder"></div>
+                        <div class="item-number"><span>3</span></div>
+                        <h3 class="item-title-camket">Hỗ trợ tận tâm – <br> Đồng hành dài lâu</h3>
+                        <p class="item-description">Luôn sẵn sàng đồng hành cùng bạn trong từng giai đoạn của cuộc
+                            sống.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+
+        </section>
+
     </div>
 
     <script>
@@ -375,130 +471,134 @@
 
 
 
-    const slider = document.querySelector('.my-manual-slider');
-    const track = slider.querySelector('.slider-track');
-    const prevButton = slider.querySelector('.prev-btn');
-    const nextButton = slider.querySelector('.next-btn');
-    const originalSlidesHTML = track.innerHTML;
+        const slider = document.querySelector('.my-manual-slider');
+        const track = slider.querySelector('.slider-track');
+        const prevButton = slider.querySelector('.prev-btn');
+        const nextButton = slider.querySelector('.next-btn');
+        const originalSlidesHTML = track.innerHTML;
 
-    // --- Biến cấu hình và trạng thái ---
-    let slidesToShow = 3; // Mặc định cho desktop
-    const transitionSpeed = 500;
-    let isAnimating = false;
-    let slideWidth = 0;
-    let currentIndex = 0;
+        // --- Biến cấu hình và trạng thái ---
+        let slidesToShow = 3; // Mặc định cho desktop
+        const transitionSpeed = 500;
+        let isAnimating = false;
+        let slideWidth = 0;
+        let currentIndex = 0;
 
-    // --- HÀM KHỞI TẠO HOẶC CẬP NHẬT LẠI SLIDER ---
-    function initializeSlider() {
-        // === THAY ĐỔI CHÍNH Ở ĐÂY ===
-        // 1. Xác định số slide cần hiển thị dựa trên kích thước màn hình
-        const screenWidth = window.innerWidth;
-        if (screenWidth <= 768) {
-            slidesToShow = 1; // Mobile
-        } else if (screenWidth <= 1024) {
-            slidesToShow = 2; // Tablet
-        } else {
-            slidesToShow = 3; // Desktop
+        // --- HÀM KHỞI TẠO HOẶC CẬP NHẬT LẠI SLIDER ---
+        function initializeSlider() {
+            // === THAY ĐỔI CHÍNH Ở ĐÂY ===
+            // 1. Xác định số slide cần hiển thị dựa trên kích thước màn hình
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 768) {
+                slidesToShow = 1; // Mobile
+            } else if (screenWidth <= 1024) {
+                slidesToShow = 2; // Tablet
+            } else {
+                slidesToShow = 3; // Desktop
+            }
+
+            // 2. Reset track và nhân bản slide
+            track.innerHTML = originalSlidesHTML;
+            let originalSlides = Array.from(track.children);
+
+            for (let i = 0; i < slidesToShow; i++) {
+                const cloneEnd = originalSlides[i].cloneNode(true);
+                track.appendChild(cloneEnd);
+                const cloneStart = originalSlides[originalSlides.length - 1 - i].cloneNode(true);
+                track.insertBefore(cloneStart, track.firstChild);
+            }
+
+            // 3. Cập nhật kích thước và vị trí ban đầu
+            updateDimensions();
         }
 
-        // 2. Reset track và nhân bản slide
-        track.innerHTML = originalSlidesHTML;
-        let originalSlides = Array.from(track.children);
-        
-        for (let i = 0; i < slidesToShow; i++) {
-            const cloneEnd = originalSlides[i].cloneNode(true);
-            track.appendChild(cloneEnd);
-            const cloneStart = originalSlides[originalSlides.length - 1 - i].cloneNode(true);
-            track.insertBefore(cloneStart, track.firstChild);
-        }
-        
-        // 3. Cập nhật kích thước và vị trí ban đầu
-        updateDimensions();
-    }
-
-    function updateDimensions() {
-        slideWidth = track.querySelector('.slide').getBoundingClientRect().width;
-        currentIndex = slidesToShow;
-        track.style.transition = 'none';
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        setTimeout(() => {
-            track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-        }, 20);
-    }
-    
-    const moveTo = (index) => {
-        if(isAnimating) return;
-        isAnimating = true;
-        track.style.transform = `translateX(-${index * slideWidth}px)`;
-        currentIndex = index;
-    };
-
-    nextButton.addEventListener('click', () => moveTo(currentIndex + 1));
-    prevButton.addEventListener('click', () => moveTo(currentIndex - 1));
-
-    // Xử lý vòng lặp vô tận
-    track.addEventListener('transitionend', () => {
-        isAnimating = false;
-        let originalSlidesCount = track.querySelectorAll('.slide').length - (slidesToShow * 2);
-
-        if (currentIndex >= originalSlidesCount + slidesToShow) {
-            track.style.transition = 'none';
+        function updateDimensions() {
+            slideWidth = track.querySelector('.slide').getBoundingClientRect().width;
             currentIndex = slidesToShow;
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-        if (currentIndex < slidesToShow) {
             track.style.transition = 'none';
-            currentIndex = originalSlidesCount + slidesToShow - 1;
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            setTimeout(() => {
+                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+            }, 20);
         }
-        
-        setTimeout(() => {
+
+        const moveTo = (index) => {
+            if (isAnimating) return;
+            isAnimating = true;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+            currentIndex = index;
+        };
+
+        nextButton.addEventListener('click', () => moveTo(currentIndex + 1));
+        prevButton.addEventListener('click', () => moveTo(currentIndex - 1));
+
+        // Xử lý vòng lặp vô tận
+        track.addEventListener('transitionend', () => {
+            isAnimating = false;
+            let originalSlidesCount = track.querySelectorAll('.slide').length - (slidesToShow * 2);
+
+            if (currentIndex >= originalSlidesCount + slidesToShow) {
+                track.style.transition = 'none';
+                currentIndex = slidesToShow;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+            if (currentIndex < slidesToShow) {
+                track.style.transition = 'none';
+                currentIndex = originalSlidesCount + slidesToShow - 1;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            setTimeout(() => {
+                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+            }, 20);
+        });
+
+        // Thêm chức năng vuốt (swipe)
+        let touchStartX = 0;
+        let touchMoveX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            if (isAnimating) return;
+            touchStartX = e.touches[0].clientX;
+            track.style.transition = 'none';
+        }, {
+            passive: true
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (isAnimating) return;
+            touchMoveX = e.touches[0].clientX;
+            const diff = touchMoveX - touchStartX;
+            track.style.transform = `translateX(-${currentIndex * slideWidth - diff}px)`;
+        }, {
+            passive: true
+        });
+
+        track.addEventListener('touchend', () => {
+            if (isAnimating) return;
+            const diff = touchMoveX - touchStartX;
             track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-        }, 20);
-    });
 
-    // Thêm chức năng vuốt (swipe)
-    let touchStartX = 0;
-    let touchMoveX = 0;
+            if (diff > 50) {
+                moveTo(currentIndex - 1);
+            } else if (diff < -50) {
+                moveTo(currentIndex + 1);
+            } else {
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+            // Reset touchMoveX
+            touchMoveX = 0;
+        });
 
-    track.addEventListener('touchstart', (e) => {
-        if (isAnimating) return;
-        touchStartX = e.touches[0].clientX;
-        track.style.transition = 'none';
-    }, { passive: true });
+        // Lắng nghe sự kiện resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(initializeSlider, 250);
+        });
 
-    track.addEventListener('touchmove', (e) => {
-        if (isAnimating) return;
-        touchMoveX = e.touches[0].clientX;
-        const diff = touchMoveX - touchStartX;
-        track.style.transform = `translateX(-${currentIndex * slideWidth - diff}px)`;
-    }, { passive: true });
-
-    track.addEventListener('touchend', () => {
-        if (isAnimating) return;
-        const diff = touchMoveX - touchStartX;
-        track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-
-        if (diff > 50) {
-            moveTo(currentIndex - 1);
-        } else if (diff < -50) {
-            moveTo(currentIndex + 1);
-        } else {
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-        // Reset touchMoveX
-        touchMoveX = 0;
-    });
-
-    // Lắng nghe sự kiện resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(initializeSlider, 250); 
-    });
-
-    // Khởi tạo slider lần đầu tiên
-    initializeSlider();
+        // Khởi tạo slider lần đầu tiên
+        initializeSlider();
     </script>
 
 </body>
