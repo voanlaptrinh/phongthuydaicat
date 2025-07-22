@@ -321,8 +321,8 @@
     }
 
     .tagline {
-       text-align: center;
-       font-size: 16px;
+        text-align: center;
+        font-size: 16px;
     }
 
     .heading-decorator {
@@ -356,8 +356,8 @@
     }
 
     .deco-top-left {
-        left: 15%;
-        top: 24%;
+        left: -3%;
+        top: 26%;
         width: 36%;
     }
 
@@ -372,11 +372,136 @@
         right: 2%;
         width: 17%;
     }
-    .item-title-camket{
+
+    .item-title-camket {
         font-size: 18px;
-          line-height: 28px;
-font-weight: 600;
+        line-height: 28px;
+        font-weight: 600;
     }
+
+    .section-title-phanhoi {
+        margin-top: 0;
+    }
+
+    #prev-btn2 {
+        left: -25px;
+    }
+
+    #next-btn2 {
+        right: -25px;
+    }
+
+    .section-title-phanhoi h2 {
+        font-size: 42px;
+    }
+
+    .phanhoi-2-image {
+        left: -16px;
+    }
+
+    .phanhoi-1-image {
+        right: -16px;
+    }
+
+    .phanhoi-2-image img {
+        width: 120px;
+    }
+
+    .phanhoi-1-image img {
+        width: 120px;
+    }
+
+    .contact-box {
+        padding: 0;
+    }
+
+    .corner-deco {
+        display: none;
+    }
+
+    .contact-box {
+        border: none;
+        background-color: unset;
+        box-shadow: none
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .contact-description,
+    .contact-hours {
+        font-size: 18px;
+        padding-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .contact-title {
+        font-size: 32px;
+        margin-bottom: 7px;
+    }
+
+    .contact-list {
+        margin-top: 8px;
+    }
+
+    .contact-list li {
+        margin-bottom: 2px;
+    }
+
+    .contact-form-wrapper {
+        margin-top: 20px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+        width: 200px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+        width: 200px;
+
+    }
+
+    .footer-about {
+        font-size: 22px;
+    }
+
+    .footer-contact-info {
+        font-size: 16px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     .section-title-hoi-dap h2{
+        font-size: 40px;
+    }
+      .hoi-dap-1-image{
+        left: 14%;
+     }
+     .hoi-dap-2-image{
+        right: 14%;
+     }
+     .hoi-dap-1-image img{
+        width: 100px;
+     }
+     .hoi-dap-2-image img{
+        width: 100px;
+     }
 }
 
 /* Small Devices (≥ 480px and < 768px) */
@@ -444,21 +569,25 @@ font-weight: 600;
     }
 
     .bird-image {
+        opacity: 0.4;
         bottom: 0;
         left: 0%;
     }
 
     .upleft-image {
+        opacity: 0.4;
         top: 10%;
         left: 0%;
     }
 
     .upright-image {
+        opacity: 0.4;
         top: 10%;
         right: 0%;
     }
 
     .bottom-image {
+        opacity: 0.4;
         bottom: 10%;
         right: 0%;
     }
@@ -657,9 +786,9 @@ font-weight: 600;
     }
 
 
-      .tagline {
-       text-align: center;
-       font-size: 16px;
+    .tagline {
+        text-align: center;
+        font-size: 16px;
     }
 
     .heading-decorator {
@@ -667,12 +796,12 @@ font-weight: 600;
     }
 
     .section-header {
-     
+
         flex-direction: column;
         display: flex;
         justify-content: center;
         align-items: center;
-   
+
     }
 
     .main-heading-wrapper {
@@ -710,11 +839,122 @@ font-weight: 600;
         right: 0%;
         width: 29%;
     }
-    .item-title-camket{
+
+    .item-title-camket {
         font-size: 18px;
         line-height: 28px;
-font-weight: 600;
+        font-weight: 600;
     }
+
+    .section-title-phanhoi {
+        margin-top: 0;
+    }
+
+    #prev-btn2 {
+        left: -25px;
+    }
+
+    #next-btn2 {
+        right: -25px;
+    }
+
+    .phanhoi-2-image {
+        left: 25px;
+    }
+
+    .phanhoi-1-image {
+        right: 25px;
+    }
+
+    .phanhoi-2-image img {
+        width: 120px;
+    }
+
+    .phanhoi-1-image img {
+        width: 120px;
+    }
+
+    .contact-box {
+        padding: 0;
+    }
+
+    .corner-deco {
+        display: none;
+    }
+
+    .contact-box {
+        border: none;
+        background-color: unset;
+        box-shadow: none
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .contact-description,
+    .contact-hours {
+        font-size: 18px;
+        padding-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .contact-title {
+        margin-bottom: 7px;
+    }
+
+    .contact-list {
+        margin-top: 8px;
+    }
+
+    .contact-list li {
+        margin-bottom: 2px;
+    }
+
+    .contact-form-wrapper {
+        margin-top: 20px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+    }
+
+    .footer-about {
+        font-size: 22px;
+    }
+
+    .footer-contact-info {
+        font-size: 16px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+     .section-title-hoi-dap h2{
+        font-size: 48px;
+    }
+      .hoi-dap-1-image{
+        left: 20%;
+     }
+     .hoi-dap-2-image{
+        right: 20%;
+     }
+     .hoi-dap-1-image img{
+        width: 110px;
+     }
+     .hoi-dap-2-image img{
+        width: 110px;
+     }
 }
 
 /* Medium Devices (≥ 768px and < 992px) */
@@ -803,7 +1043,8 @@ font-weight: 600;
         bottom: 6%;
         right: 0%;
     }
-    .bottom-image img{
+
+    .bottom-image img {
         width: 76%;
     }
 
@@ -1003,7 +1244,7 @@ font-weight: 600;
         right: 2%;
     }
 
-   .tagline {
+    .tagline {
         text-align: center;
         font-size: 16px;
     }
@@ -1013,7 +1254,7 @@ font-weight: 600;
     }
 
     .section-header {
-       flex-direction: column;
+        flex-direction: column;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1035,11 +1276,84 @@ font-weight: 600;
         right: -46px;
         top: 44px;
     }
- .item-title-camket{
+
+    .item-title-camket {
         font-size: 18px;
-         line-height: 28px;
-font-weight: 600;
+        line-height: 28px;
+        font-weight: 600;
     }
+
+    .section-title-phanhoi {
+        margin-top: 0;
+    }
+
+    #prev-btn2 {
+        left: -25px;
+    }
+
+    #next-btn2 {
+        right: -25px;
+    }
+
+    .phanhoi-2-image {
+        left: 70px;
+    }
+
+    .phanhoi-1-image {
+        right: 70px;
+    }
+
+    .contact-box {
+        padding: 133px 39px 133px 39px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+    }
+
+    .footer-about {
+        font-size: 22px;
+    }
+
+    .footer-contact-info {
+        font-size: 16px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+     .section-title-hoi-dap{
+        margin-top: 30px;
+    }
+    .section-title-hoi-dap h2{
+        font-size: 52px;
+     
+    }
+    /* .hoi-dap-1-image, .hoi-dap-2-image{
+        display: none;
+    } */
+     .hoi-dap-1-image{
+        left: 26%;
+     }
+     .hoi-dap-2-image{
+        right: 26%;
+     }
+     .hoi-dap-1-image img{
+        width: 140px;
+     }
+     .hoi-dap-2-image img{
+        width: 140px;
+     }
 }
 
 /* Large Devices (≥ 992px and < 1200px) */
@@ -1095,20 +1409,24 @@ font-weight: 600;
     } */
 
     .bird-image {
+        opacity: 0.4;
         left: 7%;
     }
 
     .upleft-image {
+        opacity: 0.4;
         top: 10%;
         left: 0%;
     }
 
     .upright-image {
+        opacity: 0.4;
         top: 10%;
         right: 0%;
     }
 
     .bottom-image {
+        opacity: 0.4;
         bottom: 10%;
         right: 0%;
     }
@@ -1307,10 +1625,43 @@ font-weight: 600;
         /* Màu của đường kẻ - màu trắng mờ cho tinh tế */
         background-color: #FFFFFF;
     }
-     .item-title-camket{
+
+    .item-title-camket {
         font-size: 20px;
         line-height: 30px;
         font-weight: 600;
+    }
+
+    .phanhoi-2-image {
+        display: none;
+    }
+
+    .phanhoi-1-image {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 133px 39px 133px 39px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+    }
+     .section-title-hoi-dap{
+        margin-top: 30px;
+    }
+    .section-title-hoi-dap h2{
+        font-size: 56px;
+     
+    }
+    .hoi-dap-1-image, .hoi-dap-2-image{
+        display: none;
     }
 }
 
@@ -1559,10 +1910,43 @@ font-weight: 600;
     .icontitle-camketright {
         display: none;
     }
-     .item-title-camket{
+
+    .item-title-camket {
         font-size: 24px;
         line-height: 40px;
-font-weight: 600;
+        font-weight: 600;
+    }
+
+    .phanhoi-2-image {
+        display: none;
+    }
+
+    .phanhoi-1-image {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 133px 39px 133px 39px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+    }
+     .section-title-hoi-dap{
+        margin-top: 30px;
+    }
+    .section-title-hoi-dap h2{
+        font-size: 56px;
+     
+    }
+    .hoi-dap-1-image, .hoi-dap-2-image{
+        display: none;
     }
 }
 
@@ -1618,20 +2002,24 @@ font-weight: 600;
     }
 
     .bird-image {
+        opacity: 0.4;
         left: 10%;
     }
 
     .upleft-image {
+        opacity: 0.4;
         top: 10%;
         left: 10%;
     }
 
     .upright-image {
+        opacity: 0.4;
         top: 10%;
         right: 10%;
     }
 
     .bottom-image {
+        opacity: 0.4;
         bottom: 10%;
         right: 10%;
     }
@@ -1836,10 +2224,43 @@ font-weight: 600;
         /* Màu của đường kẻ - màu trắng mờ cho tinh tế */
         background-color: #FFFFFF;
     }
-     .item-title-camket{
+
+    .item-title-camket {
         font-size: 24px;
         line-height: 40px;
-font-weight: 600;
+        font-weight: 600;
+    }
+
+    .phanhoi-2-image {
+        display: none;
+    }
+
+    .phanhoi-1-image {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 133px 39px 133px 39px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 0%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 0;
+        bottom: 60px;
+    }
+     .section-title-hoi-dap{
+        margin-top: 30px;
+    }
+    .section-title-hoi-dap h2{
+        font-size: 56px;
+     
+    }
+    .hoi-dap-1-image, .hoi-dap-2-image{
+        display: none;
     }
 }
 
@@ -2030,10 +2451,43 @@ font-weight: 600;
     .tagline {
         font-size: 40px;
     }
-    .item-title-camket{
+
+    .item-title-camket {
         font-size: 24px;
         line-height: 40px;
-font-weight: 600;
+        font-weight: 600;
+    }
+
+    .phanhoi-2-image {
+        display: none;
+    }
+
+    .phanhoi-1-image {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 133px 39px 133px 39px;
+    }
+
+    .deco-hoatietbottomleft {
+        left: 18%;
+        bottom: 60px;
+    }
+
+    .deco-hoatietbottomright {
+        right: 18%;
+        bottom: 60px;
+    }
+    .section-title-hoi-dap{
+        margin-top: 30px;
+    }
+    .section-title-hoi-dap h2{
+        font-size: 56px;
+     
+    }
+    .hoi-dap-1-image, .hoi-dap-2-image{
+        display: none;
     }
 }
 

@@ -1,0 +1,10 @@
+@extends('welcome')
+@section('content')
+    @include('home.slider')
+    @include('home.gioithieu')
+    @include('home.sumenh')
+    @include('home.quytrinh')
+    @include('home.camket')
+    @include('home.phanhoi')
+    @include('home.lienhe')
+@endsection

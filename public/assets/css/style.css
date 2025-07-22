@@ -30,13 +30,14 @@
  @font-face {
      font-display: block;
      font-family: OpenSans_Condensed-Regular;
-     src: url("../font/OpenSans_Condensed-Regular.ttf") format("truetype");
+     src: url("../font/OpenSans-Regular.ttf") format("truetype");
 
  }
+
  @font-face {
      font-display: block;
      font-family: OpenSans_Condensed-Bold;
-     src: url("../font/OpenSans_Condensed-Bold.ttf") format("truetype");
+     src: url("../font/OpenSans-SemiBold.ttf") format("truetype");
 
  }
 
@@ -196,14 +197,25 @@
      right: 0;
      width: 280px;
      height: 100%;
-     background-color: #ffffff;
+     background: linear-gradient(to right,
+             /* 1. Hướng chuyển màu: từ TRÁI qua PHẢI */
+             #FFFCD9,
+             /* 2. Màu bắt đầu (bên trái) */
+             #FAF9EC,
+             /* 3. Màu ở giữa */
+             #F1EFD7,
+             #F4F0C0
+             /* 4. Màu kết thúc (bên phải) */
+         );
      z-index: 1001;
      /* Phải cao hơn lớp phủ */
      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
      transform: translateX(100%);
      /* Ẩn menu ra ngoài màn hình bên phải */
      transition: transform 0.3s ease-in-out;
-     padding: 20px;
+     padding: 16px;
+     display: flex;
+     flex-direction: column;
      box-sizing: border-box;
  }
 
@@ -216,7 +228,7 @@
  .mobile-nav-close {
      text-align: right;
      font-size: 24px;
-     margin-bottom: 20px;
+
      cursor: pointer;
      color: #333;
  }
@@ -227,24 +239,26 @@
      margin: 0;
  }
 
- .mobile-navigation li {
-     margin-bottom: 15px;
- }
+
 
  .mobile-navigation a {
+     padding-top: 8px;
+     padding-bottom: 8px;
      text-decoration: none;
-     color: #333;
+     color: #FFFFFF;
      font-size: 18px;
      display: block;
-     padding: 10px;
+     /* padding: 10px; */
+     font-weight: 600;
      border-radius: 5px;
      transition: background-color 0.3s;
+     font-family: OpenSans_Condensed-Bold, serif;
  }
 
  .mobile-navigation a.active,
  .mobile-navigation a:hover {
      background-color: #f0f0f0;
-     color: #007bff;
+
  }
 
  /* 3. Lớp phủ nền */
@@ -1161,7 +1175,7 @@
      background-color: unset;
      color: white;
      border: none;
-     padding: 10px 15px;
+     /* padding: 10px 15px; */
      font-size: 24px;
      cursor: pointer;
      z-index: 10;
@@ -1326,48 +1340,55 @@
  }
 
  .item-number {
-    /* Bật position:relative để làm mỏ neo cho đường kẻ ::after */
-    position: relative; 
-    
-    /* Kích thước và hình dạng */
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    
-    /* Kiểu đường viền mảnh, màu trắng mờ giống trong ảnh */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    
-    /* Căn giữa số bên trong vòng tròn */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Căn giữa vòng tròn trong cột và tạo khoảng trống LỚN ở dưới
+     /* Bật position:relative để làm mỏ neo cho đường kẻ ::after */
+     position: relative;
+
+     /* Kích thước và hình dạng */
+     width: 45px;
+     height: 45px;
+     border-radius: 50%;
+
+     /* Kiểu đường viền mảnh, màu trắng mờ giống trong ảnh */
+     border: 1px solid rgba(255, 255, 255, 0.5);
+
+     /* Căn giữa số bên trong vòng tròn */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     /* Căn giữa vòng tròn trong cột và tạo khoảng trống LỚN ở dưới
        để chứa cả đường kẻ và khoảng cách đến tiêu đề */
-    margin: 0 auto 25px auto; 
-    
-    /* Kiểu chữ cho số */
-    font-size: 20px;
-    font-weight: 300; /* Làm số mảnh hơn một chút */
-    color: rgba(255, 255, 255, 0.8);
+     margin: 0 auto 25px auto;
+
+     /* Kiểu chữ cho số */
+     font-size: 20px;
+     font-weight: 300;
+     /* Làm số mảnh hơn một chút */
+     color: rgba(255, 255, 255, 0.8);
  }
-.item-number::after {
-    content: ''; /* Bắt buộc phải có để pseudo-element hiển thị */
-    
-    /* Định vị tuyệt đối so với .item-number */
-    position: absolute;
-    top: 100%; /* Bắt đầu ngay dưới mép của vòng tròn */
-    left: 50%;
-    transform: translateX(-50%); /* Căn giữa đường kẻ một cách hoàn hảo */
-    
-    /* Kích thước của đường kẻ */
-    width: 1px;
-    margin-top: 9px;
-    height: 18px; /* Bạn có thể điều chỉnh chiều dài này */
-    
-    /* Màu của đường kẻ */
-    background-color: rgba(255, 255, 255, 0.5);
-}
+
+ .item-number::after {
+     content: '';
+     /* Bắt buộc phải có để pseudo-element hiển thị */
+
+     /* Định vị tuyệt đối so với .item-number */
+     position: absolute;
+     top: 100%;
+     /* Bắt đầu ngay dưới mép của vòng tròn */
+     left: 50%;
+     transform: translateX(-50%);
+     /* Căn giữa đường kẻ một cách hoàn hảo */
+
+     /* Kích thước của đường kẻ */
+     width: 1px;
+     margin-top: 9px;
+     height: 18px;
+     /* Bạn có thể điều chỉnh chiều dài này */
+
+     /* Màu của đường kẻ */
+     background-color: rgba(255, 255, 255, 0.5);
+ }
+
  .item-title {
      font-family: CormorantGaramond-Italic, serif;
      font-size: 22px;
@@ -1381,7 +1402,7 @@
      line-height: 20px;
      max-width: 300px;
      margin: 0 auto;
-       font-family: OpenSans_Condensed-Regular, serif;
+     font-family: OpenSans_Condensed-Regular, serif;
  }
 
  /* --- Họa tiết trang trí --- */
@@ -1393,7 +1414,888 @@
  }
 
 
-  .item-title-camket{
+ .item-title-camket {
      font-family: OpenSans_Condensed-Bold, serif;
      color: #FFFFFF;
-  }
+ }
+
+
+
+
+
+
+ :root {
+     --card-gap: 30px;
+     /* Định nghĩa khoảng trống giữa các card */
+ }
+
+
+ /* --- Section chính --- */
+ .testimonial-section {
+     width: 100%;
+     /* Nền giấy với họa tiết nhỏ */
+     background-image: url('../images/reviews_kh.png');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     overflow: hidden;
+
+     position: relative;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ /* --- Tiêu đề Section --- */
+ .section-title-phanhoi {
+     text-align: center;
+     margin-bottom: 60px;
+     margin-top: 15px;
+     position: relative;
+ }
+
+ .section-title-phanhoi h2 {
+     font-family: CormorantGaramond-Bold, serif;
+     font-size: 36px;
+     color: #333;
+     font-weight: 700;
+ }
+
+ .title-decorator {
+     position: absolute;
+     top: -30px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 80px;
+     height: 1px;
+     background-color: #b9936c;
+ }
+
+ .title-decorator::after {
+     content: '';
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     background-color: #fff;
+     border: 2px solid #a42a2a;
+ }
+
+ /* --- Slider --- */
+ .slider-container {
+     position: relative;
+ }
+
+ .slider-viewport {
+     width: 100%;
+     overflow: hidden;
+ }
+
+ .slider-track-phanhoi {
+     display: flex;
+     gap: var(--card-gap);
+     transition: transform 0.5s ease-in-out;
+ }
+
+ /* --- Card Phản hồi --- */
+ .testimonial-card {
+     padding: 30px 25px;
+     background-color: #fff;
+     border-radius: 8px;
+     border: 2px solid #d3b895;
+
+     /* ----- 3. BÓNG ĐỔ ----- */
+     /* Một chút bóng đổ nhẹ nhàng để card nổi bật */
+     box-shadow: 0 5px 13px rgb(185 158 88 / 86%);
+     position: relative;
+ }
+
+ /* Họa tiết góc trên card */
+ .testimonial-card::before {
+     content: '';
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background-image: url("../images/topphanhoi.svg");
+     background-size: contain;
+     opacity: 0.7;
+ }
+
+ .testimonial-card::after {
+     content: '';
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background-image: url("../images/bottomphanhoi.svg");
+     background-size: contain;
+     opacity: 0.7;
+ }
+
+ .testimonial-card::before {
+     top: 10px;
+     right: 10px;
+ }
+
+ .testimonial-card::after {
+     bottom: 10px;
+     right: 10px;
+ }
+
+ .card-header {
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+ }
+
+ .avatar {
+     width: 56px;
+     height: 56px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-right: 15px;
+     border: 2px solid #eee;
+     flex-shrink: 0;
+ }
+
+ .author-info h3 {
+     font-size: 16px;
+     font-weight: 700;
+     color: #333;
+     margin: 0;
+ }
+
+ .author-info p {
+     font-size: 13px;
+     color: #888;
+     margin: 4px 0 0 0;
+ }
+
+ .testimonial-text {
+     /* 1. Bắt buộc: Ẩn đi phần văn bản bị thừa */
+     overflow: hidden;
+
+     /* 2. Bắt buộc: Kích hoạt chế độ layout đặc biệt của WebKit 
+       (dù không còn là chuẩn, nhưng vẫn là cách duy nhất để line-clamp hoạt động) */
+     display: -webkit-box;
+
+     /* 3. Quan trọng nhất: Đặt số dòng tối đa muốn hiển thị */
+     -webkit-line-clamp: 6;
+
+     /* 4. Bắt buộc: Sắp xếp nội dung theo chiều dọc */
+     -webkit-box-orient: vertical;
+
+     /* ----- KẾT THÚC CODE GIỚI HẠN DÒNG ----- */
+
+     /* Giữ lại các thuộc tính style cũ của bạn */
+     font-size: 18px;
+     line-height: 1.7;
+     color: #555;
+ }
+
+ /* --- Nút điều hướng --- */
+ .slider-btn {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 10;
+     background-color: #fff;
+     border: 2px solid #e0c5a3;
+     width: 45px;
+     height: 45px;
+     border-radius: 50%;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     transition: all 0.2s ease;
+     color: #b9936c;
+ }
+
+ .slider-btn:hover {
+     background-color: #f7f3ed;
+     transform: translateY(-50%) scale(1.1);
+ }
+
+ /* ===== BẮT ĐẦU PHẦN RESPONSIVE ===== */
+
+ /* Mobile (Mặc định, dưới 768px) - 1 card */
+ .testimonial-card {
+     flex: 0 0 100%;
+ }
+
+ .testimonial-section {
+     border: none;
+     padding: 60px 10px;
+ }
+
+ .slider-btn {
+     width: 45px;
+     height: 45px;
+ }
+
+ #prev-btn2 {
+     left: -5px;
+ }
+
+ #next-btn2 {
+     right: -5px;
+ }
+
+ /* Tablet (Từ 768px trở lên) - 2 card */
+ @media (min-width: 768px) {
+     .testimonial-card {
+         flex: 0 0 calc((100% - var(--card-gap)) / 2);
+     }
+ }
+
+ /* Desktop (Từ 992px trở lên) - 3 card */
+ @media (min-width: 992px) {
+     .testimonial-card {
+         flex: 0 0 calc((100% - var(--card-gap) * 2) / 3);
+     }
+
+     .testimonial-section {
+
+         padding: 80px 40px;
+     }
+
+     #prev-btn2 {
+         left: -70px;
+     }
+
+     #next-btn2 {
+         right: -70px;
+     }
+ }
+
+ .slider-track.grabbing,
+ .slider-track-phanhoi.grabbing {
+     cursor: grabbing;
+     cursor: -webkit-grabbing;
+     user-select: none;
+     /* Ngăn bôi đen văn bản khi kéo */
+ }
+
+
+
+
+
+ /* Giao diện liên hệ */
+ .contact-section {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-image: url('../images/bgggg.svg');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     overflow: hidden;
+     padding: 100px 15px;
+     position: relative;
+ }
+
+ /* --- Hộp Liên hệ chính & Khung Trang trí --- */
+ .contact-box {
+     border-radius: 4px;
+     background-color: #ffffff7d;
+     padding: 50px;
+     position: relative;
+     border: 3px solid #B99E58;
+     /* Đường viền chính */
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+ }
+
+ /* Kỹ thuật dùng span để vẽ các góc trang trí */
+ .corner-deco {
+     position: absolute;
+     width: 40px;
+     height: 40px;
+
+ }
+
+ .corner-top-left {
+     top: 15px;
+     left: 15px;
+
+     border-top-left-radius: 8px;
+ }
+
+ .corner-top-right {
+     top: 15px;
+     right: 15px;
+
+     border-top-right-radius: 8px;
+ }
+
+ .corner-bottom-left {
+     bottom: 15px;
+     left: 15px;
+
+     border-bottom-left-radius: 8px;
+ }
+
+ .corner-bottom-right {
+     bottom: 15px;
+     right: 15px;
+
+     border-bottom-right-radius: 8px;
+ }
+
+ /* --- Cột thông tin bên trái --- */
+ .contact-info {
+     color: #4a4a4a;
+ }
+
+ .contact-title {
+     font-family: CormorantGaramond-Bold, serif;
+     font-size: 42px;
+     font-weight: 700;
+     color: #8C1C13;
+     /* Màu đỏ sẫm */
+     margin-bottom: 20px;
+ }
+
+ .contact-description,
+ .contact-hours {
+     font-size: 16px;
+     margin-bottom: 20px;
+     font-family: OpenSans_Condensed-Regular, serif;
+     font-weight: 400;
+ }
+
+ .contact-list {
+     list-style: none;
+     padding: 0;
+     margin-top: 24px;
+ }
+
+ .contact-list li {
+     margin-bottom: 15px;
+     font-size: 16px;
+     display: flex;
+     align-items: center;
+ }
+
+ .contact-list li i {
+     color: #d3b895;
+     margin-right: 15px;
+     width: 20px;
+     text-align: center;
+ }
+
+ /* --- Form bên phải --- */
+ .form-control {
+     background-color: #fff !important;
+     border: 1px solid #B99E58 !important;
+     border-radius: 8px !important;
+     padding: 12px 15px !important;
+     font-size: 15px;
+     transition: all 0.3s ease;
+ }
+
+ .form-control:focus {
+     border-color: #b9936c;
+     box-shadow: 0 0 0 3px rgba(211, 184, 149, 0.25);
+ }
+
+ .form-control::placeholder {
+     color: #aaa;
+     font-size: 14px;
+ }
+
+ textarea.form-control {
+     resize: none;
+ }
+
+ /* Nút Submit */
+ .btn-submit {
+     background: linear-gradient(to top, #8C1C13, #a42a2a);
+     color: #fff;
+     border: 1px solid #d3b895;
+     border-radius: 8px;
+     padding: 12px 40px;
+     font-weight: 700;
+     font-size: 16px;
+     letter-spacing: 1px;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 10px rgba(140, 28, 19, 0.3);
+ }
+
+ .btn-submit:hover {
+     color: #fff;
+     transform: translateY(-2px);
+     box-shadow: 0 6px 15px rgba(140, 28, 19, 0.4);
+ }
+
+ /* --- Họa tiết trang trí bên ngoài --- */
+ .deco-left,
+ .deco-right {
+     position: absolute;
+     opacity: 0.8;
+     z-index: -1;
+ }
+
+ .deco-left {
+     left: 10%;
+     top: 50%;
+     transform: translateY(-50%);
+     /* width: 80px; */
+ }
+
+ .deco-right {
+     right: 10%;
+     bottom: 50%;
+     transform: translateY(50%);
+     /* width: 80px; */
+ }
+
+ .contact-list li {
+     font-weight: 600;
+     font-family: OpenSans_Condensed-Regular, serif;
+ }
+
+ .input-contact {
+     border: 1px solid #B99E58;
+ }
+
+ .deco-hoatietbottomleft,
+ .deco-hoatietbottomright {
+     position: absolute;
+     opacity: 0.8;
+     z-index: 0;
+
+ }
+
+ footer {
+     background: #730009;
+     color: #f0e6e6;
+     /* Màu chữ trắng ngà */
+     padding: 60px 0;
+     font-size: 15px;
+ }
+
+
+
+ .footer-col {
+     margin-bottom: 30px;
+     /* Tạo khoảng cách giữa các cột trên mobile */
+ }
+
+ /* Cột 1: Logo và Giới thiệu */
+ .footer-logo img {
+     max-width: 80px;
+     margin-bottom: 20px;
+ }
+
+ .footer-about {
+
+     margin-bottom: 20px;
+     font-size: 28px;
+     font-family: CormorantGaramond-Italic, serif;
+ }
+
+ .footer-about a {
+     color: #f5c542;
+     /* Màu vàng gold cho link */
+     text-decoration: underline;
+     font-weight: 500;
+ }
+
+ .footer-about a:hover {
+     color: #fff;
+ }
+
+ .footer-contact-info {
+     margin-bottom: 8px;
+     font-size: 20px;
+ }
+
+ /* Cột 2 & 3: Tiêu đề và link */
+ .footer-title {
+     font-size: 24px;
+     font-weight: 700;
+     margin-bottom: 25px;
+     color: #fff;
+     font-family: OpenSans_Condensed-Bold, serif;
+ }
+
+ .footer-links {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .footer-links li {
+     margin-bottom: 12px;
+ }
+
+ .footer-links a {
+     color: #f0e6e6;
+     text-decoration: none;
+     font-size: 20px;
+     font-family: OpenSans_Condensed-Regular, serif;
+
+     transition: all 0.2s ease;
+ }
+
+ .footer-links a:hover {
+     color: #fff;
+     opacity: 1;
+     padding-left: 5px;
+     /* Hiệu ứng hover nhẹ */
+ }
+
+ /* Cột 4: Mạng xã hội */
+ .social-icons {
+     display: flex;
+     gap: 15px;
+     /* Khoảng cách giữa các icon */
+ }
+
+ .social-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     border-radius: 8px;
+     color: #fff;
+     font-size: 18px;
+     text-decoration: none;
+     transition: all 0.3s ease;
+ }
+
+ .social-icon:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Màu riêng cho từng icon */
+ .social-icon.facebook {
+     background-color: #1877F2;
+ }
+
+ .social-icon.youtube {
+     background-color: #FF0000;
+ }
+
+ .social-icon.zalo {
+     background-color: #0068FF;
+ }
+
+ /* Responsive: Trên màn hình nhỏ (mobile), căn giữa cột cuối */
+ @media (max-width: 767px) {
+     .footer-col:last-child {
+         text-align: center;
+     }
+
+     .social-icons {
+         justify-content: center;
+     }
+ }
+
+
+ /* --- MENU MOBILE --- */
+
+
+ /* --- 1. Header của menu --- */
+ .mobile-nav-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+     flex-shrink: 0;
+     /* Không co lại */
+ }
+
+ .mobile-nav-logo {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     color: #8C1C13;
+     /* Màu đỏ sẫm */
+     font-weight: 700;
+ }
+
+ .mobile-nav-logo img {
+     width: 40px;
+     height: 40px;
+     /* margin-right: 10px; */
+ }
+
+ /* Nút đóng [X] */
+ .mobile-nav-close {
+     background-color: #8C1C13;
+     /* Nền đỏ sẫm */
+     color: #fff;
+     border: none;
+     width: 35px;
+     height: 35px;
+     border-radius: 8px;
+     font-size: 18px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ /* --- 2. Phần thân menu (các link) --- */
+ .mobile-nav-main {
+     margin-top: 30px;
+     /* XÓA flex-grow: 1; ĐỂ margin-top: auto ở footer hoạt động đúng */
+     overflow-y: auto;
+     /* Tự động có scroll nếu nội dung quá dài */
+ }
+
+ .mobile-nav-main ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     background-color: #8C1C13;
+     border-radius: 12px;
+     overflow: hidden;
+     /* Để bo góc có tác dụng */
+ }
+
+ .mobile-nav-main ul li a {
+     display: block;
+     padding: 15px 20px;
+     color: #fff;
+     text-decoration: none;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     font-size: 16px;
+     transition: background-color 0.2s ease;
+     font-family: OpenSans_Condensed-Bold, serif;
+ }
+
+ .mobile-nav-main ul li:last-child a {
+     border-bottom: none;
+     /* Bỏ đường kẻ của link cuối cùng */
+ }
+
+ .mobile-nav-main ul li a:hover,
+ .mobile-nav-main ul li a.active {
+     background-color: #a42a2a;
+     /* Màu đỏ đậm hơn khi hover hoặc active */
+ }
+
+ /* --- 3. Footer của menu (các nút chức năng) --- */
+ .mobile-nav-footer {
+
+     flex-shrink: 0;
+     /* Không co lại */
+
+     /* border-top: 1px solid #e0d9cf; */
+
+     /* Đây là chìa khóa để đẩy footer xuống dưới cùng */
+
+     margin-top: auto;
+ }
+
+ .mobile-nav-button {
+     display: flex !important;
+     justify-content: center;
+     align-items: center;
+     background-image: url('../images/btn_ho_tro.svg');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     overflow: hidden;
+
+ }
+
+
+
+ .mobile-nav-button:hover {
+     background-color: #a0805c;
+     /* Màu đậm hơn khi hover */
+     color: #fff;
+ }
+
+ .mobile-nav-button i {
+     margin-right: 10px;
+ }
+
+ .btn-movbie1 {
+     margin-bottom: 20px;
+ }
+
+ .gradient-text {
+     /* ----- BƯỚC 1: TẠO NỀN GRADIENT ----- */
+     /* Đây là màu chuyển sắc từ trên xuống dưới.
+       Bạn có thể thay đổi các mã màu này theo ý muốn. */
+     background: linear-gradient(to bottom, #860002, #A80003, #BC0005);
+
+     /* ----- BƯỚC 2: CẮT NỀN THEO HÌNH DẠNG CỦA CHỮ ----- */
+     /* Thuộc tính này sẽ "cắt" background theo hình dạng của text */
+     -webkit-background-clip: text;
+     background-clip: text;
+     font-size: 18px;
+     /* -----f BƯỚC 3: LÀM CHO MÀU CHỮ TRONG SUỐT ----- */
+     /* Làm cho màu chữ gốc trở nên trong suốt để lộ ra lớp nền gradient bên dưới */
+     color: transparent;
+     font-family: Anton-Regular, serif;
+     /* ----- CÁC THUỘC TÍNH PHỤ ĐỂ CHỮ ĐẸP HƠN (TÙY CHỌN) ----- */
+     font-weight: 700;
+     /* Độ đậm */
+     text-align: center;
+     /* Căn giữa */
+ }
+
+ .hoi-dap {
+     display: flex !important;
+     justify-content: center;
+     align-items: center;
+     background-image: url('../images/hoi_dap.svg');
+     background-repeat: no-repeat;
+     /* QUAN TRỌNG: Không lặp lại ảnh */
+     background-size: cover;
+     /* QUAN TRỌNG: Che phủ toàn bộ khối */
+     background-position: center;
+     /* QUAN TRỌNG: Căn ảnh ra giữa */
+     overflow: hidden;
+
+ }
+
+ .section-title-hoi-dap {
+     font-family: CormorantGaramond-Bold, serif;
+ }
+
+ .box-content-hoi-dap {
+     padding-top: 52px;
+ }
+
+ .content-faqs {
+     background: linear-gradient(306deg, #FFFCD9, #FAF9EC, #F1EFD7, #F4F0C0);
+     padding: 24px;
+ }
+
+ .accordion-box-hoidap {
+     background: linear-gradient(to bottom, #F3E5B7, #FAF2D5, #F6EAC1,#FFFCF0,#F6EAC1);
+     border: 1px solid #B99E58;
+     border-radius: 12px;
+ }
+
+ /* --- CONTAINER CHÍNH CỦA ACCORDION --- */
+ /* --- ACCORDION TỐI ƯU HIỆU NĂNG --- */
+
+ .accordion-container {
+     width: 100%;
+   
+     padding: 25px;
+    
+ }
+
+ .accordion-item {
+     margin-bottom: 15px;
+ }
+
+ .accordion-item:last-child {
+     margin-bottom: 0;
+ }
+
+ .accordion-header {
+     width: 100%;
+     background: linear-gradient(to bottom, #FFFFFF, #FCF9F2);
+     border: 1px solid #B99E58;
+     border-radius: 12px;
+     padding: 16px 25px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     text-align: left;
+     font-size: 16px;
+     font-weight: 500;
+     color: #4A4A4A;
+     cursor: pointer;
+     box-shadow: 0 4px 15px rgba(211, 184, 149, 0.25);
+     transition: all 0.3s ease;
+     /* Thêm z-index để header luôn nằm trên content */
+     position: relative;
+     z-index: 2;
+ }
+ .is-open .accordion-header{
+    border-radius: 12px 12px 0 0;
+    box-shadow: none;
+    border-bottom: none;
+     background: linear-gradient(to right, #FFFCD9, #FAF9EC, #F1EFD7, #F4F0C0);
+ }
+
+ .accordion-header:hover {
+     border-color: #d3b895;
+     box-shadow: 0 6px 20px rgba(211, 184, 149, 0.3);
+ }
+
+ /* --- PHẦN NỘI DUNG (THAY ĐỔI LỚN) --- */
+
+ .accordion-content {
+     /* Sử dụng Grid để tạo hiệu ứng đóng/mở */
+     display: grid;
+     /* Mặc định: nội dung có 0 hàng -> ẩn */
+     grid-template-rows: 0fr;
+     transition: grid-template-rows 0.4s ease-out;
+     /* Transition mượt mà hơn */
+
+     /* Đảm bảo content nằm dưới header */
+     position: relative;
+     z-index: 1;
+     margin-top: -10px;
+     /* Kéo content lên để che viền dưới của header */
+ }
+
+ .accordion-body-wrapper {
+     /* Wrapper này rất quan trọng để grid hoạt động đúng */
+     overflow: hidden;
+ }
+
+ .accordion-body-box {
+     padding: 20px 25px;
+     padding-top: 25px;
+     /* Thêm padding-top để không dính vào header */
+     background: linear-gradient(to right, #FFFCD9, #FAF9EC, #F1EFD7, #F4F0C0);
+     border: 1px solid #B99E58;
+     border-top: none;
+     /* Bỏ viền trên vì header đã có viền dưới */
+     border-bottom-left-radius: 12px;
+     border-bottom-right-radius: 12px;
+     color: #555;
+     line-height: 1.7;
+     font-size: 15px;
+ }
+
+ /* --- TRẠNG THÁI MỞ --- */
+ .accordion-item.is-open .accordion-content {
+     /* Khi mở, đổi thành 1 hàng với chiều cao tự động */
+     grid-template-rows: 1fr;
+ }
+
+ /* Icon (giữ nguyên nhưng có một số điều chỉnh nhỏ) */
+ .accordion-icon {
+     flex-shrink: 0;
+     width: 16px;
+     height: 16px;
+     margin-left: 15px;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23C7A883' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: center;
+     transition: transform 0.3s ease;
+ }
+
+ .accordion-item.is-open .accordion-icon {
+     transform: rotate(-180deg);
+ }

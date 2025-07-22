@@ -13,594 +13,231 @@
     <link rel="stylesheet" href="{{ asset('assets/css/repont.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
     <!-- 1. CSS của Slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- 2. CSS Theme của Slick (Tùy chọn nhưng nên có để có style mũi tên, dấu chấm) -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  
 
 </head>
-<style>
-    /* Tùy chỉnh mũi tên điều hướng cho đẹp hơn */
-    .slick-prev:before,
-    .slick-next:before {
-        color: #860002;
-    }
-</style>
+
 
 <body>
 
 
-    <header class="site-header fbs__net-navbar">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="site-logo d-flex align-items-center">
-                <a href="#">
-                    <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Phong Thủy Đại Cát"
-                        class="img-fluid img-logo">
-                </a>
-                <span class="text-center title-logo">Phong thủy
-                    <br> đại cát</span>
-            </div>
-
-            <!-- Menu cho Desktop -->
-            <nav class="main-navigation">
-                <ul>
-                    <li><a href="#" class="active">Giới thiệu</a></li>
-                    <li><a href="#">Dịch vụ</a></li>
-                    <li><a href="#">Tin tức</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                    <li><a href="#">Hỏi đáp</a></li>
-                </ul>
-            </nav>
-
-            <!-- Icon Hamburger cho Mobile -->
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <div id="header-placeholder"></div>
-
-    <!-- Menu cho Mobile (ẩn mặc định) -->
-    <div class="mobile-navigation" id="mobile-navigation">
-        <div class="mobile-nav-close" id="mobile-nav-close">
-            <i class="fas fa-times"></i>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Liên hệ</a></li>
-                <li><a href="#">Hỏi đáp</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Lớp phủ nền (ẩn mặc định) -->
-    <div class="menu-overlay" id="menu-overlay"></div>
+    @include('header')
     <!-- Bỏ thẻ <section> cũ đi và thay bằng khối này -->
     <div class="scroll-container" id="header-placeholder">
-        <section class="section section-1 position-relative hero__v6">
-            <div class="position-absolute   upleft-image">
-                <img src="{{ asset('assets/images/up_left.svg') }}" alt="upleft-image" class="img-fluid">
-
-            </div>
-            <div class="position-absolute   upright-image">
-                <img src="{{ asset('assets/images/up_right.svg') }}" alt="upright-image" class="img-fluid">
-
-            </div>
-            <div class="container">
-                <div class="row g-2">
-                    <div class="col-lg-6">
-                        {{-- <div class="d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('assets/images/tu_van.svg') }}" alt=""
-                                class="img-fluid img-banner-tu-van">
-
-                        </div> --}}
-                        {{-- <div class="menu-container gap-4  phong-thuyh1">
-                            <h1 class="text-center title-chuyengiatuvan">Chuyên gia tư vấn <br>
-                                phong thủy</h1>
-                        </div> --}}
-
-                        <h1 class="h1-chuyen-gia">
-                            {{-- <div class="chuyen-gia1">PHONG THỦY ĐẠI CÁT</div> --}}
-                            <div class="chuyen-gia2">PHONG THỦY ĐẠI CÁT</div>
-                        </h1>
-                        <div class="phong-thuyh1">
-                            <div class="title-chuyengiatuvan fst-italic">Chuyên gia tư vấn </br> phong thủy </div>
-                        </div>
-                        <div class="btn-hover-default btn-banner-pc">
-                            <a href="#" class="">Đặt lịch tư vấn</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6  d-flex flex-column justify-content-center align-items-center">
-                        <div class="">
-                            <div class="menu-container gap-4">
-                                <img src="{{ asset('assets/images/dich_vu.svg') }}" alt=""
-                                    class="img-fluid img-banner-dich-vu">
-                            </div>
-
-                            <div class="btn-hover-default btn-banner-mobile">
-                                <a href="#" class="">Đặt lịch tư vấn</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="position-absolute   bottom-image">
-                <img src="{{ asset('assets/images/bottom_right.svg') }}" alt="bottom-image" class="img-fluid">
-
-            </div>
-            <div class="position-absolute bottom-0  bird-image">
-                <img src="{{ asset('assets/images/bird.svg') }}" alt="bird-image" class="img-fluid bird-images">
-
-            </div>
-        </section>
-        <section class="section gioi-thieu-section position-relative">
-            <div class="position-absolute   about-upleft-image">
-                <img src="{{ asset('assets/images/1.svg') }}" alt="upleft-image" class="img-fluid">
-            </div>
-            <div class="decorative-line about-decorative-line"></div>
-            <div class="container">
-
-
-                <div class=" position-relative d-flex justify-content-center align-items-center z-0 box-about-text">
-                    <div class="position-absolute   about-2-image" style="margin-top: 20px;margin-left: -200px;">
-                        <img src="{{ asset('assets/images/img_about2.svg') }}" alt="upleft-image"
-                            class="img-fluid z-1">
-                    </div>
-                    <div class="text-center text-dark title-gioi-thieu">
-                        Giới thiệu
-                    </div>
-                    <div class="position-absolute   about-1-image" style="margin-top: 20px; margin-right: -200px;">
-                        <img src="{{ asset('assets/images/img_about1.svg') }}" alt="upleft-image"
-                            class="img-fluid z-1">
-                    </div>
-                </div>
-
-                <div class="gioi-thieu-content">
-                    <p class="">
-                        Đại Cát là nền tảng phong thủy chính thống, được xây dựng dựa trên nền tảng học thuật chuẩn mực
-                        và giá trị văn hóa phương Đông. Chúng tôi tin rằng phong thủy không chỉ là một môn khoa học cổ
-                        truyền, mà còn là chiếc chìa khóa giúp con người cân bằng cuộc sống, khơi thông tài lộc và hướng
-                        tới sự an khang - thịnh vượng.
-
-                    </p>
-                    <a href="" class="xem-them fst-italic">Xem thêm</a>
-                </div>
-                <div class="pt-5 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('assets/images/video_gioi_thieu.svg') }}" class="img-fluid z-2"
-                        alt="...">
-                </div>
-            </div>
-            <div class="position-absolute   songabout-upright-image">
-                <img src="{{ asset('assets/images/sog_about.svg') }}" alt="songabout-image" class="img-fluid z-1">
-            </div>
-            <div class="position-absolute   song2about-upright-image">
-                <img src="{{ asset('assets/images/sog2_about.svg') }}" alt="song2about-image" class="img-fluid z-1">
-            </div>
-            <div class="position-absolute   about-upright-image">
-                <img src="{{ asset('assets/images/4.svg') }}" alt="about-upright-image" class="img-fluid z-1">
-            </div>
-        </section>
-        <!-- Bắt đầu Section Sứ mệnh -->
-        <section class="section mission-section position-relative">
-            <!-- 1. KHỐI TIÊU ĐỀ -->
-
-            <div class="container">
-
-                <div class="title-wrapper ">
-                    <div class="decoration-dot"></div>
-
-                    <div class="position-absolute sumenh-2-image" style="">
-                        <img src="/assets/images/img_about2.svg" alt="upleft-image" class="img-fluid z-1">
-                    </div>
-                    <h2 class="section-title">Sứ mệnh</h2>
-                    <div class="position-absolute   sumenh-1-image" style="">
-                        <img src="/assets/images/img_about1.svg" alt="upleft-image" class="img-fluid z-1">
-                    </div>
-                </div>
-
-                <!-- 2. KHỐI NỘI DUNG CHÍNH (Row của Bootstrap) -->
-                <div class="mission-content row gx-5 g-2 align-items-center mt-5">
-
-                    <!-- Cột bên trái: Hình ảnh -->
-                    <div class="mission-image col-lg-6 ">
-                        <img src="{{ asset('assets/images/anh_phat.svg') }}" alt="Tượng Phật và cây bonsai"
-                            class="img-fluid rounded-3">
-                    </div>
-
-                    <!-- Cột bên phải: Chữ và 3 thẻ -->
-                    <div class="mission-text col-lg-6 ">
-                        <div class="mission-text-content">
-                            <h3 class="sub-title">
-                                <img src="{{ asset('assets/images/flower_left.svg') }}" alt="icon hoa"
-                                    class="deco-icon">
-                                “Tâm – Trí – Tín”
-                                <img src="{{ asset('assets/images/flower_right.svg') }}" alt="icon hoa"
-                                    class="deco-icon">
-                            </h3>
-                            <p class="text-dess-su-menh">
-                                Sứ mệnh của Phong Thủy Đại Cát là trở thành người bạn đồng hành đáng tin cậy trong hành
-                                trình kiến tạo cuộc sống hanh thông, thuận lợi – giúp mỗi người “Hiểu vận – Biết mệnh –
-                                Chủ động cải mệnh – Vững bước thành công.”
-                            </p>
-                        </div>
-                        <!-- Container cho 3 thẻ "Tâm - Trí - Tín" -->
-                        <div class="card-container-miss">
-                            <!-- Thẻ TÂM -->
-                            <div class="card-item-miss card-highlight">
-                                <p class="mb-0">Tâm<br>mình<br>hướng<br>đạo</p>
-                            </div>
-                            <!-- Thẻ TRÍ -->
-                            <div class=" card-item-miss">
-                                <p class="mb-0">Trí<br>sáng<br>soi<br>đường</p>
-                            </div>
-                            <!-- Thẻ TÍN -->
-                            <div class=" card-item-miss">
-                                <p class="mb-0">Tín<br>dựng<br>thành<br>công</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- Kết thúc Section Sứ mệnh -->
-        <section class="section section-3 position-relative">
-            <div class="position-absolute   caydao-upleft-image">
-                <img src="{{ asset('assets/images/cay_dao.svg') }}" alt="upleft-image" class="img-fluid">
-            </div>
-            <div class="decorative-line about-decorative-line"></div>
-            <div class="container">
-
-
-                <div class=" position-relative d-flex justify-content-center align-items-center z-0 mt-5">
-                    <div class="position-absolute   quytrinh-2-image" style="">
-                        <img src="{{ asset('assets/images/img_about2.svg') }}" alt="upleft-image"
-                            class="img-fluid z-1">
-                    </div>
-                    <div class="text-center text-dark title-quytrinh">
-                        Quy trình đặt hàng <br>
-                        cho khách
-                    </div>
-                    <div class="position-absolute   quytrinh-1-image" style="">
-                        <img src="{{ asset('assets/images/img_about1.svg') }}" alt="upleft-image"
-                            class="img-fluid z-1">
-                    </div>
-                </div>
-
-                <div class="row d-flex align-items-center justify-content-center ">
-                    <div class="col-lg-10 slider-quytrinh">
-                        <div class="steps-slider ">
-
-                            <!-- BẮT ĐẦU SLIDER -->
-                            <div class="my-manual-slider">
-                                <div class="slider-viewport">
-                                    <div class="slider-track">
-                                        <!-- Thêm nhiều slide hơn để thấy rõ hiệu ứng -->
-                                        <div class="slide">
-                                            <div class="slide-content flex-column">
-                                                <div class="p-4 text-center">
-                                                    <div class="title-quytrinhkhach">
-                                                        Bước 1
-                                                    </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
-                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide">
-                                            <div class="slide-content flex-column">
-                                                <div class="p-4 text-center">
-                                                    <div class="title-quytrinhkhach">
-                                                        Bước 2
-                                                    </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
-                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide">
-                                            <div class="slide-content flex-column">
-                                                <div class="p-4 text-center">
-                                                    <div class="title-quytrinhkhach">
-                                                        Bước 3
-                                                    </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
-                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <img src="{{ asset('assets/images/previcon.svg') }}" alt=""
-                                        class="img-fluid"> </button>
-                                <button class="slider-btn next-btn"> <img
-                                        src="{{ asset('assets/images/nexticon.svg') }}" alt=""
-                                        class="img-fluid"> </button>
-                            </div>
-                            <!-- KẾT THÚC SLIDER -->
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-        <section class="commitment-section section">
-            <!-- Các họa tiết trang trí. Bạn có thể thay bằng file ảnh của bạn -->
-            <img src="{{ asset('assets/images/trangtris2-giatri.svg') }}" alt="Họa tiết trang trí"
-                class="deco-top-left">
-            <img src="{{ asset('assets/images/giatri-song.svg') }}" alt="Họa tiết trang trí"
-                class="deco-bottom-left">
-            <img src="{{ asset('assets/images/giatri-right.svg') }}" alt="Họa tiết trang trí"
-                class="deco-bottom-right">
-            <img src="{{ asset('assets/images/trangtris1-giatri.svg') }}" alt="Họa tiết trang trí"
-                class="deco-bottom">
-            <img src="{{ asset('assets/images/giatri-hoa.svg') }}" alt="Họa tiết trang trí" class="deco-top-hoa">
-
-            <div class="container">
-                <div class="section-header">
-                  <div>
-                      <p class="tagline">Giá trị thật・Chất lượng thật・Niềm tin bền vững</p>
-                  </div>
-                    <div class="main-heading-wrapper">
-                      <div>
-                          <h2 class="main-heading">Cam kết</h2>
-                        <img src="{{ asset('assets/images/icontitlecamketleft.svg') }}" alt="Họa tiết trang trí"
-                            class="icontitle-camketleft">
-                        <img src="{{ asset('assets/images/icontitlecamketright.svg') }}" alt="Họa tiết trang trí"
-                            class="icontitle-camketright">
-                      </div>
-                        <div class="heading-decorator"></div>
-
-                    </div>
-                </div>
-
-                <div class="commitment-grid row g-3">
-                    <!-- Item 1 -->
-                    <article class="commitment-item col-lg-4">
-                        <div class="item-icon-placeholder"></div>
-                        <div class="item-number"><span>1</span></div>
-                        <h3 class="item-title-camket">Tư vấn chuẩn xác – <br> Cá nhân hóa theo mệnh số</h3>
-                        <p class="item-description">Cam kết đưa ra lời khuyên đúng người – đúng thời điểm</p>
-                    </article>
-
-                    <!-- Item 2 -->
-                    <article class="commitment-item col-lg-4">
-                        <div class="item-icon-placeholder"></div>
-                        <div class="item-number"><span>2</span></div>
-                        <h3 class="item-title-camket">Ứng dụng kiến thức phong thủy <br> chuẩn mực và chính thống</h3>
-                        <p class="item-description">Đội ngũ chuyên gia có nền tảng vững chắc về Kinh Dịch, Bát Tự,
-                            Huyền Không, Tử Vi...</p>
-                    </article>
-
-                    <!-- Item 3 -->
-                    <article class="commitment-item col-lg-4">
-                        <div class="item-icon-placeholder"></div>
-                        <div class="item-number"><span>3</span></div>
-                        <h3 class="item-title-camket">Hỗ trợ tận tâm – <br> Đồng hành dài lâu</h3>
-                        <p class="item-description">Luôn sẵn sàng đồng hành cùng bạn trong từng giai đoạn của cuộc
-                            sống.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-
-        </section>
-
+        @yield('content')
     </div>
 
+    @include('footer')
+    <!-- ===== BẮT ĐẦU PHẦN JAVASCRIPT ĐÃ SỬA LỖI ===== -->
     <script>
-        // === PHẦN CODE THÊM VÀO ĐỂ XỬ LÝ HEADER KHI CUỘN ===
-        document.addEventListener("DOMContentLoaded", function() {
-            var header = document.querySelector(".fbs__net-navbar");
-            var placeholder = document.getElementById("header-placeholder");
+        document.addEventListener('DOMContentLoaded', function() {
+            /**
+             * HÀM KHỞI TẠO SLIDER CHUNG (Hỗ trợ kéo/vuốt)
+             * @param {string} containerSelector - Selector của container cha bao bọc slider.
+             */
+            function initGenericSlider(containerSelector) {
+                const sliderContainer = document.querySelector(containerSelector);
+                if (!sliderContainer) return;
 
-            function updateHeaderOnScroll() {
-                if (window.scrollY > 0) {
-                    if (!header.classList.contains("active")) {
-                        header.classList.add("active");
-                        placeholder.style.height = header.offsetHeight + "px";
-                    }
-                } else {
-                    header.classList.remove("active");
-                    placeholder.style.height = "0px";
+                const track = sliderContainer.querySelector('.slider-track, .slider-track-phanhoi');
+                const prevButton = sliderContainer.querySelector('.prev-btn, #prev-btn2');
+                const nextButton = sliderContainer.querySelector('.next-btn, #next-btn2');
+
+                if (!track || !prevButton || !nextButton) {
+                    console.error(`Slider "${containerSelector}" thiếu các phần tử cần thiết.`);
+                    return;
                 }
+
+                const slides = Array.from(track.children);
+                if (slides.length === 0) return;
+
+                let currentIndex = 0;
+                let slideWidthWithGap = 0;
+
+                // --- NÂNG CẤP: Biến cho chức năng kéo/vuốt ---
+                let isDragging = false;
+                let startPos = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+                let animationID = 0;
+
+                function updateDimensions() {
+                    const firstSlide = slides[0];
+                    if (!firstSlide) return;
+                    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                    slideWidthWithGap = firstSlide.offsetWidth + gap;
+
+                    // Reset vị trí khi resize
+                    track.style.transform = `translateX(-${currentIndex * slideWidthWithGap}px)`;
+                    prevTranslate = -currentIndex * slideWidthWithGap;
+                }
+
+                function moveToSlide(index) {
+                    if (slideWidthWithGap > 0) {
+                        currentTranslate = -index * slideWidthWithGap;
+                        prevTranslate = currentTranslate;
+                        setSliderPosition();
+                        currentIndex = index;
+                    }
+                }
+
+                function getVisibleSlidesCount() {
+                    if (slideWidthWithGap === 0) return 1;
+                    return Math.round(track.parentElement.offsetWidth / slideWidthWithGap);
+                }
+
+                // --- NÂNG CẤP: Các hàm xử lý sự kiện kéo/vuốt ---
+
+                function dragStart(event) {
+                    isDragging = true;
+                    startPos = getPositionX(event);
+                    // Dùng requestAnimationFrame để tối ưu hiệu năng
+                    animationID = requestAnimationFrame(animation);
+                    track.style.transition = 'none'; // Tắt transition khi đang kéo
+                    track.classList.add('grabbing');
+                }
+
+                function dragMove(event) {
+                    if (isDragging) {
+                        const currentPosition = getPositionX(event);
+                        currentTranslate = prevTranslate + currentPosition - startPos;
+                    }
+                }
+
+                function dragEnd() {
+                    cancelAnimationFrame(animationID);
+                    isDragging = false;
+                    const movedBy = currentTranslate - prevTranslate;
+
+                    // Nếu kéo đủ xa (hơn 50px) thì chuyển slide
+                    if (movedBy < -50 && currentIndex < slides.length - getVisibleSlidesCount()) {
+                        handleNext();
+                    } else if (movedBy > 50 && currentIndex > 0) {
+                        handlePrev();
+                    } else {
+                        // Nếu không kéo đủ xa, quay lại vị trí cũ
+                        moveToSlide(currentIndex);
+                    }
+
+                    track.style.transition = 'transform 0.5s ease-in-out';
+                    track.classList.remove('grabbing');
+                }
+
+                function getPositionX(event) {
+                    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+                }
+
+                function animation() {
+                    setSliderPosition();
+                    if (isDragging) requestAnimationFrame(animation);
+                }
+
+                function setSliderPosition() {
+                    track.style.transform = `translateX(${currentTranslate}px)`;
+                }
+
+                // Hàm xử lý nút
+                function handleNext() {
+                    const visibleSlides = getVisibleSlidesCount();
+                    const maxIndex = Math.max(0, slides.length - visibleSlides);
+                    let nextIndex = currentIndex + 1;
+                    if (nextIndex > maxIndex) nextIndex = 0;
+                    moveToSlide(nextIndex);
+                }
+
+                function handlePrev() {
+                    let prevIndex = currentIndex - 1;
+                    if (prevIndex < 0) {
+                        const visibleSlides = getVisibleSlidesCount();
+                        const maxIndex = Math.max(0, slides.length - visibleSlides);
+                        prevIndex = maxIndex;
+                    }
+                    moveToSlide(prevIndex);
+                }
+
+                // Gán sự kiện
+                nextButton.addEventListener('click', handleNext);
+                prevButton.addEventListener('click', handlePrev);
+
+                // Sự kiện cho chuột
+                track.addEventListener('mousedown', dragStart);
+                track.addEventListener('mouseup', dragEnd);
+                track.addEventListener('mouseleave', dragEnd);
+                track.addEventListener('mousemove', dragMove);
+
+                // Sự kiện cho chạm (mobile)
+                track.addEventListener('touchstart', dragStart, {
+                    passive: true
+                });
+                track.addEventListener('touchend', dragEnd);
+                track.addEventListener('touchmove', dragMove, {
+                    passive: true
+                });
+
+                // Ngăn chặn hành vi kéo ảnh mặc định của trình duyệt
+                slides.forEach(slide => {
+                    slide.querySelector('img')?.addEventListener('dragstart', (e) => e.preventDefault());
+                });
+
+                // Xử lý resize
+                window.addEventListener('resize', () => {
+                    track.style.transition = 'none';
+                    updateDimensions();
+                    moveToSlide(currentIndex); // Cập nhật lại vị trí
+                });
+
+                // Khởi tạo
+                setTimeout(updateDimensions, 100);
             }
 
-            // Gọi một lần khi load
-            updateHeaderOnScroll();
+            // --- KHỞI TẠO CÁC CHỨC NĂNG CỤ THỂ ---
 
-            // Lắng nghe sự kiện scroll
-            window.addEventListener("scroll", updateHeaderOnScroll);
-            var cards = document.querySelectorAll(".card-container-miss .card-item-miss");
-            var currentIndex = 0;
+            initGenericSlider('#quy-trinh-slider');
+            initGenericSlider('#phan-hoi-slider');
 
-            function highlightNextCard() {
-                // Xóa class hiện tại
-                cards[currentIndex].classList.remove("card-highlight");
-
-                // Tăng chỉ số (và quay về 0 nếu hết)
-                currentIndex = (currentIndex + 1) % cards.length;
-
-                // Thêm class vào phần tử tiếp theo
-                cards[currentIndex].classList.add("card-highlight");
+            // --- Code cho Header và Menu Mobile (giữ nguyên) ---
+            const header = document.querySelector(".site-header");
+            const placeholder = document.getElementById("header-placeholder");
+            if (header && placeholder) {
+                const updateHeaderOnScroll = () => {
+                    const isScrolled = window.scrollY > 50;
+                    header.classList.toggle("active", isScrolled);
+                    placeholder.style.height = isScrolled ? `${header.offsetHeight}px` : "0px";
+                };
+                window.addEventListener("scroll", updateHeaderOnScroll, {
+                    passive: true
+                });
+                updateHeaderOnScroll();
             }
 
-            // Lặp mỗi 2 giây
-            setInterval(highlightNextCard, 3000);
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNavigation = document.getElementById('mobile-navigation');
+            const mobileNavClose = document.getElementById('mobile-nav-close');
+            const menuOverlay = document.getElementById('menu-overlay');
+            if (mobileMenuToggle && mobileNavigation) {
+                const toggleMenu = (isOpen) => {
+                    mobileNavigation.classList.toggle('is-open', isOpen);
+                    if (menuOverlay) menuOverlay.classList.toggle('is-open', isOpen);
+                };
+                mobileMenuToggle.addEventListener('click', () => toggleMenu(true));
+                if (mobileNavClose) mobileNavClose.addEventListener('click', () => toggleMenu(false));
+                if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+            }
+
+            // --- Code cho hiệu ứng thẻ Sứ mệnh (giữ nguyên) ---
+            const missionCards = document.querySelectorAll(".card-container-miss .card-item-miss");
+            if (missionCards.length > 0) {
+                let cardIndex = 0;
+                setInterval(() => {
+                    missionCards.forEach(card => card.classList.remove("card-highlight"));
+                    cardIndex = (cardIndex + 1) % missionCards.length;
+                    missionCards[cardIndex].classList.add("card-highlight");
+                }, 3000);
+            }
         });
-
-        // Lấy các element cần thiết
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileNavigation = document.getElementById('mobile-navigation');
-        const mobileNavClose = document.getElementById('mobile-nav-close');
-        const menuOverlay = document.getElementById('menu-overlay');
-
-        // Hàm để mở menu
-        function openMenu() {
-            mobileNavigation.classList.add('is-open');
-            menuOverlay.classList.add('is-open');
-        }
-
-        // Hàm để đóng menu
-        function closeMenu() {
-            mobileNavigation.classList.remove('is-open');
-            menuOverlay.classList.remove('is-open');
-        }
-
-        // Gán sự kiện click
-        mobileMenuToggle.addEventListener('click', openMenu);
-        mobileNavClose.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-
-
-
-        const slider = document.querySelector('.my-manual-slider');
-        const track = slider.querySelector('.slider-track');
-        const prevButton = slider.querySelector('.prev-btn');
-        const nextButton = slider.querySelector('.next-btn');
-        const originalSlidesHTML = track.innerHTML;
-
-        // --- Biến cấu hình và trạng thái ---
-        let slidesToShow = 3; // Mặc định cho desktop
-        const transitionSpeed = 500;
-        let isAnimating = false;
-        let slideWidth = 0;
-        let currentIndex = 0;
-
-        // --- HÀM KHỞI TẠO HOẶC CẬP NHẬT LẠI SLIDER ---
-        function initializeSlider() {
-            // === THAY ĐỔI CHÍNH Ở ĐÂY ===
-            // 1. Xác định số slide cần hiển thị dựa trên kích thước màn hình
-            const screenWidth = window.innerWidth;
-            if (screenWidth <= 768) {
-                slidesToShow = 1; // Mobile
-            } else if (screenWidth <= 1024) {
-                slidesToShow = 2; // Tablet
-            } else {
-                slidesToShow = 3; // Desktop
-            }
-
-            // 2. Reset track và nhân bản slide
-            track.innerHTML = originalSlidesHTML;
-            let originalSlides = Array.from(track.children);
-
-            for (let i = 0; i < slidesToShow; i++) {
-                const cloneEnd = originalSlides[i].cloneNode(true);
-                track.appendChild(cloneEnd);
-                const cloneStart = originalSlides[originalSlides.length - 1 - i].cloneNode(true);
-                track.insertBefore(cloneStart, track.firstChild);
-            }
-
-            // 3. Cập nhật kích thước và vị trí ban đầu
-            updateDimensions();
-        }
-
-        function updateDimensions() {
-            slideWidth = track.querySelector('.slide').getBoundingClientRect().width;
-            currentIndex = slidesToShow;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            setTimeout(() => {
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-            }, 20);
-        }
-
-        const moveTo = (index) => {
-            if (isAnimating) return;
-            isAnimating = true;
-            track.style.transform = `translateX(-${index * slideWidth}px)`;
-            currentIndex = index;
-        };
-
-        nextButton.addEventListener('click', () => moveTo(currentIndex + 1));
-        prevButton.addEventListener('click', () => moveTo(currentIndex - 1));
-
-        // Xử lý vòng lặp vô tận
-        track.addEventListener('transitionend', () => {
-            isAnimating = false;
-            let originalSlidesCount = track.querySelectorAll('.slide').length - (slidesToShow * 2);
-
-            if (currentIndex >= originalSlidesCount + slidesToShow) {
-                track.style.transition = 'none';
-                currentIndex = slidesToShow;
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            }
-            if (currentIndex < slidesToShow) {
-                track.style.transition = 'none';
-                currentIndex = originalSlidesCount + slidesToShow - 1;
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            }
-
-            setTimeout(() => {
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-            }, 20);
-        });
-
-        // Thêm chức năng vuốt (swipe)
-        let touchStartX = 0;
-        let touchMoveX = 0;
-
-        track.addEventListener('touchstart', (e) => {
-            if (isAnimating) return;
-            touchStartX = e.touches[0].clientX;
-            track.style.transition = 'none';
-        }, {
-            passive: true
-        });
-
-        track.addEventListener('touchmove', (e) => {
-            if (isAnimating) return;
-            touchMoveX = e.touches[0].clientX;
-            const diff = touchMoveX - touchStartX;
-            track.style.transform = `translateX(-${currentIndex * slideWidth - diff}px)`;
-        }, {
-            passive: true
-        });
-
-        track.addEventListener('touchend', () => {
-            if (isAnimating) return;
-            const diff = touchMoveX - touchStartX;
-            track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-
-            if (diff > 50) {
-                moveTo(currentIndex - 1);
-            } else if (diff < -50) {
-                moveTo(currentIndex + 1);
-            } else {
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            }
-            // Reset touchMoveX
-            touchMoveX = 0;
-        });
-
-        // Lắng nghe sự kiện resize
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(initializeSlider, 250);
-        });
-
-        // Khởi tạo slider lần đầu tiên
-        initializeSlider();
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
 </body>
 
 </html>
