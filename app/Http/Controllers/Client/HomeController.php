@@ -13,4 +13,7 @@ class HomeController extends Controller
     public function faqs(){
         return view('faqs.index');
     }
+    public function contact(){
+        return view('contact.index');
+    }
 }

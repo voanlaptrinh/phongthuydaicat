@@ -801,8 +801,26 @@
      background-color: #888;
      /* Màu của đường kẻ */
      padding-bottom: 20px;
- }
+         /* --- THÊM VÀO --- */
+    /* Đặt điểm xoay ở chính giữa và trên cùng */
+    transform-origin: top center;
+    /* Áp dụng animation */
+    animation: swing 1s ease-in-out infinite alternate;
 
+ }
+/* --- THÊM VÀO --- */
+/* Định nghĩa animation "swing" */
+@keyframes swing {
+    from {
+        /* Bắt đầu nghiêng sang trái (-10 độ) */
+        /* Giữ lại translateX để phần tử không bị lệch khỏi tâm */
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    to {
+        /* Kết thúc nghiêng sang phải (10 độ) */
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
  /* Dùng ::after để tạo hình tròn ở cuối đường kẻ */
  .decorative-line::after {
      content: '';
@@ -920,6 +938,11 @@
      background-color: #888;
      /* Màu của đường kẻ */
      padding-bottom: 20px;
+            /* --- THÊM VÀO --- */
+    /* Đặt điểm xoay ở chính giữa và trên cùng */
+    transform-origin: top center;
+    /* Áp dụng animation */
+    animation: swing 1s ease-in-out infinite alternate;
  }
 
  /* 3. DẤU CHẤM TRÒN (Tạo từ ::before của đường kẻ) */
@@ -1277,6 +1300,12 @@
 
      /* Thu nhỏ lại để vừa với dòng chữ */
      flex-shrink: 0;
+      /*    Điểm xoay theo chiều dọc là -500px (500px phía trên phần tử này) */
+    transform-origin: center -150px;
+
+    /* 2. Áp dụng animation */
+    animation: pendulum-swing 5s ease-in-out infinite alternate;
+     
  }
 
  /* Tạo chấm tròn bên trong */
@@ -1287,6 +1316,7 @@
      height: 10px;
      background-color: white;
      border-radius: 50%;
+     
  }
 
  /* Tạo đường kẻ dọc phía trên */
@@ -1298,13 +1328,22 @@
      left: 50%;
      transform: translateX(-50%);
      width: 1px;
-     height: 500px;
+     height: 150px;
      /* <-- THAY ĐỔI DÒNG NÀY: Tăng chiều cao lên rất nhiều */
      background: linear-gradient(to top,
              rgba(255, 255, 255, 0.6),
              rgba(255, 255, 255, 0.2));
  }
-
+/* 3. Định nghĩa animation "pendulum-swing" */
+@keyframes pendulum-swing {
+    from {
+        /* Vì dây treo rất dài (500px) nên ta chỉ cần một góc xoay nhỏ */
+        transform: rotate(-3deg);
+    }
+    to {
+        transform: rotate(3deg);
+    }
+}
  .main-heading {
      font-family: CormorantGaramond-Bold, serif;
      font-size: 56px;
@@ -2211,7 +2250,7 @@
 
  .accordion-header {
      width: 100%;
-     background: linear-gradient(to bottom, #FFFFFF, #FCF9F2);
+     background: #FFFFFF;
      border: 1px solid #B99E58;
      border-radius: 12px;
      padding: 16px 25px;
@@ -2228,6 +2267,7 @@
      /* Thêm z-index để header luôn nằm trên content */
      position: relative;
      z-index: 2;
+      font-family: OpenSans_Condensed-Regular, serif;
  }
  .is-open .accordion-header{
     border-radius: 12px 12px 0 0;
@@ -2299,3 +2339,39 @@
  .accordion-item.is-open .accordion-icon {
      transform: rotate(-180deg);
  }
+
+
+
+/* CSS cho cột ảnh bên trái để xếp dọc */
+.image-column-hoidap {
+    display: flex;            /* Kích hoạt Flexbox để sắp xếp */
+    flex-direction: column;   /* Yêu cầu các phần tử con xếp theo cột (trên-dưới) */
+    gap: 24px;   
+    position: relative;             /* Tạo khoảng trống 24px giữa hai ảnh */
+}
+
+/* Style phụ cho ảnh thêm đẹp (tùy chọn) */
+.box-cah-hoi-dap{
+    background: #B99E58;
+    height: 140px;
+    position: relative;
+}
+.trangtrihoidapright{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.trangtrihoidapleft{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.trangtri2thanh1{
+    position: absolute;
+}
+.trangtri2thanh2{
+    position: absolute;
+}
+.trangtri2hoidap{
+    position: absolute;
+}

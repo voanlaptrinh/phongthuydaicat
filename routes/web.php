@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-   Route::get('/', [HomeController::class, 'index'])->name('index');
+   Route::get('/', [HomeController::class, 'index'])->name('home');
    Route::get('/hoi-dap', [HomeController::class, 'faqs'])->name('faqs');
+   Route::get('/lienhe', [HomeController::class, 'contact'])->name('contact');

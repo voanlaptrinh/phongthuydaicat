@@ -11,11 +11,11 @@
          <!-- Menu cho Desktop -->
          <nav class="main-navigation">
              <ul>
-                 <li><a href="#" class="active">Giới thiệu</a></li>
+                 <li><a href="{{route('home')}}" class="{{ in_array(Request::route()->getName(), ['home']) ? 'active' : '' }}">Giới thiệu</a></li>
                  <li><a href="#">Dịch vụ</a></li>
                  <li><a href="#">Tin tức</a></li>
-                 <li><a href="#">Liên hệ</a></li>
-                 <li><a href="{{route('faqs')}}">Hỏi đáp</a></li>
+                 <li><a href="{{route('contact')}}" class="{{ in_array(Request::route()->getName(), ['contact']) ? 'active' : '' }}">Liên hệ</a></li>
+                 <li><a href="{{route('faqs')}}" class="{{ in_array(Request::route()->getName(), ['faqs']) ? 'active' : '' }}">Hỏi đáp</a></li>
              </ul>
          </nav>
 
