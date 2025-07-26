@@ -25,7 +25,7 @@
                             <div class="chuyen-gia2">PHONG THỦY ĐẠI CÁT</div>
                         </h1>
                         <div class="phong-thuyh1">
-                            <div class="title-chuyengiatuvan fst-italic">Chuyên gia tư vấn </br> phong thủy </div>
+                            <div class="title-chuyengiatuvan fst-italic p-3">Chuyên gia tư vấn </br> phong thủy </div>
                         </div>
                         <div class="btn-hover-default btn-banner-pc">
                             <a href="#" class="">Đặt lịch tư vấn</a>

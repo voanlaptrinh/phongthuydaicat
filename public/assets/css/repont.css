@@ -12,6 +12,19 @@
     .h1-chuyen-gia {
         font-size: 24px;
     }
+     .title-dichvuphongthuy{
+    font-size: 20px;
+    height: 47px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 14px;
+     line-height: 24px;
+     height: 80px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 18px;
+ }
 }
 
 @media screen and (max-width: 479.98px) {
@@ -515,7 +528,8 @@
     .box-cah-hoi-dap {
         height: 100px;
     }
-      .trangtri2thanh1 {
+
+    .trangtri2thanh1 {
         bottom: 44%;
         right: 31%;
         width: 90px;
@@ -539,6 +553,121 @@
 
     .trangtrihoidapleft {
         width: 80px;
+    }
+
+    .baivietnoibat-1-image {
+        left: 0;
+    }
+
+    .baivietnoibat-1-image img {
+        width: 100px;
+    }
+
+    .baivietnoibat-2-image img {
+        width: 100px;
+    }
+
+    .baivietnoibat-2-image {
+        right: 0%;
+    }
+
+    .title-noibat {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .des-noibat {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .section-title-main-heading {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .gthiu-main-heading-wrapper {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .bx-gthiu {
+        position: relative;
+    }
+
+    .gthiu-icontitle-camketleft {
+        position: absolute;
+        left: -8px;
+        bottom: 5px;
+    }
+
+    .gthiu-icontitle-camketright {
+        position: absolute;
+        right: -8px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketleft {
+        position: absolute;
+        left: -40px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketright {
+        position: absolute;
+        right: -40px;
+        bottom: 5px;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 360px;
+    } */
+    .glowing-tag {
+        font-size: 14px;
+    }
+
+    .gradient-text-thaytintuc {
+        font-size: 22px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 42px;
+    }
+
+    .title-kienthuch3 {
+        font-size: 24px;
+    }
+
+    .side-article .article-thumb {
+        width: 110px;
+    }
+
+    .article-tag {
+        font-size: 12px;
+    }
+
+    .title-kienthuch4 {
+        font-size: 18px;
+    }
+
+    .read-more-link {
+        font-size: 12px;
+    }
+      .title-dichvuphongthuy{
+    font-size: 20px;
+    height: 47px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 14px;
+     line-height: 24px;
+     height: 77px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 18px;
+ }
+  .container-fixx {
+               max-width: 100%;
     }
 }
 
@@ -1006,7 +1135,8 @@
     .box-cah-hoi-dap {
         height: 100px;
     }
-      .trangtri2thanh1 {
+
+    .trangtri2thanh1 {
         bottom: 44%;
         right: 43%;
         width: 90px;
@@ -1030,6 +1160,109 @@
 
     .trangtrihoidapleft {
         width: 103px;
+    }
+
+    .baivietnoibat-1-image {
+        left: 10%;
+    }
+
+    .baivietnoibat-2-image {
+        right: 10%;
+    }
+
+    .title-noibat {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .des-noibat {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .section-title-main-heading {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .gthiu-main-heading-wrapper {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .bx-gthiu {
+        position: relative;
+    }
+
+    .gthiu-icontitle-camketleft {
+        position: absolute;
+        left: -40px;
+        bottom: 5px;
+    }
+
+    .gthiu-icontitle-camketright {
+        position: absolute;
+        right: -40px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketleft {
+        position: absolute;
+        left: -35px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketright {
+        position: absolute;
+        right: -35px;
+        bottom: 5px;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 360px;
+    } */
+    .glowing-tag {
+        font-size: 14px;
+    }
+
+    .glowing-tag {
+        /* font-size: 1px; */
+    }
+
+    .gradient-text-thaytintuc {
+        font-size: 22px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 42px;
+    }
+
+    .title-kienthuch3 {
+        font-size: 24px;
+    }
+
+    .side-article .article-thumb {
+        width: 110px;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+       .title-dichvuphongthuy{
+    font-size: 20px;
+    height: 47px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 14px;
+     line-height: normal;
+     height: 60px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 16px;
+ }
+  .container-fixx {
+               max-width: 100%;
     }
 }
 
@@ -1470,6 +1703,101 @@
     .trangtrihoidapleft {
         width: 140px;
     }
+
+    .baivietnoibat-1-image {
+        left: 17%;
+    }
+
+    .baivietnoibat-2-image {
+        right: 17%;
+    }
+
+    .title-noibat {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .des-noibat {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .section-title-main-heading {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .gthiu-main-heading-wrapper {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .bx-gthiu {
+        position: relative;
+    }
+
+    .gthiu-icontitle-camketleft {
+        position: absolute;
+        left: -40px;
+        bottom: 5px;
+    }
+
+    .gthiu-icontitle-camketright {
+        position: absolute;
+        right: -40px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketleft {
+        position: absolute;
+        left: -40px;
+        bottom: 5px;
+    }
+
+    .dichvu-icontitle-camketright {
+        position: absolute;
+        right: -40px;
+        bottom: 5px;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 360px;
+    } */
+    .glowing-tag {
+        font-size: 14px;
+    }
+
+    .section-title-phongthuy {
+        margin-top: 30px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 42px;
+    }
+
+    .title-kienthuch3 {
+        font-size: 24px;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+      .title-dichvuphongthuy{
+    font-size: 20px;
+    height: 47px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 14px;
+     line-height: 24px;
+     height: 80px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 18px;
+ }
+  .container-fixx {
+               max-width: 100%;
+    }
 }
 
 /* Large Devices (≥ 992px and < 1200px) */
@@ -1714,6 +2042,16 @@
         display: none;
     }
 
+    .gthiu-icontitle-camketleft,
+    .gthiu-icontitle-camketright {
+        display: none;
+    }
+
+    .dichvu-icontitle-camketleft,
+    .dichvu-icontitle-camketright {
+        display: none;
+    }
+
     .commitment-item {
         position: relative;
     }
@@ -1793,8 +2131,8 @@
 
     .img-hoidap2 {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        top: 22%;
+        left: -51px;
         width: 281px;
     }
 
@@ -1818,6 +2156,51 @@
     .trangtri2hoidap {
         bottom: 30%;
         right: 70%;
+    }
+
+    .baivietnoibat-1-image,
+    .baivietnoibat-2-image {
+        display: none;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 430px;
+    } */
+    .glowing-tag {
+        font-size: 14px;
+    }
+
+    .gradient-text-thaytintuc {
+        font-size: 24px;
+    }
+
+    .section-title-phongthuy {
+        margin-top: 30px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 56px;
+        font-family: CormorantGaramond-Bold, serif;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+     .title-dichvuphongthuy{
+    font-size: 20px;
+    height: 47px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 14px;
+     line-height: 24px;
+     height: 80px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 18px;
+ }
+  .container-fixx {
+               max-width: 1140px;
     }
 }
 
@@ -2067,6 +2450,16 @@
         display: none;
     }
 
+    .gthiu-icontitle-camketleft,
+    .gthiu-icontitle-camketright {
+        display: none;
+    }
+
+    .dichvu-icontitle-camketleft,
+    .dichvu-icontitle-camketright {
+        display: none;
+    }
+
     .item-title-camket {
         font-size: 24px;
         line-height: 40px;
@@ -2138,6 +2531,45 @@
         bottom: 30%;
         right: 70%;
     }
+
+    .baivietnoibat-1-image,
+    .baivietnoibat-2-image {
+        display: none;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 430px;
+    } */
+    .section-title-phongthuy {
+        margin-top: 30px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 56px;
+        font-family: CormorantGaramond-Bold, serif;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+
+ .title-dichvuphongthuy{
+    font-size: 22px;
+    height: 56px;
+    margin-top: 6px;
+ }
+ .content-dichvuphongthuy2{
+     font-size: 16px;
+     line-height: 27px;
+     height: 92px;
+ }
+ .box-xemthem-dichvuphongthuy{
+       font-size: 18px;
+ }
+ .container-fixx {
+               max-width: 1140px;
+    }
+
 }
 
 /* Ultra Large Devices (≥ 1400px) */
@@ -2387,6 +2819,16 @@
         display: none;
     }
 
+    .gthiu-icontitle-camketleft,
+    .gthiu-icontitle-camketright {
+        display: none;
+    }
+
+    .dichvu-icontitle-camketleft,
+    .dichvu-icontitle-camketright {
+        display: none;
+    }
+
     .commitment-item {
         position: relative;
     }
@@ -2466,7 +2908,7 @@
 
     .img-hoidap2 {
         position: absolute;
-        bottom: 0;
+        top: 148px;
         left: 0;
         width: 281px;
     }
@@ -2487,6 +2929,29 @@
         right: 70%;
     }
 
+    .baivietnoibat-1-image,
+    .baivietnoibat-2-image {
+        display: none;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 500px;
+    } */
+    .section-title-phongthuy {
+        margin-top: 30px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 56px;
+        font-family: CormorantGaramond-Bold, serif;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+     .container-fixx {
+        max-width: 1320px;
+    }
 }
 
 @media screen and (min-width: 2560px) {
@@ -2645,6 +3110,16 @@
         display: none;
     }
 
+    .gthiu-icontitle-camketleft,
+    .gthiu-icontitle-camketright {
+        display: none;
+    }
+
+    .dichvu-icontitle-camketleft,
+    .dichvu-icontitle-camketright {
+        display: none;
+    }
+
     .commitment-item {
         position: relative;
     }
@@ -2749,6 +3224,29 @@
         right: 70%;
     }
 
+    .baivietnoibat-1-image,
+    .baivietnoibat-2-image {
+        display: none;
+    }
+
+    /* .box-gthieuthay-chuyengia{
+        height: 500px;
+    } */
+    .section-title-phongthuy {
+        margin-top: 30px;
+    }
+
+    .titlekienthucphongthuy {
+        font-size: 56px;
+        font-family: CormorantGaramond-Bold, serif;
+    }
+
+    .dich-vu-phongthuy::before {
+        height: 96px;
+    }
+     .container-fixx {
+        max-width: 1320px;
+    }
 }
 
 

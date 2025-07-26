@@ -26,10 +26,11 @@
     <div class="scroll-container" id="header-placeholder">
         @yield('content')
     </div>
-
+<div id="toast-container"></div>
     @include('footer')
     <!-- ===== BẮT ĐẦU PHẦN JAVASCRIPT ĐÃ SỬA LỖI ===== -->
     <script>
+        
         document.addEventListener('DOMContentLoaded', function() {
             /**
              * HÀM KHỞI TẠO SLIDER CHUNG (Hỗ trợ kéo/vuốt)
@@ -234,7 +235,28 @@
                     missionCards[cardIndex].classList.add("card-highlight");
                 }, 3000);
             }
+            
+             const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('is-open');
+
+                    // Đóng tất cả các item khác
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('is-open');
+                        }
+                    });
+
+                    // Toggle item hiện tại
+                    item.classList.toggle('is-open');
+                });
+            });
         });
+
     </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>

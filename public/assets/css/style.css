@@ -511,7 +511,7 @@
  }
 
  .btn-hover-default {
-     font-size: 20px;
+    
      font-weight: 500;
      text-align: center;
      display: flex;
@@ -525,6 +525,7 @@
  }
 
  .btn-hover-default:hover {
+    color: white;
      font-weight: 500;
      text-align: center;
      display: flex;
@@ -537,7 +538,16 @@
 
  }
 
+ .btn-hover-default .btn {
+    border: none;
+     font-size: 20px;
+     text-decoration: none;
+     color: #ffffff;
+     font-family: CormorantGaramond-Bold, serif;
+
+ }
  .btn-hover-default a {
+     font-size: 20px;
      text-decoration: none;
      color: #ffffff;
      font-family: CormorantGaramond-Bold, serif;
@@ -767,6 +777,17 @@
      /* Hoặc overflow-x: hidden; */
 
  }
+ .dichvudetail-section {
+     background-image: url(../images/dichvu-detail.svg);
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: center;
+     /* padding-top: 150px; */
+     align-items: normal;
+     /* === THÊM DÒNG NÀY ĐỂ SỬA LỖI === */
+     overflow: hidden;
+     /* Hoặc overflow-x: hidden; */
+     }
 
  .about-upleft-image {
      position: relative;
@@ -801,26 +822,29 @@
      background-color: #888;
      /* Màu của đường kẻ */
      padding-bottom: 20px;
-         /* --- THÊM VÀO --- */
-    /* Đặt điểm xoay ở chính giữa và trên cùng */
-    transform-origin: top center;
-    /* Áp dụng animation */
-    animation: swing 1s ease-in-out infinite alternate;
+     /* --- THÊM VÀO --- */
+     /* Đặt điểm xoay ở chính giữa và trên cùng */
+     transform-origin: top center;
+     /* Áp dụng animation */
+     animation: swing 1s ease-in-out infinite alternate;
 
  }
-/* --- THÊM VÀO --- */
-/* Định nghĩa animation "swing" */
-@keyframes swing {
-    from {
-        /* Bắt đầu nghiêng sang trái (-10 độ) */
-        /* Giữ lại translateX để phần tử không bị lệch khỏi tâm */
-        transform: translateX(-50%) rotate(-5deg);
-    }
-    to {
-        /* Kết thúc nghiêng sang phải (10 độ) */
-        transform: translateX(-50%) rotate(5deg);
-    }
-}
+
+ /* --- THÊM VÀO --- */
+ /* Định nghĩa animation "swing" */
+ @keyframes swing {
+     from {
+         /* Bắt đầu nghiêng sang trái (-10 độ) */
+         /* Giữ lại translateX để phần tử không bị lệch khỏi tâm */
+         transform: translateX(-50%) rotate(-5deg);
+     }
+
+     to {
+         /* Kết thúc nghiêng sang phải (10 độ) */
+         transform: translateX(-50%) rotate(5deg);
+     }
+ }
+
  /* Dùng ::after để tạo hình tròn ở cuối đường kẻ */
  .decorative-line::after {
      content: '';
@@ -938,11 +962,11 @@
      background-color: #888;
      /* Màu của đường kẻ */
      padding-bottom: 20px;
-            /* --- THÊM VÀO --- */
-    /* Đặt điểm xoay ở chính giữa và trên cùng */
-    transform-origin: top center;
-    /* Áp dụng animation */
-    animation: swing 1s ease-in-out infinite alternate;
+     /* --- THÊM VÀO --- */
+     /* Đặt điểm xoay ở chính giữa và trên cùng */
+     transform-origin: top center;
+     /* Áp dụng animation */
+     animation: swing 1s ease-in-out infinite alternate;
  }
 
  /* 3. DẤU CHẤM TRÒN (Tạo từ ::before của đường kẻ) */
@@ -1286,6 +1310,25 @@
      padding-right: 60px;
  }
 
+ .gthiu-main-heading-wrapper {
+     position: relative;
+
+     /* Bật Flexbox để xếp các item con (vòng tròn, chữ) theo hàng ngang */
+     display: flex;
+
+     /* Căn các item vào giữa theo chiều dọc */
+     align-items: center;
+
+     /* Đẩy toàn bộ group sang bên phải */
+     justify-content: flex-start;
+
+     /* Tạo khoảng cách 15px giữa các item (vòng tròn và chữ) */
+     gap: 15px;
+
+     /* Giữ lại padding bên phải để tạo không gian với mép màn hình */
+     padding-right: 60px;
+ }
+
  /* --- MỚI: CSS cho đường kẻ và chấm tròn trang trí --- */
  .heading-decorator {
      position: absolute;
@@ -1300,12 +1343,12 @@
 
      /* Thu nhỏ lại để vừa với dòng chữ */
      flex-shrink: 0;
-      /*    Điểm xoay theo chiều dọc là -500px (500px phía trên phần tử này) */
-    transform-origin: center -150px;
+     /*    Điểm xoay theo chiều dọc là -500px (500px phía trên phần tử này) */
+     transform-origin: center -150px;
 
-    /* 2. Áp dụng animation */
-    animation: pendulum-swing 5s ease-in-out infinite alternate;
-     
+     /* 2. Áp dụng animation */
+     animation: pendulum-swing 5s ease-in-out infinite alternate;
+
  }
 
  /* Tạo chấm tròn bên trong */
@@ -1316,7 +1359,7 @@
      height: 10px;
      background-color: white;
      border-radius: 50%;
-     
+
  }
 
  /* Tạo đường kẻ dọc phía trên */
@@ -1334,16 +1377,19 @@
              rgba(255, 255, 255, 0.6),
              rgba(255, 255, 255, 0.2));
  }
-/* 3. Định nghĩa animation "pendulum-swing" */
-@keyframes pendulum-swing {
-    from {
-        /* Vì dây treo rất dài (500px) nên ta chỉ cần một góc xoay nhỏ */
-        transform: rotate(-3deg);
-    }
-    to {
-        transform: rotate(3deg);
-    }
-}
+
+ /* 3. Định nghĩa animation "pendulum-swing" */
+ @keyframes pendulum-swing {
+     from {
+         /* Vì dây treo rất dài (500px) nên ta chỉ cần một góc xoay nhỏ */
+         transform: rotate(-3deg);
+     }
+
+     to {
+         transform: rotate(3deg);
+     }
+ }
+
  .main-heading {
      font-family: CormorantGaramond-Bold, serif;
      font-size: 56px;
@@ -2216,6 +2262,8 @@
  }
 
  .box-content-hoi-dap {
+     display: flex;
+     justify-content: center;
      padding-top: 52px;
  }
 
@@ -2225,7 +2273,7 @@
  }
 
  .accordion-box-hoidap {
-     background: linear-gradient(to bottom, #F3E5B7, #FAF2D5, #F6EAC1,#FFFCF0,#F6EAC1);
+     background: linear-gradient(to bottom, #F3E5B7, #FAF2D5, #F6EAC1, #FFFCF0, #F6EAC1);
      border: 1px solid #B99E58;
      border-radius: 12px;
  }
@@ -2235,9 +2283,7 @@
 
  .accordion-container {
      width: 100%;
-   
-     padding: 25px;
-    
+     padding: 15px;
  }
 
  .accordion-item {
@@ -2267,12 +2313,13 @@
      /* Thêm z-index để header luôn nằm trên content */
      position: relative;
      z-index: 2;
-      font-family: OpenSans_Condensed-Regular, serif;
+     font-family: OpenSans_Condensed-Regular, serif;
  }
- .is-open .accordion-header{
-    border-radius: 12px 12px 0 0;
-    box-shadow: none;
-    border-bottom: none;
+
+ .is-open .accordion-header {
+     border-radius: 12px 12px 0 0;
+     box-shadow: none;
+     border-bottom: none;
      background: linear-gradient(to right, #FFFCD9, #FAF9EC, #F1EFD7, #F4F0C0);
  }
 
@@ -2327,10 +2374,10 @@
  /* Icon (giữ nguyên nhưng có một số điều chỉnh nhỏ) */
  .accordion-icon {
      flex-shrink: 0;
-     width: 16px;
-     height: 16px;
+     width: 20px;
+     height: 20px;
      margin-left: 15px;
-     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23C7A883' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+     background-image: url("../images/snap-icon.svg");
      background-repeat: no-repeat;
      background-position: center;
      transition: transform 0.3s ease;
@@ -2342,36 +2389,740 @@
 
 
 
-/* CSS cho cột ảnh bên trái để xếp dọc */
-.image-column-hoidap {
-    display: flex;            /* Kích hoạt Flexbox để sắp xếp */
-    flex-direction: column;   /* Yêu cầu các phần tử con xếp theo cột (trên-dưới) */
-    gap: 24px;   
-    position: relative;             /* Tạo khoảng trống 24px giữa hai ảnh */
+ /* CSS cho cột ảnh bên trái để xếp dọc */
+ .image-column-hoidap {
+     display: flex;
+     /* Kích hoạt Flexbox để sắp xếp */
+     flex-direction: column;
+     /* Yêu cầu các phần tử con xếp theo cột (trên-dưới) */
+     gap: 24px;
+     position: relative;
+     /* Tạo khoảng trống 24px giữa hai ảnh */
+ }
+
+ /* Style phụ cho ảnh thêm đẹp (tùy chọn) */
+ .box-cah-hoi-dap {
+     background: #B99E58;
+     height: 140px;
+     position: relative;
+ }
+
+ .trangtrihoidapright {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+ }
+
+ .trangtrihoidapleft {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+ }
+
+ .trangtri2thanh1 {
+     position: absolute;
+ }
+
+ .trangtri2thanh2 {
+     position: absolute;
+ }
+
+ .trangtri2hoidap {
+     position: absolute;
+ }
+
+ .box-news {
+     border: 2px solid transparent;
+     background-image:
+         linear-gradient(white, white),
+         linear-gradient(to bottom, #FADFB4, #C0983D, #C79E3F, #DAAF47, #DEB249);
+     background-origin: border-box;
+     background-clip: content-box, border-box;
+     box-shadow: 0 4px 4px 0 #B99E5866;
+     border-radius: 12px;
+     position: relative;
+ }
+
+ .top-news-box {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+ }
+
+ .bottom-news-box {
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+ }
+
+ .news-images {
+     width: 100%;
+     /* hoặc 1 kích thước cụ thể như 300px */
+     max-width: 400px;
+     /* tùy theo bạn muốn giới hạn */
+     height: auto;
+     /* hoặc 1 chiều cao cố định nếu muốn khung cố định */
+     overflow: hidden;
+     /* ẩn phần ảnh tràn ra */
+     position: relative;
+     border-radius: 12px;
+     /* Thêm vào đây */
+ }
+
+ .news-images img {
+     width: 100%;
+     height: auto;
+     object-fit: contain;
+     /* hoặc "cover", tùy mục đích */
+     display: block;
+
+ }
+
+ .box-news:hover .img-news-fluid {
+     transform: scale(1.05);
+     /* phóng to 5% khi hover */
+
+ }
+
+ .box-news:hover .title-noibat {
+     color: #A1000D;
+ }
+
+ .box-news:hover {
+     cursor: pointer;
+ }
+
+ .box-title-noibat {
+     /* height: 64px; */
+     padding-top: 20px;
+ }
+
+ .title-noibat {
+     font-family: CormorantGaramond-Bold, serif;
+     font-size: 26px;
+     font-weight: 600;
+     line-height: 32px;
+     overflow: hidden;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+ }
+
+ .des-noibat {
+     font-family: OpenSans_Condensed-Regular, serif;
+     font-size: 16px;
+     overflow: hidden;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+     font-weight: 400;
+     line-height: 28px;
+ }
+
+ .box-xemthem {
+     display: flex;
+     gap: 10px;
+ }
+
+ .a-xemthem {
+     font-family: OpenSans_Condensed-Regular, serif;
+     color: #A1000D;
+     font-weight: 600;
+ }
+
+ .experts-section {
+     /* Sử dụng radial-gradient để tạo hiệu ứng nền tối ở rìa, sáng hơn ở giữa */
+     background: linear-gradient(to bottom, #8c1c1c, #4a0303);
+
+ }
+
+ .section-title-main-heading {
+     font-family: CormorantGaramond-Bold, serif;
+     color: #FFFFFF;
+     font-size: 56px;
+ }
+
+ /* 1. KHUNG NGOÀI */
+ .box-gthieuthay-chuyengia {
+     /* THAY ĐỔI QUAN TRỌNG NHẤT: Thêm position: relative */
+     position: relative;
+
+     /* CÁC THUỘC TÍNH CŨ CỦA BẠN */
+     background-image: url('../images/thay_khung_ngoai.svg');
+     /* Thay bằng path của bạn */
+     background-repeat: no-repeat;
+     aspect-ratio: 3 / 4;
+
+     /* CẢI TIẾN: Dùng '100% 100%' thay cho 'cover' để SVG không bị cắt xén */
+     background-size: 100% 100%;
+ }
+
+ /* 2. KHUNG TRONG VÀ NỘI DUNG */
+ .box-trong-chuyengia {
+     /* CÁC THUỘC TÍNH CŨ CỦA BẠN ĐÃ ĐÚNG */
+     background-image: url('../images/thay_khung_trong.svg');
+     /* Thay bằng path của bạn */
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     position: absolute;
+     top: -30%;
+     /* Khoảng cách này tạo ra độ dày của khung ngoài */
+     left: 18px;
+     right: 18px;
+     bottom: 18px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 25px 15px;
+     box-sizing: border-box;
+     /* Đảm bảo padding không làm thay đổi kích thước */
+ }
+
+ /* 4. KHU VỰC CHỨA CHỮ (.contentcontent) */
+ .contentcontent {
+     position: absolute;
+     bottom: 12%;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 100%;
+     text-align: center;
+ }
+
+ .glowing-tag {
+     display: inline-block;
+     padding: 6px 20px;
+     background-color: #4d1a0f;
+     border: 1.5px solid #d4af37;
+     color: #f3e5ca;
+     border-radius: 999px;
+   font-family: CormorantGaramond-Bold, serif;
+     font-size: 16px;
+     font-style: italic;
+     font-weight: 600;
+     white-space: nowrap;
+     box-shadow: 0 0 12px 2px rgba(255, 220, 150, 0.7), inset 0 0 8px rgba(255, 220, 150, 0.4);
+     margin-bottom: 16px;
+ }
+
+ /* 5. TÊN CHUYÊN GIA */
+ .gradient-text-thaytintuc {
+     background: linear-gradient(to right, rgb(255, 221, 121), rgb(255, 227, 122), rgb(254, 235, 163), rgb(243, 205, 110), rgb(255, 227, 122));
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     white-space: normal;
+     font-size: 32px;
+     font-weight: 700;
+      font-family: CormorantGaramond-Bold, serif;
+ }
+
+ .kienthucphongthuy {
+     display: flex !important;
+     justify-content: center;
+     align-items: center;
+     background-image: url(../images/kien_thuc_pt.svg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .titlekienthucphongthuy {
+     text-align: center;
+     font-family: CormorantGaramond-Bold, serif;
+ }
+
+ .boxkienthucphongthuy {
+     background: #FFFFFF;
+     box-shadow: #1877F2;
+ }
+
+
+
+
+
+ /* --- Khối chính bao bọc toàn bộ nội dung --- */
+ .feng-shui-section {
+     background-color: #ffffff;
+     border-radius: 16px;
+     padding: 32px;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+ }
+
+ /* --- Kiểu cho các Thẻ/Tag (Phong thủy nhà ở, ...) --- */
+ .article-tag {
+     /* 1. Các thuộc tính định dạng cơ bản của bạn */
+     background: linear-gradient(to right, #FFFCD9, #FAF9EC, #F1EFD7, #F4F0C0);
+     color: #000000B2;
+     padding: 4px;
+     max-width: 180px;
+     border-radius: 6px;
+     text-align: center;
+     font-size: 13px;
+     font-weight: 600;
+     font-family: OpenSans_Condensed-Bold, serif;
+     margin-bottom: 8px;
+
+     /* --- PHẦN CODE ĐỂ CẮT CHỮ --- */
+
+     /* Bắt buộc phải là block hoặc inline-block để giới hạn chiều rộng hoạt động */
+     display: block;
+
+     /* 2. Giới hạn văn bản chỉ trên 1 dòng */
+     -webkit-line-clamp: 1;
+
+     /* Các thuộc tính đi kèm bắt buộc */
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+ }
+
+
+ .title-kienthuch4 {
+     font-size: 24px;
+     /* Cắt dòng và hiển thị 1 dòng duy nhất */
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     /* Thêm dòng này nếu muốn có dấu "..." */
+     white-space: normal;
+     max-width: 100%;
+     /* hoặc giới hạn chiều rộng cụ thể */
+ }
+
+ .title-kienthuc {
+     font-family: CormorantGaramond-Bold, serif;
+ }
+
+ .title-kienthuch3 {
+     font-size: 32px;
+ }
+
+ /* --- Kiểu cho link "Xem thêm" --- */
+ .read-more-link {
+     color: #8c4b4a;
+     /* Màu đỏ đất */
+     font-weight: 600;
+     text-decoration: none;
+     display: inline-flex;
+     align-items: center;
+     transition: color 0.3s ease;
+ }
+
+ .read-more-link:hover {
+     color: #6d3a39;
+ }
+
+ /* Vòng tròn và mũi tên trong link "Xem thêm" */
+ .read-more-link .arrow-icon {
+     display: inline-block;
+     margin-left: 8px;
+     border: 1px solid #e4c8a2;
+     /* Màu vàng nhạt */
+     border-radius: 50%;
+     width: 24px;
+     height: 24px;
+     line-height: 17px;
+
+     text-align: center;
+     font-size: 17px;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .read-more-link:hover .arrow-icon {
+     background-color: #f5efdc;
+ }
+
+ /* --- Cột bên trái (Bài viết chính) --- */
+ .main-article .article-image {
+     width: 100%;
+     height: auto;
+     border-radius: 12px;
+     object-fit: cover;
+ }
+
+ .main-article .article-content {
+     padding-top: 1.5rem;
+ }
+
+ /* --- Cột bên phải (Các bài viết phụ) --- */
+ .side-article {
+     display: flex;
+     gap: 1rem;
+     /* Khoảng cách giữa ảnh và nội dung */
+ }
+
+ /* Thêm khoảng cách giữa các bài viết phụ */
+ .side-article:not(:last-child) {
+     margin-bottom: 1.75rem;
+ }
+
+ .side-article .article-thumb {
+     flex-shrink: 0;
+     /* Không co lại */
+     width: 180px;
+     /* height: 80px; */
+     border-radius: 8px;
+     object-fit: cover;
+ }
+
+ /* Đường kẻ ngang ngăn cách */
+ .side-article hr {
+     border: 0;
+     border-top: 1px solid #e4c8a2;
+     /* Màu vàng nhạt */
+     margin: 1rem 0;
+     opacity: 1;
+ }
+
+ /* --- Responsive cho mobile --- */
+ @media (max-width: 991.98px) {
+     .side-articles {
+         margin-top: 2.5rem;
+     }
+ }
+
+ .titledetailtintuc {
+     font-family: CormorantGaramond-Bold, serif;
+     font-size: 42px;
+     font-weight: 700;
+ }
+
+ .contet-detail-tintuwc {
+     font-family: OpenSans_Condensed-Regular, serif;
+ }
+
+ .sidebar-datlich {
+     border-radius: 16px;
+     border: 1px solid #FFFFFF;
+     background: #FFFBF5;
+     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+ }
+
+ .form-widget-header {
+     text-align: center;
+     background: #780507;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     border-radius: 16px 16px 0 0;
+
+ }
+
+ .form-widget-header span {
+     font-family: OpenSans-Italic, serif;
+     /* Thay bằng font bạn muốn */
+     font-weight: bold;
+     /* Chữ trong ảnh trông khá đậm */
+     font-size: 24px;
+     line-height: 24px;
+     letter-spacing: 0.02em;
+     /* 2% tương đương 0.02em */
+     text-transform: uppercase;
+     text-align: center;
+
+     /* --- 2. Gradient Fill (Màu chữ chuyển sắc) --- */
+     /* Kỹ thuật: tạo nền gradient rồi cắt theo hình dạng chữ */
+     background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+     -webkit-background-clip: text;
+     /* Cho trình duyệt Safari/Chrome */
+     background-clip: text;
+     color: transparent;
+ }
+
+ .form-widget-body {
+     padding: 33px;
+ }
+
+ .cauhoithuonggap-news {
+     font-family: CormorantGaramond-Bold, serif;
+     font-size: 28px;
+     margin-bottom: 20px;
+ }
+
+ .contet-detail-tintuwc {
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+     word-break: break-word;
+ }
+
+ .backdichvuphongthuy {
+     /* THAY ĐỔI QUAN TRỌNG NHẤT: Thêm position: relative */
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* CÁC THUỘC TÍNH CŨ CỦA BẠN */
+     background-image: url('../images/card_dich_vu.svg');
+     /* Thay bằng path của bạn */
+     background-repeat: no-repeat;
+     aspect-ratio: 3 / 4;
+     flex-direction: column;
+     /* CẢI TIẾN: Dùng '100% 100%' thay cho 'cover' để SVG không bị cắt xén */
+     background-size: 100% 100%;
+ }
+ .title-dichvuphongthuy{
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 26px;
+    font-family: CormorantGaramond-Bold, serif;
+    height: 63px;
+    background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+    -webkit-background-clip: text;
+     /* Cho trình duyệt Safari/Chrome */
+    background-clip: text;
+    color: transparent;
+    line-height: normal;
+    display: block;
+
+     /* 2. Giới hạn văn bản chỉ trên 1 dòng */
+    -webkit-line-clamp: 2;
+
+     /* Các thuộc tính đi kèm bắt buộc */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+ }
+ .content-dichvuphongthuy2{
+      font-family: OpenSans_Condensed-Regular, serif;
+      font-size: 18px;
+      color: #FFFFFF;
+      line-height: 30px;
+      height: 110px;
+        display: block;
+
+     /* 2. Giới hạn văn bản chỉ trên 1 dòng */
+     -webkit-line-clamp: 3;
+
+     /* Các thuộc tính đi kèm bắt buộc */
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+ }
+ .box-xemthem-dichvuphongthuy{
+    text-align: center;
+       font-family: OpenSans_Condensed-Regular, serif;
+       font-size: 20px;
+       color: white;
+ }
+ .container-fixx{
+    margin: 0 auto;
+ }
+ .form-control:focus {
+   border: 1px solid #E0BC54 !important;
+    box-shadow: unset !important;
 }
 
-/* Style phụ cho ảnh thêm đẹp (tùy chọn) */
-.box-cah-hoi-dap{
-    background: #B99E58;
-    height: 140px;
-    position: relative;
+
+/* --- Bố cục chính --- */
+
+/* Thẻ cha chứa toàn bộ */
+.article-layout {
+ 
+    padding: 1rem;
+    margin-bottom: 2rem;
+    
+    /* 
+      CỰC KỲ QUAN TRỌNG:
+      Thuộc tính này để "dọn dẹp" float, đảm bảo thẻ cha bao bọc đúng chiều cao
+      của cả ảnh và text. Đây là cách hiện đại thay cho "clearfix hack".
+    */
+    display: flow-root; 
 }
-.trangtrihoidapright{
-    position: absolute;
-    right: 0;
-    bottom: 0;
+
+/* Định dạng cho hình ảnh */
+.article-image {
+    /* Đẩy ảnh sang trái, cho phép text bao bọc bên phải và bên dưới */
+    float: right; 
+    
+    /* Kích thước của ảnh */
+    /* width: 150px; */
+    height: auto;
+    
+    /* Tạo khoảng cách giữa ảnh và text */
+    /* margin-right: 1.5rem; */ /* Khoảng cách bên phải */
+    margin-bottom: 0; /* Khoảng cách bên dưới */
+
+    /* Thêm bo góc cho đẹp (tùy chọn) */
+    border-radius: 8px;
+    margin-left: 1.0rem;
 }
-.trangtrihoidapleft{
-    position: absolute;
-    left: 0;
-    bottom: 0;
+
+/* Khối chứa văn bản (không cần style phức tạp) */
+.article-text h3 {
+    margin-top: 0; /* Xóa khoảng cách mặc định của tiêu đề */
 }
-.trangtri2thanh1{
-    position: absolute;
+
+.article-text p {
+    margin: 0;
+    /* line-height: 1.6; */ /* Tăng chiều cao dòng cho dễ đọc */
+    text-align: justify; /* Căn đều 2 bên (tùy chọn) */
 }
-.trangtri2thanh2{
-    position: absolute;
+
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
 }
-.trangtri2hoidap{
-    position: absolute;
+
+.toast-show {
+    background-color: #28a745; /* màu xanh thành công */
+    color: white;
+    padding: 17px 52px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+    animation: fadeOut 2s forwards;
+    font-size: 15px;
+    min-width: 245px;
+    max-width: 275px;
+    opacity: 1;
 }
+
+/* Animation biến mất */
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+.is-open .accordion-header span{
+    font-weight: 900;
+    color: #730009;
+}
+.schedule {
+    width: 60px;
+}
+   /* ---- Lớp phủ cho popup ---- */
+        .schedule-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            /* Ẩn mặc định */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ---- Nội dung chính của popup ---- */
+        .schedule-popup-content {
+            background-color: #FFFBF5;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 500px;
+            overflow: hidden;
+            /* Đảm bảo header bo tròn theo */
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ---- Header của popup ---- */
+        .schedule-popup-header {
+            background-color: #780507;
+            color: var(--header-text-color);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .schedule-popup-header h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            /* Kỹ thuật: tạo nền gradient rồi cắt theo hình dạng chữ */
+            background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+            -webkit-background-clip: text;
+            /* Cho trình duyệt Safari/Chrome */
+            background-clip: text;
+            color: transparent;
+        }
+
+        .schedule-popup-header .close-button {
+            background: none;
+            border: none;
+            color: var(--header-text-color);
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        .schedule-popup-header .close-button:hover {
+            opacity: 1;
+        }
+
+
+        /* ---- Thân popup (chứa form) ---- */
+        .schedule-popup-body {
+            padding: 30px 25px;
+        }
+
+        .schedule-popup-body .form-group {
+            margin-bottom: 15px;
+        }
+
+
+
+        .schedule-popup-body input::placeholder,
+        .schedule-popup-body textarea::placeholder {
+            color: #888;
+        }
+
+        .schedule-popup-body textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+
+        /* ---- Nút Đặt Lịch ---- */
+        .schedule-popup-body .submit-button {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: 1px solid var(--button-border-color);
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin-top: 10px;
+            box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .schedule-popup-body .submit-button:hover {
+            background-color: #a31919;
+            /* Màu đỏ đậm hơn khi hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
