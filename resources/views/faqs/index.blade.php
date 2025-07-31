@@ -51,6 +51,10 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    @else
+                                    <div class="alert alert-secondary text-center">
+                                        Không có câu hỏi nào
+                                    </div>
                                 @endif
 
                              

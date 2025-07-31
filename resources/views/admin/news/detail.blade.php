@@ -17,9 +17,14 @@
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                         <img src="{{ asset($news->images) }}" alt="Profile" class="">
-                        <h2>{{ $news->title ?? '' }}</h2>
+                        <h2 class="text-center">{{ $news->title ?? '' }}</h2>
                         <p>{{ $news->description ?? '' }}</p>
-
+ <div class="alert alert-secondary">
+                            <div>
+                                Metatile: {{ $news->metatitle ?? '' }}
+                            </div>
+                            <div> Metadescripotion: {{ $news->metadescription ?? '' }}</div>
+                        </div>
                     </div>
                 </div>
 

@@ -22,10 +22,10 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Câu hỏi thường gặp - {{ $phongThuy->title }}</h5>
-
+@if (auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức phong thủy'))
                         <a href="{{ route('admin.phongthuy.faqs.create', $phongThuy->id) }}" class="btn btn-success rounded-pill">Thêm
                             mới</a>
-
+@endif
                     </div>
                     <hr>
 
@@ -47,8 +47,13 @@
                                             <td>{!! Str::limit($faq->answer, 100) !!}</td>
                     
                                             <td>
+@if (auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức phong thủy'))
+
                                                <a href="{{ route('admin.phongthuy.faqs.edit', [$phongThuy->id, $faq->id]) }}"
                                                     class="btn btn-sm btn-primary"><i class="bi bi-wrench"></i></a>
+                                                    @endif
+@if (auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức phong thủy'))
+
                                                   <form action="{{ route('admin.phongthuy.faqs.destroy', [$phongThuy->id, $faq->id]) }}"
                                                     method="POST" style="display:inline-block;"
                                                     onsubmit="return confirm('Bạn chắc chắn muốn xóa?')">
@@ -57,6 +62,7 @@
                                                     <button class="btn btn-sm btn-danger"><i
                                                             class="bi bi-trash text-white"></i></button>
                                                 </form> 
+                                                @endif
                                             </td>
                                         </tr>
                                      @empty

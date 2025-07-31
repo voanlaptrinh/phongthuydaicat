@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class PhongThuyFaqController extends Controller
 {
+     public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem câu hỏi kiến thức phong thủy')->only(['index']);
+        $this->middleware('can:Thêm câu hỏi kiến thức phong thủy')->only(['create', 'store']);
+        $this->middleware('can:Sửa câu hỏi kiến thức phong thủy')->only(['edit', 'update']);
+        $this->middleware('can:Xóa câu hỏi kiến thức phong thủy')->only(['destroy']);
+    }
   public function index(PhongThuy $phongThuy)
     {
         $faqs = $phongThuy->faqs()->latest()->paginate(10);

@@ -36,8 +36,7 @@
                                                     <div class="title-quytrinhkhach">
                                                         Bước 1
                                                     </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
+                                                    <p class="content-quytrinhkhach">Gửi Thông Tin - Tư Vấn Sơ Bộ</p>
                                                     <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
                                                         class="img-fluid">
                                                 </div>
@@ -49,8 +48,7 @@
                                                     <div class="title-quytrinhkhach">
                                                         Bước 2
                                                     </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
+                                                    <p class="content-quytrinhkhach">Ký Hợp Đồng - Đặt Cọc - Hẹn Lịch</p>
                                                     <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
                                                         class="img-fluid">
                                                 </div>
@@ -62,28 +60,13 @@
                                                     <div class="title-quytrinhkhach">
                                                         Bước 3
                                                     </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
+                                                    <p class="content-quytrinhkhach">Chuyên Gia Phân Tích - Bàn Giao - Hỗ Trợ Sau Dịch Vụ</p>
                                                     <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
                                                         class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="slide">
-                                            <div class="slide-content flex-column">
-                                                <div class="p-4 text-center">
-                                                    <div class="title-quytrinhkhach">
-                                                        Bước 4
-                                                    </div>
-                                                    <p class="content-quytrinhkhach">Khách đặt gói -
-                                                        điền form đầy đủ thông tin</p>
-                                                    <img src="{{ asset('assets/images/buoc1.svg') }}" alt=""
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-
-
+                                    
                                     </div>
                                 </div>
                                 <button class="slider-btn prev-btn">

@@ -22,9 +22,9 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Danh sách Tin tức</h5>
-
-                        <a href="{{ route('news.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm tin tức'))
+                            <a href="{{ route('news.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
+                        @endif
                     </div>
                     <hr>
                     <form action="{{ route('news.admin.index') }}" method="GET"
@@ -63,23 +63,31 @@
                                                         style="width: 60px; height: 60px; overflow: hidden;"></a>
                                             </th>
                                             <td>{{ $tt->title }}</td>
-                                            <td><a href="{{ route('admin.news.faqs.index', $tt->id) }}"
-                                                    class="btn btn-outline-secondary">Thêm câu hỏi</a>
+                                            <td>
+                                                @if (auth()->user()->hasPermissionTo('Xem câu hỏi tin tức') ||
+                                                        auth()->user()->hasPermissionTo('Thêm câu hỏi tin tức') ||
+                                                        auth()->user()->hasPermissionTo('Sửa câu hỏi tin tức') ||
+                                                        auth()->user()->hasPermissionTo('Xóa câu hỏi tin tức'))
+                                                    <a href="{{ route('admin.news.faqs.index', $tt->id) }}"
+                                                        class="btn btn-outline-secondary">Thêm câu hỏi</a>
+                                                @endif
                                             </td>
                                             <td>{{ $tt->created_at->format('d/m/Y') }}</td>
                                             <td>
+                                                @if (auth()->user()->hasPermissionTo('Sửa tin tức'))
+                                                    <a href="{{ route('news.admin.edit', $tt->id) }}"
+                                                        class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
+                                                @endif
+                                                @if (auth()->user()->hasPermissionTo('Xóa tin tức'))
+                                                    <form action="{{ route('news.admin.destroy', $tt->id) }}" method="POST"
+                                                        style="display:inline-block;">
+                                                        @csrf @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Xóa tin tức này?')"><i
+                                                                class="bi bi-trash text-white"></i></button>
+                                                    </form>
+                                                @endif
 
-                                                <a href="{{ route('news.admin.edit', $tt->id) }}"
-                                                    class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
-
-
-                                                <form action="{{ route('news.admin.destroy', $tt->id) }}" method="POST"
-                                                    style="display:inline-block;">
-                                                    @csrf @method('DELETE')
-                                                    <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Xóa tin tức này?')"><i
-                                                            class="bi bi-trash text-white"></i></button>
-                                                </form>
                                                 <a href="{{ route('news.admin.detail', $tt->id) }}"
                                                     class="btn btn-info btn-sm"> <i class="bi bi-eye"></i></a>
 

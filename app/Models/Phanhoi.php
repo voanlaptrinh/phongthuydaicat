@@ -13,6 +13,7 @@ class Phanhoi extends Model
         'name',
         'avatar',
         'note',
+        'danhmuc'
        
     ];
 }

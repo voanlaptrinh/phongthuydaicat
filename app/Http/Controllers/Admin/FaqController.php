@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem hỏi đáp')->only(['index']);
+        $this->middleware('can:Thêm hỏi đáp')->only(['create', 'store']);
+        $this->middleware('can:Sửa hỏi đáp')->only(['edit', 'update']);
+        $this->middleware('can:Xóa hỏi đáp')->only(['destroy']);
+    }
      public function index(Request $request)
     {
         $query = Faq::query();

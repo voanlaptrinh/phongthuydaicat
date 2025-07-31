@@ -10,18 +10,11 @@
         </nav>
     </div>
 
-
-
-
     <div class="row">
-
         <div class="col-lg-12">
-
-
             <div class="card">
                 <div class="card-body">
-
-
+                    {{-- Form tìm kiếm --}}
                     <form method="GET" action="{{ route('contacts.admin.index') }}" class="row g-2 mb-4 mt-2">
                         <div class="col-md-5">
                             <input type="text" name="username" class="form-control" placeholder="Tìm theo tên"
@@ -31,14 +24,13 @@
                             <input type="email" name="email" class="form-control" placeholder="Tìm theo Email"
                                 value="{{ request('email') }}">
                         </div>
-
                         <div class="col-md-2">
                             <button type="submit" class="btn btn-primary">Tìm kiếm</button>
                             <a href="{{ route('contacts.admin.index') }}" class="btn btn-secondary">Xóa lọc</a>
                         </div>
                     </form>
 
-
+                    {{-- Bảng dữ liệu --}}
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -47,7 +39,6 @@
                                     <th>Email</th>
                                     <th>SĐT</th>
                                     <th>Loại dịch vụ</th>
-
                                     <th>Thời gian</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -55,41 +46,38 @@
                             <tbody>
                                 @forelse ($dsLienHe as $lh)
                                     <tr>
-                                        <td>{{ $lh->username }}</td>
-                                        <td>{{ $lh->email }}</td>
-                                        <td>{{ $lh->phone }}</td>
-                                        <td>{{ $lh->loai_dich_vu }}</td>
-
-                                        <td>{{ $lh->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $lh->username ?? 'Không có' }}</td>
+                                        <td>{{ $lh->email ?? 'Không có' }}</td>
+                                        <td>{{ $lh->phone ?? 'Không có' }}</td>
+                                        <td>{{ $lh->loai_dich_vu ?? 'Không có' }}</td>
+                                        <td>{{ $lh->created_at->format('d/m/Y') }}</td>
                                         <td>
+                                            {{-- SỬA LỖI & CẢI TIẾN: Truyền toàn bộ đối tượng dưới dạng JSON --}}
                                             <button class="btn btn-sm btn-info btn-xem-chi-tiet"
-                                                data-ten="{{ $lh->username }}" data-email="{{ $lh->email }}"
-                                                data-loaidichvu="{{ $lh->loai_dich_vu }}" data-address={{ $lh->addrress }}
-                                                data-sdt="{{ $lh->phone }}" data-noidung="{{ $lh->mo_ta }}"
-                                                data-thoigian="{{ $lh->created_at->format('d/m/Y H:i') }}">
+                                                data-contact='{{ $lh->toJson() }}'>
                                                 Xem chi tiết
                                             </button>
                                         </td>
-
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="7" class="text-center">Không có liên hệ nào</td>
+                                        <td colspan="6" class="text-center">Không có liên hệ nào</td>
                                     </tr>
                                 @endforelse
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
-                <div class=" p-nav text-end d-flex justify-content-end">
+
+                {{-- Phân trang --}}
+                <div class="card-footer d-flex justify-content-end">
                     {{ $dsLienHe->appends(request()->query())->links('pagination::bootstrap-4') }}
                 </div>
             </div>
         </div>
-
     </div>
+
+    {{-- Modal chi tiết liên hệ --}}
     <div class="modal fade" id="modalChiTietLienHe" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -104,33 +92,45 @@
                     <p><strong>Loại dịch vụ:</strong> <span id="ct-dvu"></span></p>
                     <p><strong>Địa chỉ:</strong> <span id="ct-address"></span></p>
                     <p><strong>Thời gian gửi:</strong> <span id="ct-thoigian"></span></p>
-                    <p style="max-height: 400px; overflow-y: auto; word-wrap: break-word;"><strong>Nội dung:</strong> <span
-                            id="ct-noidung"></span></p>
+                    <p style="max-height: 400px; overflow-y: auto; word-wrap: break-word;">
+                        <strong>Nội dung:</strong> <span id="ct-noidung"></span>
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- SỬA LỖI & CẢI TIẾN: Cập nhật Javascript để đọc dữ liệu từ JSON --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn-xem-chi-tiet');
+            const modalEl = document.getElementById('modalChiTietLienHe');
+            const modal = new bootstrap.Modal(modalEl);
 
             buttons.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    document.getElementById('ct-ten').textContent = this.dataset.ten;
-                    document.getElementById('ct-email').textContent = this.dataset.email;
-                    document.getElementById('ct-sdt').textContent = this.dataset.sdt || 'Không có';
-                    document.getElementById('ct-dvu').textContent = this.dataset.loaidichvu ||
-                        'Không có';
-                    document.getElementById('ct-address').textContent = this.dataset.address ||
-                        'Không có';
-                    document.getElementById('ct-noidung').textContent = this.dataset.noidung;
-                    document.getElementById('ct-thoigian').textContent = this.dataset.thoigian;
+                    // Lấy chuỗi JSON từ thuộc tính data-contact và chuyển thành đối tượng Javascript
+                    const contactData = JSON.parse(this.dataset.contact);
+                    
+                    // Định dạng lại ngày tháng từ chuỗi ISO 8601 (mặc định của toJson())
+                    const thoiGianGui = new Date(contactData.created_at);
+                    const formattedDate = `${thoiGianGui.getDate().toString().padStart(2, '0')}/${(thoiGianGui.getMonth() + 1).toString().padStart(2, '0')}/${thoiGianGui.getFullYear()} ${thoiGianGui.getHours().toString().padStart(2, '0')}:${thoiGianGui.getMinutes().toString().padStart(2, '0')}`;
 
-                    const modal = new bootstrap.Modal(document.getElementById(
-                        'modalChiTietLienHe'));
+
+                    // Điền dữ liệu vào modal
+                    document.getElementById('ct-ten').textContent = contactData.username || 'Không có';
+                    document.getElementById('ct-email').textContent = contactData.email || 'Không có';
+                    document.getElementById('ct-sdt').textContent = contactData.phone || 'Không có';
+                    document.getElementById('ct-dvu').textContent = contactData.loai_dich_vu || 'Không có';
+                    // Sửa lỗi chính tả: addrress -> address
+                    document.getElementById('ct-address').textContent = contactData.address || 'Không có'; 
+                    document.getElementById('ct-noidung').textContent = contactData.mo_ta || 'Không có';
+                    document.getElementById('ct-thoigian').textContent = formattedDate;
+
+                    // Hiển thị modal
                     modal.show();
                 });
             });

@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem liên hệ')->only(['index']);
+     
+    }
     public function index(Request $request){
        
         $query = Contact::query();

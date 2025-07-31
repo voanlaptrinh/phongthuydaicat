@@ -1,4 +1,4 @@
- <footer class="site-footer">
+ <footer class="site-footer position-relative">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -11,10 +11,12 @@
                 <div class="col-lg-4 col-md-12 footer-col">
                   
                     <p class="footer-about">
-                        Phong thủy Đại Cát là trang cung cấp thông tin về lịch âm, lịch vạn niên, chính xác nhất và miễn phí cho người Việt Nam. Mọi ý kiến đóng góp xin vui lòng liên hệ <a href="#">tại đây</a>!
+                        <b>Phong Thủy Đại Cát</b> là đơn vị cung cấp dịch vụ tư vấn Phong Thủy - Tử Vi tận tâm, uy tín, chuẩn chính phái nhất cho người Việt Nam. 
+                       <br>
+                        Mọi ý kiến đóng góp xin vui lòng liên hệ <a href="{{route('contact')}}">tại đây</a>!
                     </p>
-                    <p class="footer-contact-info">SĐT: 0123456778</p>
-                    <p class="footer-contact-info">Địa chỉ: Cầu Giấy, Hà Nội</p>
+                    <p class="footer-contact-info">SĐT: <a href="tel:0987654321" class="text-white">0987 654 321</a></p>
+                    <p class="footer-contact-info">Địa chỉ: Số 9, Ngõ 11 Dịch Vọng Hậu, Cầu Giấy, Hà Nội</p>
                 </div>
 
                 <!-- Cột 2: Giới thiệu -->
@@ -58,4 +60,6 @@
 
             </div>
         </div>
+        <img src="{{asset('assets/images/img-leftfooter.svg')}}" alt="" class="position-absolute bottom-0 start-0">
+        <img src="{{asset('assets/images/img-right-footer.svg')}}" alt="" class="position-absolute bottom-0 end-0">
     </footer>

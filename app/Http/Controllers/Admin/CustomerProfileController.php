@@ -9,6 +9,14 @@ use Illuminate\Validation\Rule;
 
 class CustomerProfileController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem hồ sơ khách hàng quản lý')->only(['index']);
+        $this->middleware('can:Thêm hồ sơ khách hàng quản lý')->only(['create', 'store']);
+        $this->middleware('can:Sửa hồ sơ khách hàng quản lý')->only(['edit', 'update']);
+        $this->middleware('can:Xóa hồ sơ khách hàng quản lý')->only(['destroy']);
+    }
     private $statuses = [
         'waiting' => 'Đang chờ',
         'consulting' => 'Đang tư vấn',

@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+               $table->string('metatitle')->nullable();
+              $table->string('metadescription')->nullable();
             $table->string('tag')->nullable();
             $table->string('description')->nullable();
             $table->string('images')->nullable();
             $table->text('content')->nullable();
-            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

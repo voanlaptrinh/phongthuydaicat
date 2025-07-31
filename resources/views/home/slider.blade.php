@@ -25,10 +25,10 @@
                             <div class="chuyen-gia2">PHONG THỦY ĐẠI CÁT</div>
                         </h1>
                         <div class="phong-thuyh1">
-                            <div class="title-chuyengiatuvan fst-italic p-3">Chuyên gia tư vấn </br> phong thủy </div>
+                            <div class="title-chuyengiatuvan fst-italic p-3">Chuyên gia tư vấn </br> phong thủy - tử vi </div>
                         </div>
-                        <div class="btn-hover-default btn-banner-pc">
-                            <a href="#" class="">Đặt lịch tư vấn</a>
+                        <div class="btn-hover-default btn-banner-pc js-open-schedule-popup">
+                            <button class=" btn">Đặt lịch tư vấn</button>
                         </div>
                     </div>
                     <div class="col-lg-6  d-flex flex-column justify-content-center align-items-center">
@@ -38,8 +38,8 @@
                                     class="img-fluid img-banner-dich-vu">
                             </div>
 
-                            <div class="btn-hover-default btn-banner-mobile">
-                                <a href="#" class="">Đặt lịch tư vấn</a>
+                            <div class="btn-hover-default btn-banner-mobile js-open-schedule-popup">
+                                <button class=" btn">Đặt lịch tư vấn</button>
                             </div>
                         </div>
 

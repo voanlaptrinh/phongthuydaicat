@@ -18,10 +18,10 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Danh sách phản hồi</h5>
-
-                        <a href="{{ route('khachhangquanly.admin.create') }}" class="btn btn-success rounded-pill">Thêm
-                            mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm hồ sơ khách hàng quản lý'))
+                            <a href="{{ route('khachhangquanly.admin.create') }}" class="btn btn-success rounded-pill">Thêm
+                                mới</a>
+                        @endif
                     </div>
                     <hr>
                     <form action="{{ route('khachhangquanly.admin.index') }}" method="GET"
@@ -87,18 +87,19 @@
 
 
                                             <td>
-
-                                                <a href="{{ route('khachhangquanly.admin.edit', $cpr->id) }}"
-                                                    class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
-
-
-                                                <form action="{{ route('khachhangquanly.admin.destroy', $cpr->id) }}"
-                                                    method="POST" style="display:inline-block;">
-                                                    @csrf @method('DELETE')
-                                                    <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Xóa khách hàng này?')"><i
-                                                            class="bi bi-trash text-white"></i></button>
-                                                </form>
+                                                @if (auth()->user()->hasPermissionTo('Sửa hồ sơ khách hàng quản lý'))
+                                                    <a href="{{ route('khachhangquanly.admin.edit', $cpr->id) }}"
+                                                        class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
+                                                @endif
+                                                @if (auth()->user()->hasPermissionTo('Xóa hồ sơ khách hàng quản lý'))
+                                                    <form action="{{ route('khachhangquanly.admin.destroy', $cpr->id) }}"
+                                                        method="POST" style="display:inline-block;">
+                                                        @csrf @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Xóa khách hàng này?')"><i
+                                                                class="bi bi-trash text-white"></i></button>
+                                                    </form>
+                                                @endif
 
                                                 <button type="button" class="btn btn-sm btn-info view-details-btn"
                                                     data-bs-toggle="modal" data-bs-target="#customerDetailModal"

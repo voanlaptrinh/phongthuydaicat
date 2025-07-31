@@ -6,11 +6,14 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DichVuController;
 use App\Http\Controllers\Admin\DichVuFaqController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\LichTuVanController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\NewsFaqConcontroller;
 use App\Http\Controllers\Admin\PhanhoiController;
 use App\Http\Controllers\Admin\PhongThuyController;
 use App\Http\Controllers\Admin\PhongThuyFaqController;
+use App\Http\Controllers\Admin\RolesControler;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -85,12 +88,12 @@ Route::prefix('admin')->group(function () {
       Route::get('/', [PhongThuyController::class, 'index'])->name('index');
       Route::get('/create', [PhongThuyController::class, 'create'])->name('create');
       Route::post('/store', [PhongThuyController::class, 'store'])->name('store');
-        Route::get('/{phongthuy}/detail', [PhongThuyController::class, 'detail'])->name('detail'); // Form sửa
-       Route::get('/{phongthuy}/edit', [PhongThuyController::class, 'edit'])->name('edit');
+      Route::get('/{phongthuy}/detail', [PhongThuyController::class, 'detail'])->name('detail'); // Form sửa
+      Route::get('/{phongthuy}/edit', [PhongThuyController::class, 'edit'])->name('edit');
       Route::put('/{phongthuy}', [PhongThuyController::class, 'update'])->name('update');
       Route::delete('/{phongthuy}', [PhongThuyController::class, 'destroy'])->name('destroy');
    });
-     Route::prefix('/phong-thuy/{phongThuy}/faqs')->name('admin.phongthuy.faqs.')->group(function () {
+   Route::prefix('/phong-thuy/{phongThuy}/faqs')->name('admin.phongthuy.faqs.')->group(function () {
       Route::get('/', [PhongThuyFaqController::class, 'index'])->name('index');
       Route::get('/create', [PhongThuyFaqController::class, 'create'])->name('create');
       Route::post('/', [PhongThuyFaqController::class, 'store'])->name('store');
@@ -104,12 +107,12 @@ Route::prefix('admin')->group(function () {
       Route::get('/', [DichVuController::class, 'index'])->name('index');
       Route::get('/create', [DichVuController::class, 'create'])->name('create');
       Route::post('/store', [DichVuController::class, 'store'])->name('store');
-        Route::get('/{dichvu}/detail', [DichVuController::class, 'detail'])->name('detail'); // Form sửa
-       Route::get('/{dichvu}/edit', [DichVuController::class, 'edit'])->name('edit');
+      Route::get('/{dichvu}/detail', [DichVuController::class, 'detail'])->name('detail'); // Form sửa
+      Route::get('/{dichvu}/edit', [DichVuController::class, 'edit'])->name('edit');
       Route::put('/{dichvu}', [DichVuController::class, 'update'])->name('update');
       Route::delete('/{dichvu}', [DichVuController::class, 'destroy'])->name('destroy');
    });
-      Route::prefix('/dich-vu/{dichvu}/faqs')->name('admin.dichvu.faqs.')->group(function () {
+   Route::prefix('/dich-vu/{dichvu}/faqs')->name('admin.dichvu.faqs.')->group(function () {
       Route::get('/', [DichVuFaqController::class, 'index'])->name('index');
       Route::get('/create', [DichVuFaqController::class, 'create'])->name('create');
       Route::post('/', [DichVuFaqController::class, 'store'])->name('store');
@@ -117,7 +120,26 @@ Route::prefix('admin')->group(function () {
       Route::put('/{faq}', [DichVuFaqController::class, 'update'])->name('update');
       Route::delete('/{faq}', [DichVuFaqController::class, 'destroy'])->name('destroy');
    });
-
+    Route::prefix('lich-tu-van')->name('lichtuvan.admin.')->group(function () {
+       Route::get('/', [LichTuVanController::class, 'index'])->name('index');
+       Route::patch('/{id}/update-status', [LichTuVanController::class, 'updateStatus'])->name('updateStatus');
+    });
+      Route::prefix('vai-tro')->name('admin.roles.')->group(function () {
+        Route::get('/', [RolesControler::class, 'index'])->name('index');
+        Route::get('/create', [RolesControler::class, 'create'])->name('create');
+        Route::post('/', [RolesControler::class, 'store'])->name('store');
+        Route::get('/{role}/edit', [RolesControler::class, 'edit'])->name('edit');
+        Route::put('/{role}', [RolesControler::class, 'update'])->name('update');
+        Route::delete('/{role}', [RolesControler::class, 'destroy'])->name('destroy');
+    });
+      Route::prefix('tai-khoan')->name('admin.users.')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
+        Route::get('/create', [UserController::class, 'create'])->name('create');
+        Route::post('/', [UserController::class, 'store'])->name('store');
+        Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+        Route::put('/{user}', [UserController::class, 'update'])->name('update');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
+    });
 });
 Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
 Route::post('/delete-image', [UploadController::class, 'deleteImage'])->name('delete-image');

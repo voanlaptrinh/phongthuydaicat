@@ -12,7 +12,8 @@ class News extends Model
         'title',
         'tag',
         'content',
-        'active',
+        'metatitle',
+        'metadescription',
         'description',
         'images'
     ];

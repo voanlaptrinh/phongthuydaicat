@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('phanhois', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(); //tên phản hôi khách hàng\
+            $table->string('danhmuc')->nullable(); //tên phản hôi khách hàng\
             $table->string('avatar')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();

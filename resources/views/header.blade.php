@@ -1,7 +1,7 @@
  <header class="site-header fbs__net-navbar">
      <div class="container d-flex align-items-center justify-content-between">
          <div class="site-logo d-flex align-items-center">
-             <a href="#">
+             <a href="{{route('home')}}">
                  <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Phong Thủy Đại Cát" class="img-fluid img-logo">
              </a>
              <span class="text-center title-logo">Phong thủy
@@ -13,7 +13,7 @@
              <ul>
                  <li><a href="{{route('home')}}" class="{{ in_array(Request::route()->getName(), ['home']) ? 'active' : '' }}">Giới thiệu</a></li>
                  <li><a href="{{route('dichvus')}}" class="{{ in_array(Request::route()->getName(), ['dichvus','dichvusdetail']) ? 'active' : '' }}">Dịch vụ</a></li>
-                 <li><a href="{{route('news')}}" class="{{in_array(Request::route()->getName(), ['news', 'newsdetail', 'newslist']) ? 'active' : ''}}">Tin tức</a></li>
+                 <li><a href="{{route('news')}}" class="{{in_array(Request::route()->getName(), ['news', 'newsdetail', 'newslist','phongthuy.show']) ? 'active' : ''}}">Tin tức</a></li>
                  <li><a href="{{route('contact')}}" class="{{ in_array(Request::route()->getName(), ['contact']) ? 'active' : '' }}">Liên hệ</a></li>
                  <li><a href="{{route('faqs')}}" class="{{ in_array(Request::route()->getName(), ['faqs']) ? 'active' : '' }}">Hỏi đáp</a></li>
              </ul>
@@ -33,7 +33,7 @@
 
      <!-- 1. Header của Menu Mobile -->
      <div class="mobile-nav-header">
-         <a href="#" class="mobile-nav-logo">
+         <a href="{{route('home')}}" class="mobile-nav-logo">
              <!-- Thay bằng logo của bạn -->
              <img src="{{ asset('assets/images/logomobie.svg') }}" alt="Logo">
              <span class="gradient-text">Phong Thủy Đại Cát</span>
@@ -48,7 +48,7 @@
          <ul>
              <li><a href="{{route('home')}}" class="{{ in_array(Request::route()->getName(), ['home']) ? 'active' : '' }}">Giới thiệu</a></li>
              <li><a href="{{route('dichvus')}}" class="{{ in_array(Request::route()->getName(), ['dichvus', 'dichvusdetail']) ? 'active' : '' }}">Dịch vụ</a></li>
-             <li><a href="{{route('news')}}" class="{{in_array(Request::route()->getName(), ['news', 'newsdetail', 'newslist']) ? 'active' : ''}}">Tin tức</a></li>
+             <li><a href="{{route('news')}}" class="{{in_array(Request::route()->getName(), ['news', 'newsdetail', 'newslist','phongthuy.show']) ? 'active' : ''}}">Tin tức</a></li>
              <li><a href="{{route('contact')}}" class="{{ in_array(Request::route()->getName(), ['contact']) ? 'active' : '' }}">Liên hệ</a></li>
              <li><a href="{{route('faqs')}}" class="{{ in_array(Request::route()->getName(), ['faqs']) ? 'active' : '' }}">Hỏi đáp</a></li>
          </ul>
@@ -56,10 +56,10 @@
 
      <!-- 3. Footer của Menu Mobile -->
      <div class="mobile-nav-footer">
-         <a href="#" class="mobile-nav-button btn-movbie1 ">
+         <a href="{{route('contact')}}" class="mobile-nav-button btn-movbie1 ">
              <i class="fas fa-headset"></i> Hỗ trợ
          </a>
-         <a href="#" class="mobile-nav-button btn-movbie2">
+         <a href="{{route('home')}}" class="mobile-nav-button btn-movbie2">
              <i class="fas fa-home"></i> Về Trang chủ
          </a>
      </div>

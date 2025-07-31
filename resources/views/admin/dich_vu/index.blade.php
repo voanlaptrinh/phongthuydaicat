@@ -22,9 +22,9 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Danh sách dịch vụ</h5>
-
-                        <a href="{{ route('dichvu.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm kiến thức dịch vụ'))
+                            <a href="{{ route('dichvu.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
+                        @endif
                     </div>
                     <hr>
                     <form action="{{ route('phongthuy.admin.index') }}" method="GET"
@@ -49,7 +49,12 @@
                                     <tr>
                                         <th>Ảnh</th>
                                         <th>Tiêu đề</th>
-                                        <th>Câu hỏi</th>
+                                        @if (auth()->user()->hasPermissionTo('Xem câu hỏi kiến thức dịch vụ') ||
+                                                auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức dịch vụ') ||
+                                                auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức dịch vụ') ||
+                                                auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức dịch vụ'))
+                                            <th>Câu hỏi</th>
+                                        @endif
                                         <th>Ngày tạo</th>
                                         <th>Hành động</th>
                                     </tr>
@@ -63,31 +68,39 @@
                                                         style="width: 60px; height: 60px; overflow: hidden;"></a>
                                             </th>
                                             <td>{{ $tt->title }}</td>
-                                            <td><a href="{{ route('admin.dichvu.faqs.index', $tt->id) }}"
-                                                    class="btn btn-outline-secondary">Thêm câu hỏi</a>
+                                            <td>
+                                                @if (auth()->user()->hasPermissionTo('Xem câu hỏi kiến thức dịch vụ') ||
+                                                        auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức dịch vụ') ||
+                                                        auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức dịch vụ') ||
+                                                        auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức dịch vụ'))
+                                                    <a href="{{ route('admin.dichvu.faqs.index', $tt->id) }}"
+                                                        class="btn btn-outline-secondary">Thêm câu hỏi</a>
+                                                @endif
                                             </td>
                                             <td>{{ $tt->created_at->format('d/m/Y') }}</td>
                                             <td>
-
-                                                <a href="{{ route('dichvu.admin.edit', $tt->id) }}"
-                                                    class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
-
-
-                                                 <form action="{{ route('dichvu.admin.destroy', $tt->id) }}" method="POST"
-                                                    style="display:inline-block;">
-                                                    @csrf @method('DELETE')
-                                                    <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Xóa dịch vụ này này?')"><i
-                                                            class="bi bi-trash text-white"></i></button>
-                                                </form>
-                                               <a href="{{ route('dichvu.admin.detail', $tt->id) }}"
+                                                @if (auth()->user()->hasPermissionTo('Sửa kiến thức dịch vụ'))
+                                                    <a href="{{ route('dichvu.admin.edit', $tt->id) }}"
+                                                        class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
+                                                @endif
+                                                @if (auth()->user()->hasPermissionTo('Xóa kiến thức dịch vụ'))
+                                                    <form action="{{ route('dichvu.admin.destroy', $tt->id) }}"
+                                                        method="POST" style="display:inline-block;">
+                                                        @csrf @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Xóa dịch vụ này này?')"><i
+                                                                class="bi bi-trash text-white"></i></button>
+                                                    </form>
+                                                @endif
+                                                <a href="{{ route('dichvu.admin.detail', $tt->id) }}"
                                                     class="btn btn-info btn-sm"> <i class="bi bi-eye"></i></a>
 
                                             </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="5" class="text-center text-muted">Không có dữ liệu dịch vụ phong thủy.
+                                            <td colspan="5" class="text-center text-muted">Không có dữ liệu dịch vụ phong
+                                                thủy.
                                             </td>
                                         </tr>
                                     @endforelse

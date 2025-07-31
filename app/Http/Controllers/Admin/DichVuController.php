@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\File;
 
 class DichVuController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem kiến thức dịch vụ')->only(['index']);
+        $this->middleware('can:Thêm kiến thức dịch vụ')->only(['create', 'store']);
+        $this->middleware('can:Sửa kiến thức dịch vụ')->only(['edit', 'update']);
+        $this->middleware('can:Xóa kiến thức dịch vụ')->only(['destroy']);
+    }
     public function index()
     {
         $newsList = DichVu::latest()->paginate(10);

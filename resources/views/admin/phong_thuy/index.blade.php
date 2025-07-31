@@ -22,9 +22,10 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Danh sách Phong thủy</h5>
-
-                        <a href="{{ route('phongthuy.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm kiến thức phong thủy'))
+                            <a href="{{ route('phongthuy.admin.create') }}" class="btn btn-success rounded-pill">Thêm
+                                mới</a>
+                        @endif
                     </div>
                     <hr>
                     <form action="{{ route('phongthuy.admin.index') }}" method="GET"
@@ -49,7 +50,14 @@
                                     <tr>
                                         <th>Ảnh</th>
                                         <th>Tiêu đề</th>
+                                        
+                                                                        @if (auth()->user()->hasPermissionTo('Xem câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức phong thủy')
+                                                                        )
                                         <th>Câu hỏi</th>
+                                        @endif
                                         <th>Ngày tạo</th>
                                         <th>Hành động</th>
                                     </tr>
@@ -63,24 +71,36 @@
                                                         style="width: 60px; height: 60px; overflow: hidden;"></a>
                                             </th>
                                             <td>{{ $tt->title }}</td>
-                                            <td><a href="{{ route('admin.phongthuy.faqs.index', $tt->id) }}"
+                                            <td>
+                                                                        @if (auth()->user()->hasPermissionTo('Xem câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức phong thủy')||
+                                                                        auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức phong thủy')
+                                                                        )
+
+                                                <a href="{{ route('admin.phongthuy.faqs.index', $tt->id) }}"
                                                     class="btn btn-outline-secondary">Thêm câu hỏi</a>
+                                                    @endif
                                             </td>
                                             <td>{{ $tt->created_at->format('d/m/Y') }}</td>
                                             <td>
+                        @if (auth()->user()->hasPermissionTo('Sửa kiến thức phong thủy'))
 
                                                 <a href="{{ route('phongthuy.admin.edit', $tt->id) }}"
                                                     class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
+@endif
 
+                        @if (auth()->user()->hasPermissionTo('Xóa kiến thức phong thủy'))
 
-                                                 <form action="{{ route('phongthuy.admin.destroy', $tt->id) }}" method="POST"
-                                                    style="display:inline-block;">
+                                                <form action="{{ route('phongthuy.admin.destroy', $tt->id) }}"
+                                                    method="POST" style="display:inline-block;">
                                                     @csrf @method('DELETE')
                                                     <button class="btn btn-danger btn-sm"
                                                         onclick="return confirm('Xóa phong thủy này?')"><i
                                                             class="bi bi-trash text-white"></i></button>
                                                 </form>
-                                               <a href="{{ route('phongthuy.admin.detail', $tt->id) }}"
+                                                @endif
+                                                <a href="{{ route('phongthuy.admin.detail', $tt->id) }}"
                                                     class="btn btn-info btn-sm"> <i class="bi bi-eye"></i></a>
 
                                             </td>

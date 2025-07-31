@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class DichVuFaqController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem câu hỏi kiến thức dịch vụ')->only(['index']);
+        $this->middleware('can:Thêm câu hỏi kiến thức dịch vụ')->only(['create', 'store']);
+        $this->middleware('can:Sửa câu hỏi kiến thức dịch vụ')->only(['edit', 'update']);
+        $this->middleware('can:Xóa câu hỏi kiến thức dịch vụ')->only(['destroy']);
+    }
    public function index(DichVu $dichvu)
     {
         $faqs = $dichvu->faqs()->latest()->paginate(10);

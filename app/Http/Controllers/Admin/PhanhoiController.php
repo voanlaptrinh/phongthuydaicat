@@ -7,8 +7,17 @@ use App\Models\Phanhoi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+
 class PhanhoiController extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem phản hồi')->only(['index']);
+        $this->middleware('can:Thêm phản hồi')->only(['create', 'store']);
+        $this->middleware('can:Sửa phản hồi')->only(['edit', 'update']);
+        $this->middleware('can:Xóa phản hồi')->only(['destroy']);
+    }
     public function index(Request $request)
     {
         $query = Phanhoi::query();
@@ -17,7 +26,7 @@ class PhanhoiController extends Controller
             $query->where('name', 'like', '%' . $request->name . '%');
         }
 
-     
+
 
         $phanHois = $query->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.phanhoi.index', compact('phanHois'));
@@ -32,12 +41,16 @@ class PhanhoiController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'danhmuc' => 'required|string|max:255',
             'note' => 'required',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ], [
             'name.required' => 'Tiêu đề không được để trống.',
             'name.max' => 'Tiêu đề không được vượt quá 255 ký tự.',
             'name.string' => 'Tiêu đề phải là một chuỗi ký tự.',
+            'danhmuc.required' => 'Dịch vụ không được để trống.',
+            'danhmuc.max' => 'Dịch vụ không được vượt quá 255 ký tự.',
+            'danhmuc.string' => 'Dịch vụ phải là một chuỗi ký tự.',
 
             'note.string' => 'Mô tả ngắn phải là một chuỗi ký tự.',
 
@@ -48,8 +61,8 @@ class PhanhoiController extends Controller
 
         ]);
 
-        $data = $request->only('name', 'note');
-    
+        $data = $request->only('name', 'note', 'danhmuc');
+
 
         if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
@@ -59,28 +72,31 @@ class PhanhoiController extends Controller
         }
 
         Phanhoi::create($data);
-      
+
         return redirect()->route('phanhoi.admin.index')->with('success', 'Thêm phản hồi thành công.');
     }
 
     public function edit(Phanhoi $phanhoi)
     {
-    
+
         return view('admin.phanhoi.edit', compact('phanhoi'));
     }
 
     public function update(Request $request, Phanhoi $phanhoi)
-    
+
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'danhmuc' => 'required|string|max:255',
             'note' => 'required',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ], [
             'name.required' => 'Tiêu đề không được để trống.',
             'name.max' => 'Tiêu đề không được vượt quá 255 ký tự.',
             'name.string' => 'Tiêu đề phải là một chuỗi ký tự.',
-
+            'danhmuc.required' => 'Dịch vụ không được để trống.',
+            'danhmuc.max' => 'Dịch vụ không được vượt quá 255 ký tự.',
+            'danhmuc.string' => 'Dịch vụ phải là một chuỗi ký tự.',
             'note.string' => 'Mô tả ngắn phải là một chuỗi ký tự.',
 
             'note.required' => 'Nội dung không được để trống.',
@@ -90,14 +106,14 @@ class PhanhoiController extends Controller
 
         ]);
 
-        $data = $request->only('name', 'note');
+        $data = $request->only('name', 'note','danhmuc');
         if ($request->hasFile('avatar')) {
             if ($phanhoi->avatar && File::exists(public_path($phanhoi->avatar))) {
                 File::delete(public_path($phanhoi->avatar));
             }
             $image = $request->file('avatar');
             $imageName = time() . '_' . $image->getClientOriginalName();
-         $image->move(public_path('/assetsadmin/uploads/tin_tuc'), $imageName);
+            $image->move(public_path('/assetsadmin/uploads/tin_tuc'), $imageName);
             $data['avatar'] = '/assetsadmin/uploads/tin_tuc/' . $imageName;
         }
 
@@ -115,4 +131,4 @@ class PhanhoiController extends Controller
 
         return redirect()->route('phanhoi.admin.index')->with('success', 'Xóa tin tức thành công.');
     }
-    }
+}

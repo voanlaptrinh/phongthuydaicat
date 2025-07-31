@@ -15,6 +15,13 @@
 
  @font-face {
      font-display: block;
+     font-family: CormorantGaramond-Semi-Bold;
+     src: url("../font/CormorantGaramond-SemiBold.ttf") format("truetype");
+
+ }
+
+ @font-face {
+     font-display: block;
      font-family: CormorantGaramond-Italic;
      src: url("../font/CormorantGaramond-Italic.ttf") format("truetype");
 
@@ -511,7 +518,7 @@
  }
 
  .btn-hover-default {
-    
+
      font-weight: 500;
      text-align: center;
      display: flex;
@@ -525,7 +532,7 @@
  }
 
  .btn-hover-default:hover {
-    color: white;
+     color: white;
      font-weight: 500;
      text-align: center;
      display: flex;
@@ -539,19 +546,26 @@
  }
 
  .btn-hover-default .btn {
-    border: none;
+     border: none;
      font-size: 20px;
      text-decoration: none;
      color: #ffffff;
      font-family: CormorantGaramond-Bold, serif;
 
  }
+
  .btn-hover-default a {
-     font-size: 20px;
+     font-size: 22px;
      text-decoration: none;
      color: #ffffff;
      font-family: CormorantGaramond-Bold, serif;
+ }
 
+ .btn-hover-default button {
+     font-size: 22px;
+     text-decoration: none;
+     color: #ffffff;
+     font-family: CormorantGaramond-Bold, serif;
  }
 
  .phong-thuyh1 {
@@ -649,7 +663,7 @@
      font-weight: bold;
      /* Chữ trong ảnh trông khá đậm */
      font-size: 24px;
-     line-height: 24px;
+     line-height: 26px;
      letter-spacing: 0.02em;
      /* 2% tương đương 0.02em */
      text-transform: uppercase;
@@ -777,6 +791,7 @@
      /* Hoặc overflow-x: hidden; */
 
  }
+
  .dichvudetail-section {
      background-image: url(../images/dichvu-detail.svg);
      background-repeat: no-repeat;
@@ -787,7 +802,7 @@
      /* === THÊM DÒNG NÀY ĐỂ SỬA LỖI === */
      overflow: hidden;
      /* Hoặc overflow-x: hidden; */
-     }
+ }
 
  .about-upleft-image {
      position: relative;
@@ -888,7 +903,7 @@
  .gioi-thieu-content {
      color: #000;
      text-align: center;
-     font-family: CormorantGaramond-Bold, serif;
+     font-family: CormorantGaramond-Semi-Bold, serif;
  }
 
  .xem-them {
@@ -1245,7 +1260,9 @@
  }
 
  .content-quytrinhkhach {
-     font-size: 20px;
+     font-size: 18px;
+     height: 84px;
+     line-height: 24px;
      font-family: OpenSans_Condensed-Regular, serif;
  }
 
@@ -1287,7 +1304,7 @@
      font-family: CormorantGaramond-Italic, serif;
      font-style: italic;
      /* Font chữ có chân cho tagline */
-     font-size: 24px;
+     font-size: 30px;
      font-weight: 700;
  }
 
@@ -1434,7 +1451,7 @@
      border-radius: 50%;
 
      /* Kiểu đường viền mảnh, màu trắng mờ giống trong ảnh */
-     border: 1px solid rgba(255, 255, 255, 0.5);
+     border: 1.5px solid rgba(255, 255, 255, 0.5);
 
      /* Căn giữa số bên trong vòng tròn */
      display: flex;
@@ -1449,7 +1466,7 @@
      font-size: 20px;
      font-weight: 300;
      /* Làm số mảnh hơn một chút */
-     color: rgba(255, 255, 255, 0.8);
+     color: rgba(255, 255, 255);
  }
 
  .item-number::after {
@@ -1484,8 +1501,8 @@
 
  .item-description {
      font-size: 16px;
-     line-height: 20px;
-     max-width: 300px;
+     line-height: 26px;
+     max-width: 350px;
      margin: 0 auto;
      font-family: OpenSans_Condensed-Regular, serif;
  }
@@ -1594,7 +1611,7 @@
  .testimonial-card {
      padding: 30px 25px;
      background-color: #fff;
-     border-radius: 8px;
+     border-radius: 12px;
      border: 2px solid #d3b895;
 
      /* ----- 3. BÓNG ĐỔ ----- */
@@ -1645,26 +1662,27 @@
      height: 56px;
      border-radius: 50%;
      object-fit: cover;
-     margin-right: 15px;
+     margin-right: 12px;
      border: 2px solid #eee;
      flex-shrink: 0;
  }
 
  .author-info h3 {
-     font-size: 16px;
+     font-size: 20px;
      font-weight: 700;
      color: #333;
      margin: 0;
  }
 
  .author-info p {
-     font-size: 13px;
-     color: #888;
+     font-size: 16px;
+     color: #5f5e5e;
      margin: 4px 0 0 0;
  }
 
  .testimonial-text {
      /* 1. Bắt buộc: Ẩn đi phần văn bản bị thừa */
+     padding-top: 20px;
      overflow: hidden;
 
      /* 2. Bắt buộc: Kích hoạt chế độ layout đặc biệt của WebKit 
@@ -1681,7 +1699,7 @@
 
      /* Giữ lại các thuộc tính style cũ của bạn */
      font-size: 18px;
-     line-height: 1.7;
+     line-height: 28px;
      color: #555;
  }
 
@@ -2597,7 +2615,7 @@
      border: 1.5px solid #d4af37;
      color: #f3e5ca;
      border-radius: 999px;
-   font-family: CormorantGaramond-Bold, serif;
+     font-family: CormorantGaramond-Bold, serif;
      font-size: 16px;
      font-style: italic;
      font-weight: 600;
@@ -2615,7 +2633,7 @@
      white-space: normal;
      font-size: 32px;
      font-weight: 700;
-      font-family: CormorantGaramond-Bold, serif;
+     font-family: CormorantGaramond-Bold, serif;
  }
 
  .kienthucphongthuy {
@@ -2867,35 +2885,37 @@
      /* CẢI TIẾN: Dùng '100% 100%' thay cho 'cover' để SVG không bị cắt xén */
      background-size: 100% 100%;
  }
- .title-dichvuphongthuy{
-    margin-top: 16px;
-    margin-bottom: 4px;
-    font-size: 26px;
-    font-family: CormorantGaramond-Bold, serif;
-    height: 63px;
-    background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
-    -webkit-background-clip: text;
+
+ .title-dichvuphongthuy {
+     margin-top: 16px;
+     margin-bottom: 4px;
+     font-size: 26px;
+     font-family: CormorantGaramond-Bold, serif;
+     height: 63px;
+     background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+     -webkit-background-clip: text;
      /* Cho trình duyệt Safari/Chrome */
-    background-clip: text;
-    color: transparent;
-    line-height: normal;
-    display: block;
+     background-clip: text;
+     color: transparent;
+     line-height: normal;
+     display: block;
 
      /* 2. Giới hạn văn bản chỉ trên 1 dòng */
-    -webkit-line-clamp: 2;
+     -webkit-line-clamp: 2;
 
      /* Các thuộc tính đi kèm bắt buộc */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
  }
- .content-dichvuphongthuy2{
-      font-family: OpenSans_Condensed-Regular, serif;
-      font-size: 18px;
-      color: #FFFFFF;
-      line-height: 30px;
-      height: 110px;
-        display: block;
+
+ .content-dichvuphongthuy2 {
+     font-family: OpenSans_Condensed-Regular, serif;
+     font-size: 18px;
+     color: #FFFFFF;
+     line-height: 30px;
+     height: 95px;
+     display: block;
 
      /* 2. Giới hạn văn bản chỉ trên 1 dòng */
      -webkit-line-clamp: 3;
@@ -2905,224 +2925,795 @@
      -webkit-box-orient: vertical;
      overflow: hidden;
  }
- .box-xemthem-dichvuphongthuy{
-    text-align: center;
-       font-family: OpenSans_Condensed-Regular, serif;
-       font-size: 20px;
-       color: white;
+
+ .box-xemthem-dichvuphongthuy {
+     text-align: center;
+     font-family: OpenSans_Condensed-Regular, serif;
+     font-size: 20px;
+     color: white;
  }
- .container-fixx{
-    margin: 0 auto;
+
+ .container-fixx {
+     margin: 0 auto;
  }
+
  .form-control:focus {
-   border: 1px solid #E0BC54 !important;
-    box-shadow: unset !important;
-}
+     border: 1px solid #E0BC54 !important;
+     box-shadow: unset !important;
+ }
 
 
-/* --- Bố cục chính --- */
+ /* --- Bố cục chính --- */
 
-/* Thẻ cha chứa toàn bộ */
-.article-layout {
- 
-    padding: 1rem;
-    margin-bottom: 2rem;
-    
-    /* 
+ /* Thẻ cha chứa toàn bộ */
+ .article-layout {
+
+     padding: 1rem;
+     margin-bottom: 2rem;
+
+     /* 
       CỰC KỲ QUAN TRỌNG:
       Thuộc tính này để "dọn dẹp" float, đảm bảo thẻ cha bao bọc đúng chiều cao
       của cả ảnh và text. Đây là cách hiện đại thay cho "clearfix hack".
     */
-    display: flow-root; 
-}
+     display: flow-root;
+ }
 
-/* Định dạng cho hình ảnh */
-.article-image {
-    /* Đẩy ảnh sang trái, cho phép text bao bọc bên phải và bên dưới */
-    float: right; 
+ /* Định dạng cho hình ảnh */
+ .article-image {
+     /* Đẩy ảnh sang trái, cho phép text bao bọc bên phải và bên dưới */
+     float: right;
+
+     /* Kích thước của ảnh */
+     /* width: 150px; */
+     height: auto;
+
+     /* Tạo khoảng cách giữa ảnh và text */
+     /* margin-right: 1.5rem; */
+     /* Khoảng cách bên phải */
+     margin-bottom: 0;
+     /* Khoảng cách bên dưới */
+
+     /* Thêm bo góc cho đẹp (tùy chọn) */
+     border-radius: 8px;
+     margin-left: 1.0rem;
+ }
+
+ /* Khối chứa văn bản (không cần style phức tạp) */
+ .article-text h3 {
+     margin-top: 0;
+     /* Xóa khoảng cách mặc định của tiêu đề */
+ }
+
+ .article-text p {
+     margin: 0;
+     /* line-height: 1.6; */
+     /* Tăng chiều cao dòng cho dễ đọc */
+     text-align: justify;
+     /* Căn đều 2 bên (tùy chọn) */
+ }
+
+
+ /* #toast-container {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+     z-index: 9999;
     
-    /* Kích thước của ảnh */
-    /* width: 150px; */
-    height: auto;
-    
-    /* Tạo khoảng cách giữa ảnh và text */
-    /* margin-right: 1.5rem; */ /* Khoảng cách bên phải */
-    margin-bottom: 0; /* Khoảng cách bên dưới */
+ }
+ .toaasst{
+ background: linear-gradient(to bottom, #EFE5B8, #F2E7C3, #F4D297);
+     border-radius: 15px;
+     padding: 2px;
+    animation: slideInFromRight 0.5s ease-out forwards;
+ }
 
-    /* Thêm bo góc cho đẹp (tùy chọn) */
-    border-radius: 8px;
-    margin-left: 1.0rem;
-}
+ .toast-show {
+     background-color: #5A6234;
+     color: white;
+     padding: 12px 16px;
+     border-radius: 6px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     font-size: 15px;
+     min-width: 245px;
+     max-width: 275px;
+     opacity: 1;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     font-family: OpenSans_Condensed-Bold, serif;
+     background-color: #5A6234;
+     border-radius: 13px;
+     padding: 20px;
+ }
 
-/* Khối chứa văn bản (không cần style phức tạp) */
-.article-text h3 {
-    margin-top: 0; /* Xóa khoảng cách mặc định của tiêu đề */
-}
-
-.article-text p {
-    margin: 0;
-    /* line-height: 1.6; */ /* Tăng chiều cao dòng cho dễ đọc */
-    text-align: justify; /* Căn đều 2 bên (tùy chọn) */
-}
-
-
-#toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.toast-show {
-    background-color: #28a745; /* màu xanh thành công */
-    color: white;
-    padding: 17px 52px;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    margin-bottom: 10px;
-    animation: fadeOut 2s forwards;
-    font-size: 15px;
-    min-width: 245px;
-    max-width: 275px;
-    opacity: 1;
-}
-
-/* Animation biến mất */
-@keyframes fadeOut {
-    0% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-10px); }
-}
-.is-open .accordion-header span{
-    font-weight: 900;
-    color: #730009;
-}
-.schedule {
-    width: 60px;
-}
-   /* ---- Lớp phủ cho popup ---- */
-        .schedule-popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: none;
-            /* Ẩn mặc định */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
-        }
-
-        /* ---- Nội dung chính của popup ---- */
-        .schedule-popup-content {
-            background-color: #FFFBF5;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 500px;
-            overflow: hidden;
-            /* Đảm bảo header bo tròn theo */
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* ---- Header của popup ---- */
-        .schedule-popup-header {
-            background-color: #780507;
-            color: var(--header-text-color);
-            padding: 15px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .schedule-popup-header h2 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            /* Kỹ thuật: tạo nền gradient rồi cắt theo hình dạng chữ */
-            background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
-            -webkit-background-clip: text;
-            /* Cho trình duyệt Safari/Chrome */
-            background-clip: text;
-            color: transparent;
-        }
-
-        .schedule-popup-header .close-button {
-            background: none;
-            border: none;
-            color: var(--header-text-color);
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1;
-            opacity: 0.8;
-        }
-
-        .schedule-popup-header .close-button:hover {
-            opacity: 1;
-        }
-
-
-        /* ---- Thân popup (chứa form) ---- */
-        .schedule-popup-body {
-            padding: 30px 25px;
-        }
-
-        .schedule-popup-body .form-group {
-            margin-bottom: 15px;
-        }
+ .icon-toast {
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #35F676;
+     width: 32px;
+     height: 32px;
+ } */
 
 
 
-        .schedule-popup-body input::placeholder,
-        .schedule-popup-body textarea::placeholder {
-            color: #888;
-        }
+ /* ---- CSS cho Lỗi Form ---- */
+ .error-text {
+     color: #dc3545;
+     font-size: 0.875em;
+     margin-top: 5px;
+     min-height: 1.0em;
+ }
 
-        .schedule-popup-body textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+ .input-contact.is-invalid {
+     border-color: #dc3545 !important;
+ }
+
+ /* ---- CSS cho Toast Notification ---- */
+ #toast-container {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+     z-index: 9999;
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+ }
+
+ .toaasst {
+     background: linear-gradient(to bottom, #EFE5B8, #F2E7C3, #F4D297);
+     border-radius: 15px;
+     padding: 2px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     animation: slideInFromRight 0.5s ease-out forwards;
+ }
+
+ .toaasst.toast-hiding {
+     animation: slideOutToRight 0.5s ease-in forwards;
+ }
+
+ .toast-show {
+     color: white;
+     border-radius: 13px;
+     padding: 16px 20px;
+     font-size: 15px;
+     min-width: 250px;
+     max-width: 280px;
+     font-family: OpenSans_Condensed-Bold, serif;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .toast-show.toast-success {
+     background-color: #5A6234;
+ }
+
+ .toast-show.toast-error {
+     background-color: #5A6234;
+ }
+
+ .icon-toast {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-shrink: 0;
+ }
+
+ .icon-toast i {
+     font-size: 20px;
+ }
+
+ /* ---- Keyframes cho Animations ---- */
+ @keyframes slideInFromRight {
+     from {
+         opacity: 0;
+         transform: translateX(100%);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ @keyframes slideOutToRight {
+     from {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+     to {
+         opacity: 0;
+         transform: translateX(100%);
+     }
+ }
+
+ .icon-scess {
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #35F676;
+     width: 32px;
+     height: 32px;
+ }
+
+ .icon-error {
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #e73131;
+     width: 32px;
+     height: 32px;
+ }
+
+ /* ---- Keyframes cho Animation ---- */
+
+ @keyframes slideInFromRight {
+
+     /* Trạng thái bắt đầu: Ẩn, và lệch 100% sang phải */
+     from {
+         opacity: 0;
+         transform: translateX(100%);
+     }
+
+     /* Trạng thái kết thúc: Hiện rõ, và ở vị trí ban đầu */
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ /* Animation biến mất */
+ @keyframes fadeOut {
+     0% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     80% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     100% {
+         opacity: 0;
+         transform: translateY(-10px);
+     }
+ }
+
+ .is-open .accordion-header span {
+     font-weight: 900;
+     color: #730009;
+ }
+
+ .schedule {
+     width: 60px;
+ }
+
+ /* ---- Lớp phủ cho popup ---- */
+ .schedule-popup-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.6);
+     display: none;
+     /* Ẩn mặc định */
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+     font-family: Arial, sans-serif;
+ }
+
+ /* ---- Nội dung chính của popup ---- */
+ .schedule-popup-content {
+     background-color: #FFFBF5;
+     border-radius: 12px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+     width: 90%;
+     max-width: 500px;
+     overflow: hidden;
+     /* Đảm bảo header bo tròn theo */
+     animation: fadeIn 0.3s ease-out;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: scale(0.9);
+     }
+
+     to {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
+
+ /* ---- Header của popup ---- */
+ .schedule-popup-header {
+     background-color: #780507;
+     color: var(--header-text-color);
+     padding: 15px 25px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-family: 'Cormorant Garamond', serif;
+ }
+
+ .schedule-popup-header h2 {
+     margin: 0;
+     font-size: 24px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     /* Kỹ thuật: tạo nền gradient rồi cắt theo hình dạng chữ */
+     background: linear-gradient(to right, #FFFFFF, #FFF1BC, #F3D68D);
+     -webkit-background-clip: text;
+     /* Cho trình duyệt Safari/Chrome */
+     background-clip: text;
+     color: transparent;
+ }
+
+ .schedule-popup-header .close-button {
+     background: none;
+     border: none;
+     color: var(--header-text-color);
+     font-size: 30px;
+     font-weight: bold;
+     cursor: pointer;
+     line-height: 1;
+     opacity: 0.8;
+ }
+
+ .schedule-popup-header .close-button:hover {
+     opacity: 1;
+ }
 
 
-        /* ---- Nút Đặt Lịch ---- */
-        .schedule-popup-body .submit-button {
-            width: 100%;
-            padding: 12px 20px;
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-            border: 1px solid var(--button-border-color);
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Cormorant Garamond', serif;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            margin-top: 10px;
-            box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
-        }
+ /* ---- Thân popup (chứa form) ---- */
+ .schedule-popup-body {
+     padding: 30px 25px;
+ }
 
-        .schedule-popup-body .submit-button:hover {
-            background-color: #a31919;
-            /* Màu đỏ đậm hơn khi hover */
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+ .schedule-popup-body .form-group {
+     margin-bottom: 15px;
+ }
+
+
+
+ .schedule-popup-body input::placeholder,
+ .schedule-popup-body textarea::placeholder {
+     color: #888;
+ }
+
+ .schedule-popup-body textarea {
+     min-height: 120px;
+     resize: vertical;
+ }
+
+
+ /* ---- Nút Đặt Lịch ---- */
+ .schedule-popup-body .submit-button {
+     width: 100%;
+     padding: 12px 20px;
+     background-color: var(--button-bg-color);
+     color: var(--button-text-color);
+     border: 1px solid var(--button-border-color);
+     border-radius: 8px;
+     font-size: 18px;
+     font-weight: 700;
+     font-family: 'Cormorant Garamond', serif;
+     letter-spacing: 1.5px;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+     margin-top: 10px;
+     box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+ }
+
+ .schedule-popup-body .submit-button:hover {
+     background-color: #a31919;
+     /* Màu đỏ đậm hơn khi hover */
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Hiệu ứng rung */
+ @keyframes shake-in-place {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     25% {
+         transform: rotate(25deg);
+     }
+
+     50% {
+         transform: rotate(-25deg);
+     }
+
+     75% {
+         transform: rotate(25deg);
+     }
+
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+
+ .schedule-button img {
+     animation: shake-in-place 1.5s infinite;
+     width: 30px;
+     height: auto;
+     transition: transform 0.3s ease;
+ }
+
+ /* Tùy chỉnh text */
+ .schedule-text {
+     /* font-size: 14px;
+     animation: fadeInUp 1s ease;
+     background: #842022;
+     border: 2px solid #e0ba4d; */
+     border-radius: 10px;
+ }
+
+ /* Optional: hiệu ứng hiện lên */
+ @keyframes fadeInUp {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .schedule-popup-header h2 {
+     text-align: center;
+     width: 100%;
+     font-weight: bold;
+     margin: 0 auto;
+ }
+
+ /* ---- Pagination Custom Styling ---- */
+
+ /* Giới hạn style chỉ áp dụng cho pagination bên trong .p-nav */
+
+ /* Bỏ phần đệm mặc định của ul.pagination */
+ .p-nav .pagination {
+     padding-left: 0;
+ }
+
+ /* Thêm khoảng cách giữa các nút */
+ .p-nav .page-item {
+     margin: 0 4px;
+ }
+
+ /* Style chung cho tất cả các nút (page-link) */
+ .p-nav .page-link {
+     border-radius: 8px !important;
+     /* Bo góc tròn như trong ảnh */
+     border: 1px solid #e9ecef;
+     /* Viền rất nhạt */
+     background-color: #ffffff;
+     /* Nền trắng */
+     color: #495057;
+     /* Màu chữ xanh đậm/xám */
+     font-weight: 600;
+     /* Chữ hơi đậm */
+     min-width: 42px;
+     /* Đảm bảo các nút có chiều rộng tối thiểu */
+     height: 42px;
+     /* Chiều cao cố định */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+     /* Đổ bóng nhẹ */
+     transition: all 0.2s ease-in-out;
+     /* Hiệu ứng chuyển động mượt mà */
+ }
+
+ /* Bỏ viền xanh khi focus vào nút */
+ .p-nav .page-link:focus {
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ /* Style khi di chuột vào nút (hover) */
+ .p-nav .page-link:hover {
+     background-color: #f8f9fa;
+     /* Nền hơi xám khi di chuột */
+     border-color: #dee2e6;
+ }
+
+ /* --- Style cho trang đang được chọn (ACTIVE) --- */
+ /* Đây là phần quan trọng nhất để giống ảnh */
+ .p-nav .page-item.active .page-link {
+     background-color: #a91118;
+     /* Màu đỏ đậm từ ảnh */
+     border-color: #a91118;
+     /* Viền cùng màu nền */
+     color: #ffffff;
+     /* Chữ màu trắng */
+     font-weight: 700;
+     /* Chữ đậm hơn */
+ }
+
+ .p-nav .page-item.active .page-link:hover {
+     background-color: #9d0a0f;
+     /* Màu đỏ đậm hơn một chút khi hover */
+     border-color: #9d0a0f;
+ }
+
+
+ /* --- Style cho nút bị vô hiệu hóa (DISABLED) --- */
+ /* Áp dụng cho "..." và các mũi tên khi ở trang đầu/cuối */
+ .p-nav .page-item.disabled .page-link {
+     background-color: #ffffff;
+     /* Vẫn là nền trắng */
+     color: #6c757d;
+     /* Màu chữ xám hơn một chút */
+     pointer-events: none;
+     /* Không cho phép click */
+     box-shadow: none;
+     /* Bỏ bóng cho nút bị vô hiệu hóa */
+ }
+
+ /* ---- CSS cho Nút bấm tròn với viền Gradient ---- */
+
+
+ .gradient-button-wrapper {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     background: linear-gradient(to bottom, #FADFB4, #DDC07F);
+     padding: 3px;
+     border: none;
+     cursor: pointer;
+     transition: transform 0.2s ease-out;
+ }
+
+ .button-content {
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(to bottom, #FADFB4, #DDC07F);
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow:
+         inset 2px 4px 7.3px -2px #CA9315,
+         inset 0 -2px 2px rgba(255, 255, 255, 0.4);
+ }
+
+ .button-icon {
+     width: 50%;
+     height: auto;
+ }
+
+ .gradient-button-wrapper:hover {
+     transform: scale(1.05);
+ }
+
+ /* ---- CSS cho Hộp văn bản hình mũi tên ---- */
+
+ .arrow-box {
+     /* Quan trọng: Cần 'position: relative' để định vị hình tam giác */
+     position: relative;
+
+     /* Style cơ bản cho hộp văn bản */
+     background-color: #a91c23;
+     /* Màu đỏ đậm như nút bấm trước */
+     color: white;
+     font-family: OpenSans_Condensed-Bold, serif;
+     padding: 0.5rem 2rem 0.5rem 1rem;
+     /* Padding: top, right, bottom, left */
+     font-size: 16px;
+     /* Đảm bảo hộp văn bản nằm trên các phần tử khác nếu cần */
+     z-index: 1;
+ }
+
+ /* Phần "ma thuật" - tạo ra hình tam giác cho mũi tên */
+ .arrow-box::after {
+     content: '';
+     /* Bắt buộc phải có */
+     position: absolute;
+
+     /* Định vị tam giác ngay bên phải của hộp văn bản */
+     left: 100%;
+     top: 50%;
+     transform: translateY(-50%);
+     /* Căn giữa tam giác theo chiều dọc */
+
+     /* Kích thước của tam giác được quyết định bởi border */
+     width: 0;
+     height: 0;
+     border-style: solid;
+
+     /*
+     * Tính toán kích thước tam giác cho phù hợp với chiều cao của hộp.
+     * Với padding-top/bottom là 0.5rem và font-size ~1rem, chiều cao hộp khoảng 38-40px.
+     * Chúng ta sẽ tạo tam giác có chiều cao tương ứng (19px + 19px = 38px).
+    */
+     border-width: 10px 0 10px 10px;
+
+     /* Chỉ tô màu cho cạnh bên trái, các cạnh khác trong suốt */
+     border-color: transparent transparent transparent #a91c23;
+ }
+
+ .text-description-contact {
+     text-align: center;
+     font-family: OpenSans_Condensed-Bold, serif;
+     font-size: 16px;
+     font-style: italic;
+ }
+
+
+
+
+ .select-wrapper {
+     position: relative;
+ }
+
+ /* Tùy chỉnh select box chung */
+ .select-wrapper select.form-control {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     padding-right: 2.5rem;
+     /* 40px */
+     /* Thêm hiệu ứng chuyển đổi mượt mà */
+     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+ }
+
+ /* 
+     * MẸO CSS: Dùng :invalid để tạo style cho placeholder.
+     * Khi select có 'required' và option được chọn có value="",
+     * select sẽ ở trạng thái :invalid.
+    */
+ .select-wrapper select.form-control:invalid {
+     color: #6c757d;
+     /* Màu placeholder của Bootstrap */
+ }
+
+ /* Đảm bảo các option có màu chữ bình thường */
+ .select-wrapper select.form-control option {
+     color: #212529;
+     /* Màu chữ đen mặc định */
+ }
+
+ /* Ẩn option placeholder khỏi danh sách khi xổ xuống */
+ .select-wrapper select.form-control option[value=""][disabled] {
+     display: none;
+ }
+
+ /* Icon SVG bằng pseudo-element ::after */
+ .select-wrapper::after {
+     content: '';
+     position: absolute;
+     top: 50%;
+     right: 1rem;
+     /* 16px */
+     transform: translateY(-50%);
+     width: 1.25em;
+     /* 20px */
+     height: 1.25em;
+     /* 20px */
+     background-image: url("../images/snap-icon.svg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     pointer-events: none;
+ }
+
+ /* Animation cho hiệu ứng rung */
+ @keyframes shake {
+
+     10%,
+     90% {
+         transform: translate3d(-1px, 0, 0);
+     }
+
+     20%,
+     80% {
+         transform: translate3d(2px, 0, 0);
+     }
+
+     30%,
+     50%,
+     70% {
+         transform: translate3d(-4px, 0, 0);
+     }
+
+     40%,
+     60% {
+         transform: translate3d(4px, 0, 0);
+     }
+ }
+
+ /* Class để áp dụng animation vào popup content */
+ /* Đảm bảo bạn có một class cho nội dung bên trong popup, ví dụ: .schedule-popup-content */
+ .schedule-popup-content.shake {
+     animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+     transform: translate3d(0, 0, 0);
+     backface-visibility: hidden;
+     perspective: 1000px;
+ }
+
+ /* Container chính */
+ .select-wrapper {
+     position: relative;
+     font-family: Arial, sans-serif;
+ }
+
+ .select-wrapper select {
+     display: none;
+ }
+
+ /* Box hiển thị giá trị đã chọn */
+ .select-selected {
+     background-color: #fff;
+     color: #999;
+     /* Màu placeholder mặc định */
+     padding: 12px 16px;
+     border: 1px solid #B99E58;
+     border-radius: 5px;
+     cursor: pointer;
+     user-select: none;
+     position: relative;
+ }
+
+ /* Đổi màu chữ khi đã chọn */
+ .select-selected.has-value {
+     color: #333;
+ }
+
+ .select-selected.select-arrow-active::after {
+     transform: translateY(-50%) rotate(180deg);
+ }
+
+ .select-selected.select-arrow-active {
+     border-bottom-left-radius: 0;
+     border-bottom-right-radius: 0;
+ }
+
+ .select-items {
+     position: absolute;
+     background-color: white;
+     top: 100%;
+     left: 0;
+     right: 0;
+     z-index: 99;
+     border: 1px solid #ddd;
+     border-top: none;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     max-height: 200px;
+     overflow-y: auto;
+ }
+
+ .select-hide {
+     display: none;
+ }
+
+ .select-items div {
+     /* color: #333; */
+     padding: 12px 16px;
+     cursor: pointer;
+     transition: background-color 0.2s ease, color 0.2s ease;
+ }
+
+ .select-items div:hover {
+     background-color: #f1f1f1;
+ }
+
+ .same-as-selected {
+     background-color: rgba(0, 123, 255, 0.1);
+ }

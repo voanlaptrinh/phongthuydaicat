@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class NewsFaqConcontroller extends Controller
 {
+    public function __construct()
+    {
+        // Kiểm tra quyền của người dùng để tạo, sửa, xóa hợp đồng
+        $this->middleware('can:Xem câu hỏi tin tức')->only(['index']);
+        $this->middleware('can:Thêm câu hỏi tin tức')->only(['create', 'store']);
+        $this->middleware('can:Sửa câu hỏi tin tức')->only(['edit', 'update']);
+        $this->middleware('can:Xóa câu hỏi tin tức')->only(['destroy']);
+    }
     public function index(News $news)
     {
         $faqs = $news->faqs()->latest()->paginate(10);

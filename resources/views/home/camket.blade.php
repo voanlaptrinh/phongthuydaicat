@@ -33,26 +33,24 @@
                     <article class="commitment-item col-lg-4">
                         <div class="item-icon-placeholder"></div>
                         <div class="item-number"><span>1</span></div>
-                        <h3 class="item-title-camket">Tư vấn chuẩn xác – <br> Cá nhân hóa theo mệnh số</h3>
-                        <p class="item-description">Cam kết đưa ra lời khuyên đúng người – đúng thời điểm</p>
+                        <h3 class="item-title-camket">Tư vấn chuẩn mực – <br> đúng chuyên môn</h3>
+                        <p class="item-description">Đảm bảo mọi phân tích và giải pháp đều dựa trên kiến thức phong thủy chính thống, phù hợp thực tế từng khách hàng.</p>
                     </article>
 
                     <!-- Item 2 -->
                     <article class="commitment-item col-lg-4">
                         <div class="item-icon-placeholder"></div>
                         <div class="item-number"><span>2</span></div>
-                        <h3 class="item-title-camket">Ứng dụng kiến thức phong thủy <br> chuẩn mực và chính thống</h3>
-                        <p class="item-description">Đội ngũ chuyên gia có nền tảng vững chắc về Kinh Dịch, Bát Tự,
-                            Huyền Không, Tử Vi...</p>
+                        <h3 class="item-title-camket">Bảo mật tuyệt đối <br> thông tin cá nhân</h3>
+                        <p class="item-description">Mọi dữ liệu và thông tin của khách hàng đều được bảo vệ nghiêm ngặt và chỉ sử dụng cho mục đích tư vấn.</p>
                     </article>
 
                     <!-- Item 3 -->
                     <article class="commitment-item col-lg-4">
                         <div class="item-icon-placeholder"></div>
                         <div class="item-number"><span>3</span></div>
-                        <h3 class="item-title-camket">Hỗ trợ tận tâm – <br> Đồng hành dài lâu</h3>
-                        <p class="item-description">Luôn sẵn sàng đồng hành cùng bạn trong từng giai đoạn của cuộc
-                            sống.</p>
+                        <h3 class="item-title-camket">Đồng hành tận tâm – <br> hỗ trợ sau dịch vụ</h3>
+                        <p class="item-description">Không chỉ bàn giao kết quả, chúng tôi luôn sẵn sàng lắng nghe, giải đáp và đồng hành cùng khách hàng trong suốt quá trình ứng dụng phong thủy vào đời sống.</p>
                     </article>
                 </div>
             </div>

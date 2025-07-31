@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="row box-content-hoi-dap g-3 mt-3">
-                @foreach ($news as $item)
+                @forelse ($news as $item)
                     <div class="col-lg-4 col-sm-6">
                         <div class="box-news">
                             <img src="{{ asset('/assets/images/top-news-box.svg') }}" alt="top-news-box"
@@ -47,10 +47,17 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="alert alert-secondary text-center">
+                        Không có bài viết phụ nào để hiển thị.
+                    </div>
+                @endforelse
 
 
             </div>
+            <style>
+                
+            </style>
             <div class=" p-nav text-end d-flex justify-content-end mt-3">
                 {{ $news->appends(request()->query())->links('pagination::bootstrap-4') }}
             </div>

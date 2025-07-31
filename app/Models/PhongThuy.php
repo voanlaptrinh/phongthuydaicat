@@ -12,6 +12,8 @@ class PhongThuy extends Model
         'title',
         'tag',
         'content',
+        'metatitle',
+        'metadescription',
         'description',
         'images'
     ];

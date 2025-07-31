@@ -21,11 +21,19 @@
         </div>
         <div class="col-lg-10">
             <div class="row g-3">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <label for="name" class="form-label">Tiêu đề</label>
                     <input type="text" class="form-control" name="name"
                         value="{{ old('name', $phanhoi->name ?? '') }}">
                     @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-lg-6">
+                    <label for="name" class="form-label">Dịch vụ</label>
+                    <input type="text" class="form-control" name="danhmuc"
+                        value="{{ old('danhmuc', $phanhoi->danhmuc ?? '') }}">
+                    @error('danhmuc')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>

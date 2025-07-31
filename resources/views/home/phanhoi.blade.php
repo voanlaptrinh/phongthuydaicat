@@ -29,10 +29,11 @@
                                <span class="card-deco-bottom"></span>
 
                                <div class="card-header">
-                                   <img src="https://i.imgur.com/3YQ5Yf1.png" alt="Avatar Chị Hà Trang" class="avatar">
+                                   <img src="{{ asset($phanhoiitem->avatar ?? 'https://i.imgur.com/3YQ5Yf1.png') }}"
+                                       alt="Avatar Chị Hà Trang" class="avatar">
                                    <div class="author-info">
                                        <h3>{{ $phanhoiitem->name ?? '' }}</h3>
-  <p>{{ \Carbon\Carbon::parse($phanhoiitem->created_at)->format('d/m/Y') }}</p>
+                                       <p>{{ $phanhoiitem->danhmuc ?? '' }}</p>
                                    </div>
                                </div>
                                <p class="testimonial-text">

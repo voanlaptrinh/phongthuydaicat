@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('phong_thuys', function (Blueprint $table) {
             $table->id();
               $table->string('title');
+              $table->string('metatitle')->nullable();
+              $table->string('metadescription')->nullable();
             $table->string('tag')->nullable();
             $table->string('description')->nullable();
             $table->string('images')->nullable();

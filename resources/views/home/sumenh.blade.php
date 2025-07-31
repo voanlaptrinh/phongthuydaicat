@@ -35,9 +35,8 @@
                                     class="deco-icon">
                             </h3>
                             <p class="text-dess-su-menh">
-                                Sứ mệnh của Phong Thủy Đại Cát là trở thành người bạn đồng hành đáng tin cậy trong hành
-                                trình kiến tạo cuộc sống hanh thông, thuận lợi – giúp mỗi người “Hiểu vận – Biết mệnh –
-                                Chủ động cải mệnh – Vững bước thành công.”
+                              Phong Thủy Đại Cát mang trên mình sứ mệnh trở thành người đồng hành khai sáng bằng phong thủy – nơi Tâm dẫn lối, Trí khai đường, và Tín làm nền tảng.
+Với tri thức chân chính và cái tâm trong sáng, chúng tôi góp phần xây dựng cuộc sống hài hòa, thịnh vượng và bền vững cho mỗi gia chủ.
                             </p>
                         </div>
                         <!-- Container cho 3 thẻ "Tâm - Trí - Tín" -->

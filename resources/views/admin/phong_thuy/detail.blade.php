@@ -17,9 +17,14 @@
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                         <img src="{{ asset($phongthuy->images) }}" alt="Profile" class="">
-                        <h2>{{ $phongthuy->title ?? '' }}</h2>
-                        <p>{{ $phongthuy->description ?? '' }}</p>
-
+                        <h2>Tiêu đề:{{ $phongthuy->title ?? '' }}</h2>
+                        <p>Mô tả ngắn: {{ $phongthuy->description ?? '' }}</p>
+                        <div class="alert alert-secondary">
+                            <div>
+                                Metatile: {{ $phongthuy->metatitle ?? '' }}
+                            </div>
+                            <div> Metadescripotion: {{ $phongthuy->metadescription ?? '' }}</div>
+                        </div>
                     </div>
                 </div>
 

@@ -15,19 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-   Route::get('/', [HomeController::class, 'index'])->name('home');
-   Route::get('/hoi-dap', [HomeController::class, 'faqs'])->name('faqs');
-   Route::get('/lienhe', [HomeController::class, 'contact'])->name('contact');
-   Route::post('/lien-he', [HomeController::class, 'storecontact']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/hoi-dap', [HomeController::class, 'faqs'])->name('faqs');
+Route::get('/lien-he', [HomeController::class, 'contact'])->name('contact');
+Route::post('/lien-he', [HomeController::class, 'storecontact'])->name('storecontact');
 
-   Route::get('/tin-tuc', [HomeController::class, 'news'])->name('news');
-   Route::get('/tin-tuc/chi-tiet/{news}', [HomeController::class, 'newsdetail'])->name('newsdetail');
-   Route::get('/tin-tuc/danh-sach', [HomeController::class, 'newslist'])->name('newslist');
+Route::get('/tin-tuc', [HomeController::class, 'news'])->name('news');
+Route::get('/tin-tuc/chi-tiet/{news}', [HomeController::class, 'newsdetail'])->name('newsdetail');
+Route::get('/phong-thuy/chi-tiet/{phongthuy}', [HomeController::class, 'phongthuydetail'])->name('phongthuy.show');
+Route::get('/tin-tuc/danh-sach', [HomeController::class, 'newslist'])->name('newslist');
 
-   Route::get('/dich-vu', [HomeController::class, 'dichvus'])->name('dichvus');
-   Route::get('/dich-vu/chi-tiet/{dichvu}', [HomeController::class, 'dichvusdetail'])->name('dichvusdetail');
+Route::get('/dich-vu', [HomeController::class, 'dichvus'])->name('dichvus');
+Route::get('/dich-vu/chi-tiet/{dichvu}', [HomeController::class, 'dichvusdetail'])->name('dichvusdetail');
 
-
-   Route::get('/login', [LoginController::class, 'showform'])->name('login');
+Route::post('/dat-lich-tu-van', [HomeController::class, 'storedatlichtuvan'])->name('schedule.store');
+Route::get('/login', [LoginController::class, 'showform'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('post_login');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');

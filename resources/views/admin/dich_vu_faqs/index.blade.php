@@ -22,10 +22,11 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Câu hỏi thường gặp - {{ $dichvu->title }}</h5>
-
-                        <a href="{{ route('admin.dichvu.faqs.create', $dichvu->id) }}" class="btn btn-success rounded-pill">Thêm
-                            mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm câu hỏi kiến thức dịch vụ'))
+                            <a href="{{ route('admin.dichvu.faqs.create', $dichvu->id) }}"
+                                class="btn btn-success rounded-pill">Thêm
+                                mới</a>
+                        @endif
                     </div>
                     <hr>
 
@@ -36,7 +37,7 @@
                                     <tr>
                                         <th>Câu hỏi</th>
                                         <th>Câu trả lời</th>
-                                       
+
                                         <th>Hành động</th>
                                     </tr>
                                 </thead>
@@ -45,21 +46,27 @@
                                         <tr>
                                             <td>{{ $faq->question }}</td>
                                             <td>{!! Str::limit($faq->answer, 100) !!}</td>
-                    
+
                                             <td>
-                                               <a href="{{ route('admin.dichvu.faqs.edit', [$dichvu->id, $faq->id]) }}"
-                                                    class="btn btn-sm btn-primary"><i class="bi bi-wrench"></i></a>
-                                               <form action="{{ route('admin.dichvu.faqs.destroy', [$dichvu->id, $faq->id]) }}"
-                                                    method="POST" style="display:inline-block;"
-                                                    onsubmit="return confirm('Bạn chắc chắn muốn xóa?')">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger"><i
-                                                            class="bi bi-trash text-white"></i></button>
-                                                </form> 
+                                                @if (auth()->user()->hasPermissionTo('Sửa câu hỏi kiến thức dịch vụ'))
+                                                    <a href="{{ route('admin.dichvu.faqs.edit', [$dichvu->id, $faq->id]) }}"
+                                                        class="btn btn-sm btn-primary"><i class="bi bi-wrench"></i></a>
+                                                @endif
+                                                @if (auth()->user()->hasPermissionTo('Xóa câu hỏi kiến thức dịch vụ'))
+                                                    <form
+                                                        action="{{ route('admin.dichvu.faqs.destroy', [$dichvu->id, $faq->id]) }}"
+                                                        method="POST" style="display:inline-block;"
+                                                        onsubmit="return confirm('Bạn chắc chắn muốn xóa?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-sm btn-danger"><i
+                                                                class="bi bi-trash text-white"></i></button>
+                                                    </form>
+                                                @endif
+
                                             </td>
                                         </tr>
-                                     @empty
+                                    @empty
                                         <tr>
                                             <td colspan="3" class="text-center text-muted">Không có dữ liệu câu hỏi.
                                             </td>
@@ -79,10 +86,4 @@
         </div>
 
     </div>
-
-
-
-
-
-
 @endsection

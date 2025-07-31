@@ -22,12 +22,12 @@
 
                     <div class="col-12 d-sm-flex justify-content-between align-items-center">
                         <h5 class="card-title">Danh sách phản hồi</h5>
-
-                        <a href="{{ route('faqs.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
-
+                        @if (auth()->user()->hasPermissionTo('Thêm hỏi đáp'))
+                            <a href="{{ route('faqs.admin.create') }}" class="btn btn-success rounded-pill">Thêm mới</a>
+                        @endif
                     </div>
                     <hr>
-                  
+
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-responsive">
@@ -43,26 +43,27 @@
                                 <tbody>
                                     @forelse ($faqs as $faq)
                                         <tr>
-                                           
+
                                             <td>{{ $faq->question }}</td>
                                             <td>{{ $faq->answer }}</td>
 
                                             <td>{{ $faq->created_at->format('d/m/Y') }}</td>
                                             <td>
+                                                @if (auth()->user()->hasPermissionTo('Sửa hỏi đáp'))
+                                                    <a href="{{ route('faqs.admin.edit', $faq->id) }}"
+                                                        class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
+                                                @endif
+                                                @if (auth()->user()->hasPermissionTo('Xóa hỏi đáp'))
+                                                    <form action="{{ route('faqs.admin.destroy', $faq->id) }}"
+                                                        method="POST" style="display:inline-block;">
+                                                        @csrf @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Xóa hỏi đáp này?')"><i
+                                                                class="bi bi-trash text-white"></i></button>
+                                                    </form>
+                                                @endif
 
-                                                <a href="{{ route('faqs.admin.edit', $faq->id) }}"
-                                                    class="btn btn-warning btn-sm"><i class="bi bi-wrench"></i></a>
-
-
-                                                <form action="{{ route('faqs.admin.destroy', $faq->id) }}" method="POST"
-                                                    style="display:inline-block;">
-                                                    @csrf @method('DELETE')
-                                                    <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Xóa hỏi đáp này?')"><i
-                                                            class="bi bi-trash text-white"></i></button>
-                                                </form>
-
-                                               {{--  <button type="button" class="btn btn-info btn-sm btn-xem-chi-tiet"
+                                                {{--  <button type="button" class="btn btn-info btn-sm btn-xem-chi-tiet"
                                                     data-bs-toggle="modal" data-bs-target="#modalChiTiet"
                                                     data-tieude="{{ $tt->name }}" data-mota="{{ $tt->note }}"
                                                     data-anh="{{ asset($tt->avatar) }}">

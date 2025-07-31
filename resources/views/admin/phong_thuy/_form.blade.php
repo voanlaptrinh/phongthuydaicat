@@ -21,7 +21,7 @@
         </div>
         <div class="col-lg-10">
             <div class="row g-3">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <label for="title" class="form-label">Tiêu đề</label>
                     <input type="text" class="form-control" name="title"
                         value="{{ old('title', $phongthuy->title ?? '') }}">
@@ -29,11 +29,26 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <label for="tag" class="form-label">Tag</label>
                     <input type="text" class="form-control" name="tag"
                         value="{{ old('tag', $phongthuy->tag ?? '') }}">
                     @error('tag')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-lg-12">
+                    <label for="metatitle" class="form-label">Metatitle</label>
+                    <input type="text" class="form-control" name="metatitle"
+                        value="{{ old('metatitle', $phongthuy->metatitle ?? '') }}">
+                    @error('metatitle')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-lg-12">
+                    <label for="metadescription" class="form-label">Meta Description</label>
+                     <textarea class="form-control" name="metadescription">{{ old('metadescription', $phongthuy->metadescription ?? '') }}</textarea>
+                    @error('metadescription')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
