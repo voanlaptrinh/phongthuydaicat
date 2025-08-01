@@ -2,7 +2,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a class="logo d-flex align-items-center">
-           <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Phong Thủy Đại Cát" class="img-fluid img-logo">
+           <img src="{{ asset('assets/images/Logo.svg') }}" alt="Logo Phong Thủy Đại Cát" class="img-fluid img-logo">
             <span class="d-none d-lg-block">Phong thủy đại cát</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>

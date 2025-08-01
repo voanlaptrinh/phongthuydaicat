@@ -9,7 +9,7 @@
     <!-- Font Awesome cho icons -->
     <!-- Link CSS của bạn -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.1') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/repont.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- 1. CSS của Slick -->
@@ -99,7 +99,7 @@
 
 
 
-    <script src="{{ asset('assets/js/style.js') }}"></script>
+    <script src="{{ asset('assets/js/style.js?v=1.0') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 

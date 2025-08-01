@@ -1653,7 +1653,7 @@
 
  .card-header {
      display: flex;
-     align-items: center;
+     align-items: start;
      margin-bottom: 20px;
  }
 

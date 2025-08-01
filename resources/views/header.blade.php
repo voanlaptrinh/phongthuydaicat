@@ -2,7 +2,7 @@
      <div class="container d-flex align-items-center justify-content-between">
          <div class="site-logo d-flex align-items-center">
              <a href="{{route('home')}}">
-                 <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Phong Thủy Đại Cát" class="img-fluid img-logo">
+                 <img src="{{ asset('assets/images/Logo.svg') }}" alt="Logo Phong Thủy Đại Cát" class="img-fluid img-logo">
              </a>
              <span class="text-center title-logo">Phong thủy
                  <br> đại cát</span>
